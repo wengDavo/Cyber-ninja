@@ -2,7 +2,7 @@ import "./styles/css/homepage.css";
 
 const CompanyLogos = () => {
   return (
-    <section class="video">
+    <section className="video">
       <video src=""></video>
     </section>
   );

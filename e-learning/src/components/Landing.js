@@ -3,9 +3,9 @@ import "./styles/css/homepage.css";
 
 const Landing = ({ children }) => {
   return (
-    <body id="body">
+    <div id="body">
       {children}
-    </body>
+    </div>
   );
 };
 

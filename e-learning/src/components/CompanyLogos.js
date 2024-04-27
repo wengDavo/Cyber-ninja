@@ -9,7 +9,7 @@ import Amazon from "./assets/icons/Amazon_(company)-Logo.wine.svg";
 
 const CompanyLogos = () => {
   return (
-    <section class="company-logos scrollbar-hide">
+    <section className="company-logos scrollbar-hide">
       <figure class="company-logo">
         <img src={Adobe} alt="" class="icon" />
       </figure>

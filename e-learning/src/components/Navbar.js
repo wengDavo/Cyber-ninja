@@ -1,15 +1,33 @@
-import "./styles/css/homepage.css";
-import { Link } from "react-router-dom/dist";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
-// import { useAuthStore } from "../store/auth";
+import SidePanel from "./SidePanel";
 
 const NavBar = () => {
-  //   const [isLoggedIn, user] = useAuthStore((state) => [
-  //     state.isLoggedIn,
-  //     state.user,
-  //   ]); console.log(user().user_type);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isWideScreen, setIsWideScreen] = useState(true);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 600px)");
+    setIsWideScreen(mediaQuery.matches);
+
+    const handleResize = () => {
+      setIsWideScreen(mediaQuery.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleResize);
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header id="header">
       <section className="header--info">
@@ -20,17 +38,7 @@ const NavBar = () => {
         <figure className="nav--logo logo p-x-5">
           <img src={logo} alt="logo" />
         </figure>
-        <div className="nav--btns">
-          <button className="btn-medium grey-15">Sign Up</button>
-
-          {/* <Link to="/private"> */}
-            <button className="btn-medium bg-orange-50">Login</button>
-          {/* </Link> */}
-        </div>
-        <div className="nav--bar">
-          <figure className="nav--hamburger">
-            <img src={hamburger} alt="" />
-          </figure>
+        {isWideScreen && (
           <menu className="nav--menu">
             <li className="nav--menu--list">Home</li>
             <li className="nav--menu--list">Courses</li>
@@ -38,44 +46,31 @@ const NavBar = () => {
             <li className="nav--menu--list">Pricing</li>
             <li className="nav--menu--list">Contact</li>
           </menu>
-        </div>
+        )}
+        {!isWideScreen && (
+          <div className="nav--bar">
+            <figure className="nav--hamburger" onClick={toggleMenu}>
+              <img src={hamburger} alt="" />
+            </figure>
+          </div>
+        )}
+        {isWideScreen && (
+          <div className="nav--btns">
+            <button className="btn-medium grey-15">Sign Up</button>
+            <Link to="/private">
+              <button
+                className="btn-medium bg-orange-50"
+                style={{ marginLeft: "10px" }}
+              >
+                Login
+              </button>
+            </Link>
+          </div>
+        )}
       </nav>
+      {!isWideScreen && <SidePanel isOpen={menuOpen} toggleMenu={toggleMenu} />}
     </header>
   );
 };
-
-// const LoggedInView = ({ user }) => {
-//   // console.log(user.username)
-//   return (
-//     <Row>
-//       <Col>
-//         <Link to="/private">
-//           <Button className="btn btn-outline-light btn-lg">
-//             {user.username}
-//           </Button>
-//         </Link>
-//       </Col>
-//       <Col>
-//         <Link to="/logout">
-//           <Button className="btn btn-outline-light btn-lg">Logout</Button>
-//         </Link>
-//       </Col>
-//     </Row>
-//   );
-// };
-
-// export const LoggedOutView = ({ title }) => {
-//   return (
-//     <div>
-//       <Navbar.Text className="text-white">{title}</Navbar.Text>
-//       <Link to="/login">
-//         <Button className="btn btn-outline-light btn-lg">Login</Button>
-//       </Link>
-//       <Link to="/register">
-//         <Button className="btn btn-outline-light btn-lg">Register</Button>
-//       </Link>
-//     </div>
-//   );
-// };
 
 export default NavBar;

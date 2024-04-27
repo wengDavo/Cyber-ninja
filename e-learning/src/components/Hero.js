@@ -22,7 +22,9 @@ const Hero = () => {
       </article>
       <article className="hero--bottom">
         <button className="btn-lg bg-orange-50 white">Explore Courses</button>
-        <button className="btn-lg">View Pricing</button>
+        <button className="btn-lg" style={{ marginLeft: "10px" }}>
+          View Pricing
+        </button>
       </article>
     </section>
   );
