@@ -1,0 +1,74 @@
+$mobile: 375px;
+$tablet: 600px;
+$laptop: 1024px;
+
+:root{
+    --abs-white:#fff;
+    --abs-black:#000;
+
+    --orange-50:#FF9500;    
+    --orange-70:#FFBF66;    
+    --orange-75:#FFCA80;    
+    --orange-80:#FFCA80;    
+    --orange-90:#FFEACC;    
+    --orange-95:#FFF4E5;    
+    --orange-97:#FFF9F0;    
+    --orange-99:#FFFDFA;
+    
+    --white-90:#E4E4E7;
+    --white-95:#F1F1F3;
+    --white-97:#F7F7F8;
+    --white-99:#FCFCFD;
+
+    --grey-10:#1A1A1A;
+    --grey-15:#262626;
+    --grey-20:#333333;
+    --grey-30:#4C4C4D;
+    --grey-35:#59595A;
+    --grey-40:#656567;
+    --grey-60:#98989A;
+    --grey-70:#B3B3B3;
+
+    --reg:300;
+    --medium:500;
+    --semi-bold:600;
+    --bold:700;
+
+    --sp-16: 16px;
+    --sp-30: 30px;
+    --sp-40: 40px;
+    --sp-50: 50px;
+    --sp-76: 76px;
+    --sp-154: 154px;
+
+    --rad-6: 6px;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@mixin responsive($size){
+    @media(min-width:$size) {
+        @content;
+    }
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: var(--reg);
+    color: var(--grey-15);
+}
+
+
+image{
+    display: block;
+}
+
+button{
+    border: none;
+    color: inherit;
+}

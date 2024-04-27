@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { faFax, faPhone, faLocationPin } from '@fortawesome/free-solid-svg-icons'
+
+import { Route, Routes, BrowserRouter } from "react-router-dom/dist";
+import Home from './views/home';
+import MainWrapper from "./layouts/Mainwrapper";
+import Login from './views/login';
+import PrivateRoute from "./layouts/PrivateRoute";
+import Logout from './views/logout';
+import Private from './views/private';
+import Register from './views/register'
+
+// library.add(fab, faFax, faPhone, faLocationPin)
+// console.log(library)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <BrowserRouter>
+      <MainWrapper>
+        <Routes>
+          <Route 
+            path="/private" 
+            element={
+              <PrivateRoute>
+                <Private />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/" element={<Home /> }/>
+          <Route path="/login" element={ <Login /> }/>
+          <Route path="/register" element={ <Register /> }/>
+          <Route path="/logout" element={ <Logout /> }/>
+        </Routes>
+        
+      </MainWrapper>    
+    </BrowserRouter>
   );
 }
 
