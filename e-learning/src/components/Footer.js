@@ -1,22 +1,30 @@
 import "./styles/css/homepage.css";
+import emailIcn from "./assets/icons/emial-icon.svg";
+import logo from "./assets/icons/Logo.svg";
+import phoneIcn from "./assets/icons/phone-icon.svg";
+import locationIcn from "./assets/icons/location-icon.svg";
+import facebookIcn from "./assets/icons/sociual-facebook.svg";
+import twitterIcn from "./assets/icons/social-twitter.svg";
+import linkedinIcn from "./assets/icons/social-linkedin.svg";
+
 const Footer = () => {
   return (
     <footer id="footer">
       <section className="contact-info">
         <figure className="p-b-5">
-          <img src="/assets/icons/Logo.svg" alt="" />
+          <img src={logo} alt="" />
         </figure>
         <figure>
           <div>
-            <i><img src="/assets/icons/emial-icon.svg" alt="" /></i>
+            <i><img src={emailIcn} alt="" /></i>
             <span>skillninja@gmail.com</span>
           </div>
           <div>
-            <i><img src="/assets/icons/phone-icon.svg" alt="" /></i>
+            <i><img src={phoneIcn} alt="" /></i>
             <span>+91 92231 9301</span>
           </div>
           <div>
-            <i><img src="/assets/icons/location-icon.svg" alt="" /></i>
+            <i><img src={locationIcn} alt="" /></i>
             <span>somewhere</span>
           </div>
         </figure>
@@ -39,9 +47,9 @@ const Footer = () => {
       <section className="social-info">
         <div className="semi-bold p-b-5">Social Profiles</div>
         <figure>
-          <i><img src="/assets/icons/sociual-facebook.svg" alt="" /></i>
-          <i><img src="/assets/icons/social-twitter.svg" alt="" /></i>
-          <i><img src="/assets/icons/social-linkedin.svg" alt="" /></i>
+          <i><img src={facebookIcn} alt="" /></i>
+          <i><img src={twitterIcn} alt="" /></i>
+          <i><img src={linkedinIcn} alt="" /></i>
         </figure>
       </section>
     </footer>

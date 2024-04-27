@@ -23,9 +23,9 @@ const NavBar = () => {
         <div className="nav--btns">
           <button className="btn-medium grey-15">Sign Up</button>
 
-          <Link to="/private">
+          {/* <Link to="/private"> */}
             <button className="btn-medium bg-orange-50">Login</button>
-          </Link>
+          {/* </Link> */}
         </div>
         <div className="nav--bar">
           <figure className="nav--hamburger">
