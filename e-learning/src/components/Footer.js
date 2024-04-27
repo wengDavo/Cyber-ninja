@@ -17,19 +17,19 @@ const Footer = () => {
         <figure>
           <div>
             <i>
-              <img src={emailIcn} alt="" />
+              <img src={emailIcn} alt="" className="icon-sm"/>
             </i>
             <span>skillninja@gmail.com</span>
           </div>
           <div>
             <i>
-              <img src={phoneIcn} alt="" />
+              <img src={phoneIcn} alt="" className="icon-sm" />
             </i>
             <span>+91 92231 9301</span>
           </div>
           <div>
             <i>
-              <img src={locationIcn} alt="" />
+              <img src={locationIcn} alt="" className="icon-sm"/>
             </i>
             <span>somewhere</span>
           </div>
