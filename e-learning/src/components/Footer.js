@@ -16,15 +16,21 @@ const Footer = () => {
         </figure>
         <figure>
           <div>
-            <i><img src={emailIcn} alt="" /></i>
+            <i>
+              <img src={emailIcn} alt="" />
+            </i>
             <span>skillninja@gmail.com</span>
           </div>
           <div>
-            <i><img src={phoneIcn} alt="" /></i>
+            <i>
+              <img src={phoneIcn} alt="" />
+            </i>
             <span>+91 92231 9301</span>
           </div>
           <div>
-            <i><img src={locationIcn} alt="" /></i>
+            <i>
+              <img src={locationIcn} alt="" />
+            </i>
             <span>somewhere</span>
           </div>
         </figure>
@@ -47,9 +53,15 @@ const Footer = () => {
       <section className="social-info">
         <div className="semi-bold p-b-5">Social Profiles</div>
         <figure>
-          <i><img src={facebookIcn} alt="" /></i>
-          <i><img src={twitterIcn} alt="" /></i>
-          <i><img src={linkedinIcn} alt="" /></i>
+          <i>
+            <img src={facebookIcn} alt="" />
+          </i>
+          <i>
+            <img src={twitterIcn} alt="" />
+          </i>
+          <i>
+            <img src={linkedinIcn} alt="" />
+          </i>
         </figure>
       </section>
     </footer>

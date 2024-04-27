@@ -10,7 +10,7 @@ import Image from "./assets/photos/mobile/Image.png";
 const Info = () => {
   return (
     <section className="info">
-      <article >
+      <article>
         <h3 className="info--title">Benefits</h3>
         <div className="info--main">
           <p className="info--description">
@@ -58,7 +58,7 @@ const Info = () => {
             </p>
           </div>
           <figure className="align-right">
-        <img src={NorthEast} alt="" className="icon" />
+            <img src={NorthEast} alt="" className="icon" />
           </figure>
         </div>
         <div className="benefit">
@@ -66,8 +66,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access courses with up-to-dat content reflection the latest
-              trends and industry practices
+              Access courses with up-to-dat content reflection the latest trends
+              and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -79,8 +79,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access courses with up-to-dat content reflection the latest
-              trends and industry practices
+              Access courses with up-to-dat content reflection the latest trends
+              and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -92,8 +92,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access courses with up-to-dat content reflection the latest
-              trends and industry practices
+              Access courses with up-to-dat content reflection the latest trends
+              and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -116,11 +116,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image1}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image1} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">4 weeks</span>
@@ -130,8 +126,8 @@ const Info = () => {
             <p className="course--title">Web Design Fundapntals</p>
             <p className="course--description">
               Larn the Fundamentals of web design, including HTML, CSS and
-              responsivr design principles. Develop the skill to create
-              visually appealing and user friendly websites
+              responsivr design principles. Develop the skill to create visually
+              appealing and user friendly websites
             </p>
           </div>
           <button className="p-x-24 p-y-14 medium white-97">Get it Now</button>
@@ -139,11 +135,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image2}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image2} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">6 weeks</span>
@@ -162,11 +154,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image3}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image3} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">8 weeks</span>
@@ -185,11 +173,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image4}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image4} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">20 weeks</span>
@@ -207,11 +191,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">4 weeks</span>
@@ -221,8 +201,8 @@ const Info = () => {
             <p className="course--title">Backen Developmep</p>
             <p className="course--description">
               Larn the Fundamentals of web design, including HTML, CSS and
-              responsivr design principles. Develop the skill to create
-              visually appealing and user friendly websites
+              responsivr design principles. Develop the skill to create visually
+              appealing and user friendly websites
             </p>
           </div>
           <button className="p-x-24 p-y-14 medium white-97">Get it Now</button>
@@ -230,11 +210,7 @@ const Info = () => {
         <div className="course">
           <div>
             <figure>
-              <img
-                src={Image5}
-                alt=""
-                className="course--img"
-              />
+              <img src={Image5} alt="" className="course--img" />
             </figure>
             <div className="course--meta">
               <span className="course--duration">4 weeks</span>
