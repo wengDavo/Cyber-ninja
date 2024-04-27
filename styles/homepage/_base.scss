@@ -1,6 +1,6 @@
-$mobile: 640px;
-$laptop:1024px;
-$desktop: 1920px;
+$mobile: 375px;
+$tablet: 600px;
+$laptop: 1024px;
 
 :root{
     --abs-white:#fff;
@@ -30,9 +30,18 @@ $desktop: 1920px;
     --grey-70:#B3B3B3;
 
     --reg:300;
-    --mid:500;
+    --medium:500;
     --semi-bold:600;
     --bold:700;
+
+    --sp-16: 16px;
+    --sp-30: 30px;
+    --sp-40: 40px;
+    --sp-50: 50px;
+    --sp-76: 76px;
+    --sp-154: 154px;
+
+    --rad-6: 6px;
 
 }
 
@@ -41,15 +50,25 @@ $desktop: 1920px;
     margin: 0;
     box-sizing: border-box;
 }
-
+@mixin responsive($size){
+    @media(min-width:$size) {
+        @content;
+    }
+}
 body{
     width: 100vw;
     height: 100vh;
     font-family: "Roboto", sans-serif;
     font-weight: var(--reg);
+    color: var(--grey-15);
 }
-@mixin responsive($size){
-    @media(min-width:$size) {
-        @content;
-    }
+
+
+image{
+    display: block;
+}
+
+button{
+    border: none;
+    color: inherit;
 }
