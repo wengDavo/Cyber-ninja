@@ -41,7 +41,11 @@ const NavBar = () => {
         {isWideScreen && (
           <menu className="nav--menu">
             <li className="nav--menu--list">Home</li>
-            <li className="nav--menu--list">Courses</li>
+
+            <li className="nav--menu--list">
+              <Link to="/courses">Courses</Link>
+            </li>
+
             <li className="nav--menu--list">About Us</li>
             <li className="nav--menu--list">Pricing</li>
             <li className="nav--menu--list">Contact</li>

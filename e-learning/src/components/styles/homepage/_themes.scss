@@ -36,6 +36,9 @@
 .grey-60 {
   color: var(--grey-60);
 }
+.grey-35 {
+  color: var(--grey-35);
+}
 
 .orange-50 {
   color: var(--orange-50);
@@ -87,11 +90,20 @@
 .p-x-5 {
   padding: 0 5px;
 }
+.p-x-15 {
+  padding: 0 10px;
+}
 .p-y-14 {
   padding: 14px 0;
 }
 .p-y-24 {
   padding: 24px 0;
+}
+.m-t-10{
+  margin-top: 10px;
+}
+.m-y-20{
+  margin: 20px 0;
 }
 .rad-6 {
   border-radius: var(--rad-6);
@@ -117,7 +129,7 @@
   text-align: right;
 }
 .medium {
-  font-size: var(--medium);
+  font-weight: var(--medium);
 }
 .semi-bold {
   font-weight: var(--semi-bold);
@@ -148,4 +160,7 @@
 }
 .align-end {
   align-self: end;
+}
+.align-start{
+  align-self:flex-start;
 }
