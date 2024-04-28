@@ -1,4 +1,5 @@
 import "./styles/css/homepage.css";
+import { Link } from "react-router-dom";
 import NorthEast from "./assets/icons/north-east.svg";
 import Image1 from "./assets/photos/mobile/Image (1).png";
 import Image2 from "./assets/photos/mobile/Image (2).png";
@@ -109,7 +110,9 @@ const Info = () => {
             labore vitae officiis libero hic veritatis laudantium maiores
             obcaecati nesciunt voluptates?
           </p>
-          <button className="btn-medium bg-white-50 black">View All</button>
+          <button className="btn-medium bg-white-50 black">
+            <Link to="/courses">View All</Link>
+          </button>
         </div>
       </article>
       <article className="courses">

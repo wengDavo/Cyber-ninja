@@ -33,6 +33,7 @@ $laptop: 1024px;
     --medium:500;
     --semi-bold:600;
     --bold:700;
+    --extra-bold:900;
 
     --sp-16: 16px;
     --sp-30: 30px;
@@ -62,7 +63,6 @@ body{
     font-weight: var(--reg);
     color: var(--grey-15);
 }
-
 
 image{
     display: block;
