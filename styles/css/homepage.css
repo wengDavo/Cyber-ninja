@@ -25,6 +25,7 @@
   --medium:500;
   --semi-bold:600;
   --bold:700;
+  --extra-bold:900;
   --sp-16: 16px;
   --sp-30: 30px;
   --sp-40: 40px;
@@ -58,9 +59,7 @@ button {
 }
 
 #body {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  padding: var(--sp-40) var(--sp-16) 0 var(--sp-16);
+  padding: 10px 0;
 }
 @media (min-width: 600px) {
   #body {
@@ -69,26 +68,19 @@ button {
 }
 
 #header {
-  grid-column: 1/-1;
   color: var(--abs-white);
+  margin-inline: 1rem;
   margin-bottom: var(--sp-40);
 }
 
 #main {
-  background-color: var(--white-97);
-  grid-column: 1/-1;
   display: grid;
-  row-gap: var(--sp-40);
-}
-@media (min-width: 600px) {
-  #main {
-    padding-inline: 30px;
-  }
+  row-gap: 20px;
+  padding: 0 12px;
 }
 
 #footer {
-  margin: 5rem 0;
-  grid-column: 1/-1;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 1em;
@@ -154,7 +146,9 @@ button {
 }
 
 .hero {
+  background-color: var(--white-97);
   text-align: center;
+  padding: 0.5rem 0;
 }
 @media (min-width: 600px) {
   .hero {
@@ -229,8 +223,10 @@ button {
 }
 
 .info {
+  background-color: var(--white-97);
   display: grid;
   row-gap: 40px;
+  padding: 10px;
   color: var(--gray-15);
 }
 
@@ -580,6 +576,10 @@ button {
   color: var(--grey-60);
 }
 
+.grey-35 {
+  color: var(--grey-35);
+}
+
 .orange-50 {
   color: var(--orange-50);
 }
@@ -639,12 +639,24 @@ button {
   padding: 0 5px;
 }
 
+.p-x-15 {
+  padding: 0 10px;
+}
+
 .p-y-14 {
   padding: 14px 0;
 }
 
 .p-y-24 {
   padding: 24px 0;
+}
+
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-y-20 {
+  margin: 20px 0;
 }
 
 .rad-6 {
@@ -674,7 +686,7 @@ button {
 }
 
 .medium {
-  font-size: var(--medium);
+  font-weight: var(--medium);
 }
 
 .semi-bold {
@@ -712,4 +724,8 @@ button {
 
 .align-end {
   align-self: end;
+}
+
+.align-start {
+  align-self: flex-start;
 }/*# sourceMappingURL=homepage.css.map */
