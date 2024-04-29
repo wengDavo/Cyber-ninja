@@ -61,7 +61,7 @@ button {
 #body {
   padding: 10px 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   #body {
     padding: 30px;
   }
@@ -86,7 +86,7 @@ button {
   row-gap: 1em;
   background-color: var(--white-97);
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   #footer {
     padding: 20px 80px;
     flex-direction: row;
@@ -304,7 +304,7 @@ button {
   border-radius: var(--rad-6);
   padding: 5px;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .hero {
     padding: 40px 60px;
     display: grid;
@@ -318,7 +318,7 @@ button {
   font-weight: var(--semi-bold);
   padding-bottom: 3px;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .hero--title {
     width: 60%;
   }
@@ -333,7 +333,7 @@ button {
   display: grid;
   gap: 1rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .lessons {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -373,7 +373,7 @@ button {
   flex-direction: column;
   row-gap: 2rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .topic {
     flex-direction: row;
     justify-content: space-between;

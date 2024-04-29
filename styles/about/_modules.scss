@@ -1,0 +1,109 @@
+.hero {
+  border-top: 1px solid var(--white-95);
+  border-bottom: 1px solid var(--white-95);
+  background-color: var(--white-99);
+  border-radius: var(--rad-6);
+  padding: 5px;
+
+  @include responsive($tablet) {
+    padding: 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.hero--title {
+  line-height: 1.5;
+  font-size: 28px;
+  font-weight: var(--semi-bold);
+  padding-bottom: 3px;
+  @include responsive($tablet) {
+    width: 60%;
+  }
+}
+.hero--description {
+  font-size: 14;
+  color: var(--grey-35);
+}
+
+.container {
+  display: grid;
+  gap: 2rem;
+  background-color: var(--white-97);
+  border-radius: var(--rad-6);
+  padding: 10px;
+}
+.container--title {
+  font-weight: var(--medium);
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--grey-20);
+  border: 1px solid var(--white-95);
+  
+}
+.container--msg {
+  line-height: 1.5;
+  font-size: 14px;
+  color: var(--grey-35);
+}
+.cards {
+  display: grid;
+  gap: 1rem;
+  @include responsive($tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card {
+  border: 1px solid var(--white-95);
+  padding: 30px;
+  display: grid;
+  row-gap: 10px;
+  border-radius: var(--rad-6);
+}
+.card--icon {
+  border: 1px solid var(--orange-90);
+  background-color: var(--orange-97);
+  padding: 12px;
+  border-radius: var(--rad-6);
+}
+.card--topic {
+  font-size: 18px;
+  font-weight: var(--medium);
+}
+.card--description {
+  color: var(--grey-35);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.message {
+  background-color: var(--white-97);
+  border-radius: var(--rad-6);
+  @include responsive($tablet) {
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.msg-container {
+  @include responsive($tablet) {
+    width: 60%;
+  }
+}
+.info {
+  font-size: 28px;
+  font-weight: var(--semi-bold);
+}
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--grey-30);
+}
+.logo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include responsive($tablet) {
+    flex-direction: row-reverse;
+  }
+}

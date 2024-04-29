@@ -61,7 +61,7 @@ button {
 #body {
   padding: 10px 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   #body {
     padding: 30px;
   }
@@ -86,7 +86,7 @@ button {
   row-gap: 1em;
   background-color: var(--white-97);
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   #footer {
     padding: 20px 80px;
     flex-direction: row;
@@ -117,7 +117,7 @@ button {
   margin-left: auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .nav--hamburger {
     display: none;
   }
@@ -126,7 +126,7 @@ button {
 .nav--menu {
   display: none;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .nav--menu {
     display: block;
     color: var(--grey-15);
@@ -150,7 +150,7 @@ button {
   text-align: center;
   padding: 0.5rem 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .hero {
     width: 80%;
     margin-inline: auto;
@@ -170,7 +170,7 @@ button {
   border: 1px solid var(--white-95);
   position: relative;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .hero--top {
     font-weight: var(--bold);
     font-size: 36px;
@@ -203,7 +203,7 @@ button {
   border: 1px solid var(--white-95);
   padding-left: 340px;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .company-logos {
     padding: 24px;
     justify-content: space-evenly;
@@ -229,13 +229,13 @@ button {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .info--main {
     flex-direction: row;
     justify-content: space-between;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .info--main button {
     align-self: end;
   }
@@ -248,7 +248,7 @@ button {
   align-items: center;
   font-size: 28px;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .info--title {
     font-size: 38px;
   }
@@ -260,7 +260,7 @@ button {
   color: var(--grey-35);
   padding-bottom: 20px;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .info--description {
     width: 60%;
   }
@@ -275,19 +275,19 @@ button {
   line-height: 1.5;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .benefits {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .courses {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .testimonials {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -394,7 +394,7 @@ button {
   gap: 30px;
   background-color: var(--abs-white);
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .vouchers {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -458,7 +458,7 @@ button {
 .faqs--container {
   padding: 2rem 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .faqs--container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -516,7 +516,7 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .summary {
     -moz-column-gap: 5rem;
          column-gap: 5rem;
