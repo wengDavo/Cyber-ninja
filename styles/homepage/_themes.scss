@@ -134,6 +134,7 @@
 .semi-bold {
   font-weight: var(--semi-bold);
 }
+
 //
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -163,6 +164,9 @@
 }
 .align-start{
   align-self:flex-start;
+}
+.center{
+  text-align: center;
 }
 // 
 .video {
