@@ -8,7 +8,7 @@ const VideoCourse = () => {
         <p className="lesson--number">01</p>
         <p className="lesson--title">Introduction to UI/UX Design</p>
         <div className="topics">
-          <div className="topic" style = {{padding: "20px", width: "100%" }}>
+          <div className="topic" style = {{padding: "20px"}}>
             <div>
               <p className="topic--title">
                 Understanding to UI/UX Design Principles

@@ -378,13 +378,14 @@ button {
   row-gap: 2rem;
 }
 @media (min-width: 700px) {
+  .topics {
+    grid-template-columns: 1fr; /* Adjust column width as needed */
+  }
+
   .topic {
-    padding: 24px;
-    display: flex;
     flex-direction: row; /* Change flex direction to row */
     justify-content: space-between; /* Align items along the main axis */
-    align-items: center;
-    column-gap: 8.8rem;
+    align-items: center
   }
 
   .topic--duration {
