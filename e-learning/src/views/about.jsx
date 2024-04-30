@@ -1,30 +1,33 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// import "../components/styles/css/courses.css";
+import "../components/styles/css/course.css";
 import Landing from "../components/Landing";
-import HeroCourses from "../components/HeroCourses";
-import Courses from "../components/Courses";
+import Hero from "../components/pages/about/Hero";
+import Achievements from "../components/pages/about/Achievements";
+import Goals from "../components/pages/about/Goals";
+import Message from "../components/pages/about/Message";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
-const CoursesHome = () => {
+const About = () => {
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
   // ]);
   // console.log(isLister())
   return (
-    <body>
-      
+    
+      <body>
         <NavBar />
         <main id="main">
-          <HeroCourses />
-          <Courses />
+          <Hero />
+          <Achievements />
+          <Goals />
+          <Message />
         </main>
         <Footer />
-      
-    </body>
+      </body>
   );
 };
 
@@ -56,4 +59,4 @@ const CoursesHome = () => {
 //   );
 // };
 
-export default CoursesHome;
+export default About;

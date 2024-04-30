@@ -1,30 +1,31 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// import "../components/styles/css/courses.css";
+import "../components/styles/css/course.css";
 import Landing from "../components/Landing";
-import HeroCourses from "../components/HeroCourses";
-import Courses from "../components/Courses";
+import Hero from "../components/pages/course/Hero";
+import Video from "../components/pages/course/Video";
+import Lessons from "../components/pages/course/Lessons";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
-const CoursesHome = () => {
+const Course = () => {
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
   // ]);
   // console.log(isLister())
   return (
-    <body>
-      
+    
+      <body>
         <NavBar />
         <main id="main">
-          <HeroCourses />
-          <Courses />
+          <Hero />
+          <Video />
+          <Lessons />
         </main>
         <Footer />
-      
-    </body>
+      </body>
   );
 };
 
@@ -56,4 +57,4 @@ const CoursesHome = () => {
 //   );
 // };
 
-export default CoursesHome;
+export default Course;

@@ -115,7 +115,7 @@ const Info = () => {
           </button>
         </div>
       </article>
-      <article className="courses">
+      <article className="courses" style={{ display: "grid" }}>
         <div className="course">
           <div>
             <figure>
