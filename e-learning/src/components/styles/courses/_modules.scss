@@ -22,7 +22,7 @@
     }
 }
 .hero--description{
-    font-size: 14;
+    font-size: 14px;
     color: var(--grey-35);
 }
 
@@ -32,7 +32,6 @@
     border: 1px solid var(--white-99);
     border-radius: var(--rad-6);
     background-color: var(--white-99);
-    padding: 24px;
    
 }
 .course{
@@ -41,7 +40,7 @@
     border: 1px solid var(--white-90);
     border-radius: var(--rad-6);
     
-     padding: 24px;
+    padding: 24px;
 }
 .course--title{
     font-size: 18px;

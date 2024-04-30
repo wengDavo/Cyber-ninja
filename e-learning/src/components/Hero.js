@@ -4,7 +4,7 @@ import bolt from "./assets/icons/bolt.svg";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" style={{ display: "block" }}>
       <article className="hero--top">
         <img src={threeLines} alt="" className="icon-lg fly" />
         <figure className="bg-orange-95 p-12">
