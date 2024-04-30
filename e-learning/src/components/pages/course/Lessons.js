@@ -3,7 +3,7 @@ import "../../styles/css/course.css";
 
 const VideoCourse = () => {
   return (
-    <section className="lessons">
+    <section className="lessons" style={{ paddingBottom: "20px"}}>
       <article className="lesson">
         <p className="lesson--number">01</p>
         <p className="lesson--title">Introduction to UI/UX Design</p>

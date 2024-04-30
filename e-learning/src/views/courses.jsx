@@ -8,23 +8,23 @@ import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
-const Home = () => {
+const CoursesHome = () => {
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
   // ]);
   // console.log(isLister())
   return (
-    <div>
-      <Landing>
+    <body>
+      
         <NavBar />
         <main id="main">
           <HeroCourses />
           <Courses />
         </main>
         <Footer />
-      </Landing>
-    </div>
+      
+    </body>
   );
 };
 
@@ -56,4 +56,4 @@ const Home = () => {
 //   );
 // };
 
-export default Home;
+export default CoursesHome;

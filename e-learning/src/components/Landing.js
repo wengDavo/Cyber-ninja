@@ -3,7 +3,7 @@ import "./styles/css/homepage.css";
 
 const Landing = ({ children }) => {
   return (
-    <div id="body">
+    <div id="body" className="px-md-0 justify-content-center p-0 m-0 ">
       {children}
     </div>
   );

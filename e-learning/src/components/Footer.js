@@ -9,7 +9,7 @@ import linkedinIcn from "./assets/icons/social-linkedin.svg";
 
 const Footer = () => {
   return (
-    <footer id="footer">
+    <footer id="footer" >
       <section className="contact-info">
         <figure className="p-b-5">
           <img src={logo} alt="" />

@@ -2,14 +2,15 @@ import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import "../components/styles/css/course.css";
 import Landing from "../components/Landing";
-import Hero from "../components/pages/course/Hero";
-import Video from "../components/pages/course/Video";
-import Lessons from "../components/pages/course/Lessons";
+import Hero from "../components/pages/about/Hero";
+import Achievements from "../components/pages/about/Achievements";
+import Goals from "../components/pages/about/Goals";
+import Message from "../components/pages/about/Message";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
-const Course = () => {
+const About = () => {
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
@@ -21,8 +22,9 @@ const Course = () => {
         <NavBar />
         <main id="main">
           <Hero />
-          <Video />
-          <Lessons />
+          <Achievements />
+          <Goals />
+          <Message />
         </main>
         <Footer />
       </body>
@@ -57,4 +59,4 @@ const Course = () => {
 //   );
 // };
 
-export default Course;
+export default About;
