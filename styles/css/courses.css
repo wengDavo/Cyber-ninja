@@ -302,11 +302,9 @@ button {
 }
 
 .hero {
-  border-top: 1px solid var(--white-95);
-  border-bottom: 1px solid var(--white-95);
-  background-color: var(--white-99);
-  border-radius: var(--rad-6);
-  padding: 5px;
+  border: 1px solid var(--white-97);
+  background-color: var(--white-97);
+  padding: 10px;
 }
 @media (min-width: 700px) {
   .hero {
@@ -339,12 +337,14 @@ button {
   border: 1px solid var(--white-99);
   border-radius: var(--rad-6);
   background-color: var(--white-99);
+  padding: 5px;
 }
 
 .course {
   display: grid;
   row-gap: 1rem;
-  border: 1px solid var(--white-90);
+  border: 1px solid var(--white-95);
+  background-color: var(--white-97);
   border-radius: var(--rad-6);
   padding: 24px;
 }
@@ -386,6 +386,13 @@ button {
   width: inherit;
 }
 
+.course--info > span {
+  height: -moz-fit-content;
+  height: fit-content;
+  display: inline-block;
+  border: 1px solid var(--white-95);
+  padding: 5px;
+}
 @media (min-width: 700px) {
   .course--info {
     display: flex;
@@ -394,6 +401,13 @@ button {
   }
 }
 
+.course--instructor {
+  color: var(--grey-35);
+  border: 1px solid var(--white-95);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+}
 @media (min-width: 700px) {
   .course--instructor {
     margin-left: auto;
@@ -406,13 +420,14 @@ button {
   row-gap: 20px;
   padding: 14px 20px;
   border: 1px solid var(--white-95);
+  background-color: var(--white-95);
   border-radius: var(--rad-6);
 }
 
 .curriculum--title {
   line-height: 1.5;
   font-weight: var(--semi-bold);
-  border-bottom: 1px solid var(--white-95);
+  border-bottom: 1px solid var(--white-90);
 }
 
 @media (min-width: 700px) {
@@ -423,14 +438,14 @@ button {
 }
 
 .topic:not(:last-child) {
-  border-bottom: 1px solid var(--white-95);
+  border-bottom: 1px solid var(--white-90);
   padding: 10px 0;
 }
 @media (min-width: 700px) {
   .topic:not(:last-child) {
     padding: 0 10px;
     border-bottom: none;
-    border-right: 1px solid var(--white-95);
+    border-right: 1px solid var(--white-90);
   }
 }
 

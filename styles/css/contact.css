@@ -302,9 +302,9 @@ button {
 }
 
 .hero {
-  border-top: 1px solid var(--white-95);
-  border-bottom: 1px solid var(--white-95);
-  background-color: var(--white-99);
+  border-top: 1px solid var(--white-97);
+  border-bottom: 1px solid var(--white-97);
+  background-color: var(--white-97);
   border-radius: var(--rad-6);
   padding: 5px;
 }
@@ -335,7 +335,7 @@ button {
 
 .contact {
   background-color: var(--white-97);
-  border: 1px solid var(--white-95);
+  border: 1px solid var(--white-97);
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -357,7 +357,7 @@ button {
 @media (min-width: 700px) {
   .contact--form {
     padding: 10px;
-    border: 1px solid var(--white-90);
+    border: 1px solid var(--white-95);
   }
 }
 
@@ -382,6 +382,11 @@ button {
 .contact--item textarea {
   resize: none;
   outline: none;
+  border: inherit;
+  line-height: 1.5;
+  padding: 20px;
+  font-family: inherit;
+  font-size: 14px;
 }
 
 .contact--item input::-moz-placeholder {
@@ -404,7 +409,7 @@ button {
   color: var(--grey-30);
   line-height: 1.5;
   font-size: 14px;
-  border: 1px solid var(--white-90);
+  border: 1px solid var(--white-95);
   padding: 15px;
   margin-bottom: 1rem;
 }

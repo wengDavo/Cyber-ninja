@@ -302,9 +302,8 @@ button {
 }
 
 .hero {
-  border-top: 1px solid var(--white-95);
-  border-bottom: 1px solid var(--white-95);
-  background-color: var(--white-99);
+  border: 1px solid var(--white-97);
+  background-color: var(--white-97);
   border-radius: var(--rad-6);
   padding: 5px;
 }
@@ -346,7 +345,11 @@ button {
   font-size: 24px;
   line-height: 1.5;
   color: var(--grey-20);
-  border: 1px solid var(--white-95);
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-text-decoration: underline wavy var(--orange-90);
+          text-decoration: underline wavy var(--orange-90);
+  margin-bottom: 1rem;
 }
 
 .container--msg {

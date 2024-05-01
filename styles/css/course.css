@@ -302,11 +302,10 @@ button {
 }
 
 .hero {
-  border-top: 1px solid var(--white-95);
-  border-bottom: 1px solid var(--white-95);
-  background-color: var(--white-99);
+  border: 1px solid var(--white-97);
+  background-color: var(--white-97);
+  padding: 10px;
   border-radius: var(--rad-6);
-  padding: 5px;
 }
 @media (min-width: 700px) {
   .hero {
@@ -336,6 +335,8 @@ button {
 .lessons {
   display: grid;
   gap: 1rem;
+  background-color: var(--white-97);
+  padding: 10px;
 }
 @media (min-width: 700px) {
   .lessons {
@@ -344,7 +345,7 @@ button {
 }
 
 .lesson {
-  border: 1px solid var(--white-95);
+  border: 1px solid var(--white-99);
   background-color: var(--white-99);
   padding: 30px;
   display: grid;
