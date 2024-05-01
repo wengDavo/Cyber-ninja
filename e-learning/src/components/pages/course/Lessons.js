@@ -7,27 +7,27 @@ const VideoCourse = () => {
       <article className="lesson">
         <p className="lesson--number">01</p>
         <p className="lesson--title">Introduction to UI/UX Design</p>
-        <div className="topics">
-          <div className="topic" style = {{padding: "20px"}}>
+        <div className="topiccs">
+          <div className="topicc" style = {{padding: "20px"}}>
             <div>
-              <p className="topic--title">
+              <p className="topicc--title">
                 Understanding to UI/UX Design Principles
               </p>
-              <p className="topic--number">Lesson 01</p>
+              <p className="topicc--number">Lesson 01</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
               <span>45 Minutes</span>
             </p>
           </div>
-          <div className="topic" style = {{padding: "20px" }}>
+          <div className="topicc" style = {{padding: "20px" }}>
             <div>
-              <p className="topic--title">Conducting User Research and Analysis</p>
-              <p className="topic--number">Lesson 02</p>
+              <p className="topicc--title">Conducting User Research and Analysis</p>
+              <p className="topicc--number">Lesson 02</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
@@ -39,25 +39,25 @@ const VideoCourse = () => {
       <article className="lesson">
         <p className="lesson--number">02</p>
         <p className="lesson--title">User Reasearch and Analysis</p>
-        <div className="topics">
-          <div className="topic" style = {{padding: "20px" }}>
+        <div className="topiccs">
+          <div className="topicc" style = {{padding: "20px" }}>
             <div>
-              <p className="topic--title">Analyzing User Needs and Behavior</p>
-              <p className="topic--number">Lesson 01</p>
+              <p className="topicc--title">Analyzing User Needs and Behavior</p>
+              <p className="topicc--number">Lesson 01</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
               <span>45 Minutes</span>
             </p>
           </div>
-          <div className="topic" style = {{padding: "20px" }}>
+          <div className="topicc" style = {{padding: "20px" }}>
             <div>
-              <p className="topic--title">Creating User Personas and Scenarios</p>
-              <p className="topic--number">Lesson 02</p>
+              <p className="topicc--title">Creating User Personas and Scenarios</p>
+              <p className="topicc--number">Lesson 02</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
@@ -69,25 +69,25 @@ const VideoCourse = () => {
       <article className="lesson">
         <p className="lesson--number">02</p>
         <p className="lesson--title">User Reasearch and Analysis</p>
-        <div className="topics">
-          <div className="topic" style = {{padding: "20px" }}>
+        <div className="topiccs">
+          <div className="topicc" style = {{padding: "20px" }}>
             <div>
-              <p className="topic--title">Analyzing User Needs and Behavior</p>
-              <p className="topic--number">Lesson 01</p>
+              <p className="topicc--title">Analyzing User Needs and Behavior</p>
+              <p className="topicc--number">Lesson 01</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
               <span>45 Minutes</span>
             </p>
           </div>
-          <div className="topic" style = {{padding: "20px" }}>
+          <div className="topicc" style = {{padding: "20px" }}>
             <div>
-              <p className="topic--title">Creating User Personas and Scenarios</p>
-              <p className="topic--number">Lesson 02</p>
+              <p className="topicc--title">Creating User Personas and Scenarios</p>
+              <p className="topicc--number">Lesson 02</p>
             </div>
-            <p className="topic--duration">
+            <p className="topicc--duration">
               <i>
                 <img src={clock} alt="" />
               </i>
