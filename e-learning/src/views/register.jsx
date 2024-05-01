@@ -1,22 +1,25 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { register } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import "../components/styles/css/signup.css";
+import eye from "../components/assets/icons/eye.svg"
+import northE from "../components/assets/icons/north-e.svg"
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
 function Register() {
-  const [first_name, setFirstName] = useState("");
-  const [last_name, setLastName] = useState("");
+  const [full_name, setFullName] = useState("");
+  // const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const [phone_number, setPhoneNumber] = useState("");
-  const [user_type, setUserType] = useState("");
+  // const [phone_number, setPhoneNumber] = useState("");
+  // const [user_type, setUserType] = useState("");
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const navigate = useNavigate();
 
@@ -27,33 +30,33 @@ function Register() {
   }, []);
 
   const resetForm = () => {
-    setFirstName("");
-    setLastName("");
+    setFullName("");
+    // setLastName("");
     setEmail("");
-    setUsername("");
+    // setUsername("");
     setPassword("");
     setPassword2("");
-    setPhoneNumber("");
-    setUserType("");
+    // setPhoneNumber("");
+    // setUserType("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (user_type === "Lister") {
-      setUserType(2);
-    } else {
-      setUserType(3);
-    }
-    console.log(user_type);
+    // if (user_type === "Lister") {
+    //   setUserType(2);
+    // } else {
+    //   setUserType(3);
+    // }
+    // console.log(user_type);
     const { error } = await register(
-      first_name,
-      last_name,
+      full_name,
+      // last_name,
       email,
-      username,
+      // username,
       password,
       password2,
-      phone_number,
-      user_type
+      // phone_number,
+      // user_type
     );
     if (error) {
       alert(JSON.stringify(error));
@@ -81,8 +84,8 @@ function Register() {
                 <label for="">Email</label>
                 <input
                   type="email"
-                  name=""
-                  id=""
+                  name="email"
+                  id="email"
                   placeholder="Enter your Email"
                 />
               </p>
@@ -90,8 +93,8 @@ function Register() {
                 <label for="">Full Name</label>
                 <input
                   type="text"
-                  name=""
-                  id=""
+                  name="full_name"
+                  id="full_name"
                   placeholder="Enter Your Name"
                 />
               </p>
@@ -99,12 +102,12 @@ function Register() {
                 <label for="">Password</label>
                 <input
                   type="password"
-                  name=""
-                  id=""
+                  name="password"
+                  id="password"
                   placeholder="Enter your Password"
                 />
                 <i>
-                  <img src="/assets/icons/eye.svg" alt="" />
+                  <img src={eye} alt="" />
                 </i>
               </p>
               <a href="" class="signup--policy">
@@ -121,9 +124,9 @@ function Register() {
             </div>
             <div class="to-login">
               <p>ALready have an account? </p>
-              <a href="">Login</a>
+              <Link to="/login">Login</Link>
               <i>
-                <img src="/assets/icons/north-e.svg" alt="" class="icon" />
+                <img src={northE} alt="" class="icon" />
               </i>
             </div>
           </div>

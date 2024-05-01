@@ -1,4 +1,5 @@
 import "../components/styles/css/courses.css";
+import { Link } from "react-router-dom";
 import manClipboard from "./assets/photos/mobile/man-clipboard-desktop.png";
 import manWriting from "./assets/photos/mobile/man-writting-desktop.png";
 import womanDesktop from "./assets/photos/mobile/woman-desktop-laptop.png";
@@ -15,28 +16,18 @@ const Courses = () => {
               responsive design principles. Develop the skills to create
               visually appealing and user-friendly websites.
             </p>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 align-start">
-              View Course
-            </button>
+            <Link to="/course">
+              <button class="bg-white-97 p-12 rad-6 m-t-10 align-start">
+                View Course
+              </button>
+            </Link>
           </div>
         </div>
         <div>
           <figure class="course--images">
-            <img
-              src={manClipboard}
-              alt=""
-              class="course--image"
-            />
-            <img
-              src={manWriting}
-              alt=""
-              class="course--image"
-            />
-            <img
-              src={womanDesktop}
-              alt=""
-              class="course--image"
-            />
+            <img src={manClipboard} alt="" class="course--image" />
+            <img src={manWriting} alt="" class="course--image" />
+            <img src={womanDesktop} alt="" class="course--image" />
           </figure>
           <div class="course--info">
             <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
@@ -90,21 +81,9 @@ const Courses = () => {
         </div>
         <div>
           <figure class="course--images">
-            <img
-              src={manClipboard}
-              alt=""
-              class="course--image"
-            />
-            <img
-              src={manWriting}
-              alt=""
-              class="course--image"
-            />
-            <img
-              src={womanDesktop}
-              alt=""
-              class="course--image"
-            />
+            <img src={manClipboard} alt="" class="course--image" />
+            <img src={manWriting} alt="" class="course--image" />
+            <img src={womanDesktop} alt="" class="course--image" />
           </figure>
           <div class="course--info">
             <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">

@@ -35,9 +35,11 @@ const NavBar = () => {
         <img src={arrowRight} alt="" className="icon-sm" />
       </section>
       <nav className="nav">
-        <figure className="nav--logo logo p-x-5">
-          <img src={logo} alt="logo" />
-        </figure>
+        <Link to="/">
+          <figure className="nav--logo logo p-x-5">
+            <img src={logo} alt="logo" />
+          </figure>
+        </Link>
         {isWideScreen && (
           <menu className="nav--menu">
             <li className="nav--menu--list">
@@ -52,7 +54,7 @@ const NavBar = () => {
               <Link to="/courses">About Us</Link>
             </li>
             <li className="nav--menu--list">
-              <Link to="/courses">Pricing</Link>
+              <Link to="/pricing">Pricing</Link>
             </li>
             <li className="nav--menu--list">
               <Link to="/contact">Contact</Link>
@@ -68,8 +70,8 @@ const NavBar = () => {
         )}
         {isWideScreen && (
           <div className="nav--btns">
-          <Link to="/register">
-            <button className="btn-medium grey-15">Sign Up</button>
+            <Link to="/register">
+              <button className="btn-medium grey-15">Sign Up</button>
             </Link>
             <Link to="/private">
               <button

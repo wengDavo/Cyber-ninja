@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import Testimonials from "../components/Testimonials";
 import "../components/styles/css/login.css"
 import Footer from "../components/Footer";
+import eye from "../components/assets/icons/eye.svg"
+import northE from "../components/assets/icons/north-e.svg"
 
 import NavBar from "../components/Navbar";
 
@@ -56,8 +59,8 @@ const Login = () => {
                 <label for="">Email</label>
                 <input
                   type="email"
-                  name=""
-                  id=""
+                  name="email"
+                  id="email"
                   placeholder="Enter your Email"
                 />
               </p>
@@ -65,12 +68,12 @@ const Login = () => {
                 <label for="">Password</label>
                 <input
                   type="password"
-                  name=""
-                  id=""
+                  name="password"
+                  id="password"
                   placeholder="Enter your Password"
                 />
                 <i>
-                  <img src="/assets/icons/eye.svg" alt="" />
+                  <img src={eye} alt="" />
                 </i>
               </p>
               <a href="" class="login--forgot">
@@ -87,9 +90,9 @@ const Login = () => {
             </div>
             <div class="to-signup">
               <p>Do not have an account? </p>
-              <a href="">Sign Up</a>
+              <Link to="/register">Sign Up</Link>
               <i>
-                <img src="/assets/icons/north-e.svg" alt="" class="icon" />
+                <img src={northE} alt="" class="icon" />
               </i>
             </div>
           </div>

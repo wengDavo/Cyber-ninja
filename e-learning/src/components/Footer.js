@@ -1,4 +1,5 @@
 import "./styles/css/homepage.css";
+import { Link } from "react-router-dom";
 import emailIcn from "./assets/icons/emial-icon.svg";
 import logo from "./assets/icons/Logo.svg";
 import phoneIcn from "./assets/icons/phone-icon.svg";
@@ -9,7 +10,7 @@ import linkedinIcn from "./assets/icons/social-linkedin.svg";
 
 const Footer = () => {
   return (
-    <footer id="footer" >
+    <footer id="footer">
       <section className="contact-info">
         <figure className="p-b-5">
           <img src={logo} alt="" />
@@ -17,7 +18,7 @@ const Footer = () => {
         <figure>
           <div>
             <i>
-              <img src={emailIcn} alt="" className="icon-sm"/>
+              <img src={emailIcn} alt="" className="icon-sm" />
             </i>
             <span>skillninja@gmail.com</span>
           </div>
@@ -29,7 +30,7 @@ const Footer = () => {
           </div>
           <div>
             <i>
-              <img src={locationIcn} alt="" className="icon-sm"/>
+              <img src={locationIcn} alt="" className="icon-sm" />
             </i>
             <span>somewhere</span>
           </div>
@@ -37,9 +38,13 @@ const Footer = () => {
       </section>
       <section className="summary">
         <div>
-          <h4 className="semi-bold fs-18 p-b-5">Home</h4>
+          <Link to="/">
+            <h4 className="semi-bold fs-18 p-b-5">Home</h4>
+          </Link>
           <p className="summary--item">Benefits</p>
-          <p className="summary--item">Our Courses</p>
+          <Link to="/courses">
+            <p className="summary--item">Our Courses</p>
+          </Link>
           <p className="summary--item">Our Testimonials</p>
           <p className="summary--item">Our FAQ</p>
         </div>

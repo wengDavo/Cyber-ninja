@@ -1,6 +1,7 @@
 import "./styles/css/homepage.css";
 import threeLines from "./assets/icons/three-lines.svg";
 import bolt from "./assets/icons/bolt.svg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -21,10 +22,14 @@ const Hero = () => {
         </div>
       </article>
       <article className="heroo--bottom">
-        <button className="btn-lg bg-orange-50 white">Explore Courses</button>
-        <button className="btn-lg" style={{ marginLeft: "10px" }}>
-          View Pricing
-        </button>
+        <Link to="/courses">
+          <button className="btn-lg bg-orange-50 white">Explore Courses</button>
+        </Link>
+        <Link to="/pricing">
+          <button className="btn-lg" style={{ marginLeft: "10px" }}>
+            View Pricing
+          </button>
+        </Link>
       </article>
     </section>
   );

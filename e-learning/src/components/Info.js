@@ -19,7 +19,7 @@ const Info = () => {
             excepturi? Rerum et id beatae alias ipsam soluta cupiditate
             molestiae? Distinctio.
           </p>
-          <button className="btn-medium bg-white-50 black">View All</button>
+          {/* <button className="btn-medium bg-white-50 black">View All</button> */}
         </div>
       </article>
       <article className="benefits">
@@ -67,8 +67,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access coursees with up-to-dat content reflection the latest trends
-              and industry practices
+              Access coursees with up-to-dat content reflection the latest
+              trends and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -80,8 +80,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access coursees with up-to-dat content reflection the latest trends
-              and industry practices
+              Access coursees with up-to-dat content reflection the latest
+              trends and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -93,8 +93,8 @@ const Info = () => {
           <div>
             <h3 className="benefit--topic">Update Curriculum</h3>
             <p className="benefit--description">
-              Access coursees with up-to-dat content reflection the latest trends
-              and industry practices
+              Access coursees with up-to-dat content reflection the latest
+              trends and industry practices
             </p>
           </div>
           <figure className="align-right">
@@ -111,7 +111,7 @@ const Info = () => {
             obcaecati nesciunt voluptates?
           </p>
           <button className="btn-medium bg-white-50 black">
-            <Link to="/coursees">View All</Link>
+            <Link to="/courses">View All</Link>
           </button>
         </div>
       </article>
@@ -125,7 +125,7 @@ const Info = () => {
               <span className="coursee--duration">4 weeks</span>
               <span className="coursee--difficulty">Begineer</span>
             </div>
-              <p >By John Smith</p>
+            <p>By John Smith</p>
             <p className="coursee--title">Web Design Fundapntals</p>
             <p className="coursee--description">
               Larn the Fundamentals of web design, including HTML, CSS and
@@ -133,7 +133,11 @@ const Info = () => {
               appealing and user friendly websites
             </p>
           </div>
-          <button className="p-x-24 p-y-14 medium white-97">Get it Now</button>
+          <Link to="/course">
+            <button className="p-x-24 p-y-14 medium white-97">
+              Get it Now
+            </button>
+          </Link>
         </div>
         <div className="coursee">
           <div>
@@ -144,7 +148,7 @@ const Info = () => {
               <span className="coursee--duration">6 weeks</span>
               <span className="coursee--difficulty">Intermediate</span>
             </div>
-              <p >By Emily Johnson</p>
+            <p>By Emily Johnson</p>
             <p className="coursee--title">UI/UX Desing</p>
             <p className="coursee--description">
               Master the art of creating intuitive user interfaces(UI) and
@@ -163,7 +167,7 @@ const Info = () => {
               <span className="coursee--duration">8 weeks</span>
               <span className="coursee--difficulty">Intermediate</span>
             </div>
-              <p >By David Brown</p>
+            <p>By David Brown</p>
             <p className="coursee--title">Mobile App Develpment</p>
             <p className="coursee--description">
               Dive into the world of mobile app development. Learn to builf
@@ -182,7 +186,7 @@ const Info = () => {
               <span className="coursee--duration">20 weeks</span>
               <span className="coursee--difficulty">Advanced</span>
             </div>
-              <p >By Jack Simons</p>
+            <p>By Jack Simons</p>
             <p className="coursee--title">Cyber Security</p>
             <p className="coursee--description">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam,
@@ -200,7 +204,7 @@ const Info = () => {
               <span className="coursee--duration">4 weeks</span>
               <span className="coursee--difficulty">Begineer</span>
             </div>
-              <p >By Michal Adams</p>
+            <p>By Michal Adams</p>
             <p className="coursee--title">Backen Developmep</p>
             <p className="coursee--description">
               Larn the Fundamentals of web design, including HTML, CSS and
@@ -219,7 +223,7 @@ const Info = () => {
               <span className="coursee--duration">4 weeks</span>
               <span className="coursee--difficulty">Begineer</span>
             </div>
-              <p >By Sarah Thompson</p>
+            <p>By Sarah Thompson</p>
             <p className="coursee--title">Graphic Desing fp Beginners</p>
             <p className="coursee--description">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit
