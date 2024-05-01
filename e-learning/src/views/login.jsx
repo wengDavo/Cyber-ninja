@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <body>
+    <div>
       <NavBar />
       <main id="mainn">
         <section class="login">
@@ -102,7 +102,7 @@ const Login = () => {
         </section>
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

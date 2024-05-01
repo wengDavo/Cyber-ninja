@@ -2,7 +2,7 @@ import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 // import "../components/styles/css/homepage.css";
 import Landing from "../components/Landing";
-import Hero from "../components/Hero";
+import Hero from "../components/pages/pricing/Hero";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
 
@@ -15,16 +15,14 @@ const Home = () => {
   // ]);
   // console.log(isLister())
   return (
-    <div>
-      <Landing>
-        <NavBar />
-        <main id="main">
-          <Hero />
-          <Pricing />
-        </main>
-        <Footer />
-      </Landing>
-    </div>
+    <body>
+      <NavBar />
+      <main id="main">
+        <Hero />
+        <Pricing />
+      </main>
+      <Footer />
+    </body>
   );
 };
 

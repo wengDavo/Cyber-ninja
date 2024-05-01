@@ -36,7 +36,7 @@ const Courses = () => {
             <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
               4 weeks
             </button>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
+            <button class="bg-white-97 p-12 rad-6 m-t-10 m-l-10 grey-35">
               Beginner
             </button>
             <p class="course--instructor medium m-y-20">By John Smith</p>
@@ -89,10 +89,10 @@ const Courses = () => {
             <img src={womanDesktop} alt="" class="course--image" />
           </figure>
           <div class="course--info">
-            <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
+            <button class="bg-white-97 p-12 rad-6 m-t-10  grey-35">
               4 weeks
             </button>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
+            <button class="bg-white-97 p-12 rad-6 m-t-10 m-l-10 grey-35">
               Beginner
             </button>
             <p class="course--instructor medium m-y-20">By John Smith</p>

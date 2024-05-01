@@ -135,13 +135,13 @@
   font-weight: var(--semi-bold);
 }
 //
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+// .scrollbar-hide {
+//   -ms-overflow-style: none;
+//   scrollbar-width: none;
+// }
+// .scrollbar-hide::-webkit-scrollbar {
+//   display: none;
+// }
 
 .order-1 {
   order: 1;

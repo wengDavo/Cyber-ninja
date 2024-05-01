@@ -20,21 +20,19 @@ const Home = () => {
   // ]);
   // console.log(isLister())
   return (
-    <div>
-      <Landing>
-        <NavBar />
-        <main id="main">
-          <Hero />
-          <CompanyLogos />
-          <VideoSection />
-          <Info />
-          <Testimonials />
-          <Pricing />
-          <FAQS />
-        </main>
-        <Footer />
-      </Landing>
-    </div>
+    <body>
+      <NavBar />
+      <main id="main">
+        <Hero />
+        <CompanyLogos />
+        <VideoSection />
+        <Info />
+        <Testimonials />
+        <Pricing />
+        <FAQS />
+      </main>
+      <Footer />
+    </body>
   );
 };
 

@@ -10,7 +10,7 @@ const NavBar = () => {
   const [isWideScreen, setIsWideScreen] = useState(true);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 600px)");
+    const mediaQuery = window.matchMedia("(min-width: 700px)");
     setIsWideScreen(mediaQuery.matches);
 
     const handleResize = () => {
@@ -44,7 +44,7 @@ const NavBar = () => {
           <menu className="nav--menu">
             <li className="nav--menu--list">
               <Link
-                to="/courses"
+                to="/"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 Home
@@ -62,7 +62,7 @@ const NavBar = () => {
 
             <li className="nav--menu--list">
               <Link
-                to="/courses"
+                to="/about"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 About Us

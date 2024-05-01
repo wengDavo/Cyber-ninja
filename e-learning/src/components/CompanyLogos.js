@@ -10,26 +10,26 @@ import Amazon from "./assets/icons/Amazon_(company)-Logo.wine.svg";
 const CompanyLogos = () => {
   return (
     <section className="company-logos scrollbar-hide">
-      <figure class="company-logo">
-        <img src={Adobe} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Adobe} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Google} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Google} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Metabo} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Metabo} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Netflix} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Netflix} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Spotify} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Spotify} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Zoom} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Zoom} alt="" className="icon" />
       </figure>
-      <figure class="company-logo">
-        <img src={Amazon} alt="" class="icon" />
+      <figure className="company-logo">
+        <img src={Amazon} alt="" className="icon" />
       </figure>
     </section>
   );
