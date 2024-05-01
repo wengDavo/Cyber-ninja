@@ -24,7 +24,9 @@ const SidePanel = ({ isOpen, toggleMenu }) => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <button className="btn-medium grey-15">Sign Up</button>
+            <Link to="/register">
+              <button className="btn-medium grey-15">Sign Up</button>
+            </Link>
             <Link to="/private">
               <button
                 className="btn-medium bg-orange-50"

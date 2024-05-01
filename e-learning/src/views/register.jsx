@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import "../components/styles/css/signup.css";
 import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
+
+import NavBar from "../components/Navbar";
 
 function Register() {
   const [first_name, setFirstName] = useState("");
@@ -63,62 +66,73 @@ function Register() {
 
   return (
     <body>
-      <section class="signup">
-        <div>
-          <p class="signup--title">Sign Up</p>
-          <p class="signup--msg">
-            Create an account to unlock exclusive features.
-          </p>
-        </div>
-        <div>
-          <form action="" class="signup--form">
-            <p class="signup--item">
-              <label for="">Email</label>
-              <input
-                type="email"
-                name=""
-                id=""
-                placeholder="Enter your Email"
-              />
+      <NavBar />
+      <main id="mainn">
+        <section class="signup">
+          <div>
+            <p class="signup--title">Sign Up</p>
+            <p class="signup--msg">
+              Create an account to unlock exclusive features.
             </p>
-            <p class="signup--item">
-              <label for="">Full Name</label>
-              <input type="text" name="" id="" placeholder="Enter Your Name" />
-            </p>
-            <p class="signup--item">
-              <label for="">Password</label>
-              <input
-                type="password"
-                name=""
-                id=""
-                placeholder="Enter your Password"
-              />
+          </div>
+          <div>
+            <form action="" class="signup--form">
+              <p class="signup--item">
+                <label for="">Email</label>
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Enter your Email"
+                />
+              </p>
+              <p class="signup--item">
+                <label for="">Full Name</label>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter Your Name"
+                />
+              </p>
+              <p class="signup--item">
+                <label for="">Password</label>
+                <input
+                  type="password"
+                  name=""
+                  id=""
+                  placeholder="Enter your Password"
+                />
+                <i>
+                  <img src="/assets/icons/eye.svg" alt="" />
+                </i>
+              </p>
+              <a href="" class="signup--policy">
+                I agree with Terms of Use and Privacy Policy
+              </a>
+              <button type="submit" class="white p-12 rad-6 bg-orange-50">
+                Sign Up
+              </button>
+            </form>
+            <div class="signup--or">
+              <p></p>
+              <p>OR</p>
+              <p></p>
+            </div>
+            <div class="to-login">
+              <p>ALready have an account? </p>
+              <a href="">Login</a>
               <i>
-                <img src="/assets/icons/eye.svg" alt="" />
+                <img src="/assets/icons/north-e.svg" alt="" class="icon" />
               </i>
-            </p>
-            <a href="" class="signup--policy">
-              I agree with Terms of Use and Privacy Policy
-            </a>
-            <button type="submit" class="white p-12 rad-6 bg-orange-50">
-              Sign Up
-            </button>
-          </form>
-          <div class="signup--or">
-            <p></p>
-            <p>OR</p>
-            <p></p>
+            </div>
           </div>
-          <div class="to-login">
-            <p>ALready have an account? </p>
-            <a href="">Login</a>
-            <i>
-              <img src="/assets/icons/north-e.svg" alt="" class="icon" />
-            </i>
-          </div>
-        </div>
-      </section>
-      <Testimonials />
+        </section>
+        <section class="testti">
+        <Testimonials />
+        </section>
+      </main>
+      <Footer />
     </body>
   );
 }

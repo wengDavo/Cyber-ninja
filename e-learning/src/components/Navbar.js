@@ -40,15 +40,23 @@ const NavBar = () => {
         </figure>
         {isWideScreen && (
           <menu className="nav--menu">
-            <li className="nav--menu--list">Home</li>
+            <li className="nav--menu--list">
+              <Link to="/courses">Home</Link>
+            </li>
 
             <li className="nav--menu--list">
               <Link to="/courses">Courses</Link>
             </li>
 
-            <li className="nav--menu--list">About Us</li>
-            <li className="nav--menu--list">Pricing</li>
-            <li className="nav--menu--list">Contact</li>
+            <li className="nav--menu--list">
+              <Link to="/courses">About Us</Link>
+            </li>
+            <li className="nav--menu--list">
+              <Link to="/courses">Pricing</Link>
+            </li>
+            <li className="nav--menu--list">
+              <Link to="/contact">Contact</Link>
+            </li>
           </menu>
         )}
         {!isWideScreen && (
@@ -60,7 +68,9 @@ const NavBar = () => {
         )}
         {isWideScreen && (
           <div className="nav--btns">
+          <Link to="/register">
             <button className="btn-medium grey-15">Sign Up</button>
+            </Link>
             <Link to="/private">
               <button
                 className="btn-medium bg-orange-50"

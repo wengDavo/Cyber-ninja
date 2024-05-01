@@ -307,11 +307,17 @@ button {
 }
 
 @media (min-width: 700px) {
-  #main {
+  #mainn {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* 
+.testti{
+  padding: 30px;
+} */
+
 
 .signup {
   background-color: var(--white-97);
