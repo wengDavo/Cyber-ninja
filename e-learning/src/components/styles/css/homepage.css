@@ -39,11 +39,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  max-width: 100%;
-}
-
-body > #root > div {
-  width: 100vw;
 }
 
 body {
@@ -150,19 +145,19 @@ button {
   border-radius: var(--rad-6);
 }
 
-.hero {
+.heroo {
   background-color: var(--white-97);
   text-align: center;
   padding: 0.5rem 0;
 }
 @media (min-width: 700px) {
-  .hero {
+  .heroo {
     width: 80%;
     margin-inline: auto;
   }
 }
 
-.hero--top {
+.heroo--top {
   height: var(--sp-76);
   display: flex;
   align-items: center;
@@ -176,7 +171,7 @@ button {
   position: relative;
 }
 @media (min-width: 700px) {
-  .hero--top {
+  .heroo--top {
     font-weight: var(--bold);
     font-size: 36px;
     padding: 10px;
@@ -186,16 +181,16 @@ button {
   }
 }
 
-.hero--center {
+.heroo--center {
   align-items: center;
   font-weight: var(--medium);
   line-height: 1.5;
 }
-.hero--center div {
+.heroo--center div {
   margin-inline: auto;
 }
 
-.hero--bottom {
+.heroo--bottom {
   padding-top: var(--sp-50);
 }
 
@@ -272,7 +267,7 @@ button {
 }
 
 .benefits,
-.courses,
+.coursees,
 .testimonials {
   margin-top: 40px;
   display: grid;
@@ -287,7 +282,7 @@ button {
 }
 
 @media (min-width: 700px) {
-  .courses {
+  .coursees {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -324,7 +319,7 @@ button {
   font-size: 14px;
 }
 
-.course {
+.coursee {
   background-color: var(--abs-white);
   border: 1px solid var(--white-90);
   padding: 10px;
@@ -333,21 +328,31 @@ button {
   border-radius: var(--rad-6);
 }
 
-.course--img {
+.coursee--img {
   width: 100%;
 }
 
-.course--instructor {
-  font-weight: var(--medium);
+.coursee--instructor {
+  font-weight: var(--reg);
   padding: 10px 0;
+  font-size: 20px;
 }
 
-.course--title {
+.coursee--title {
   font-weight: var(--medium);
 }
 
-.course--duration,
-.course--difficulty {
+
+@media (min-width: 600px) {
+  .coursee--meta {
+    display: flex;
+  }
+}
+
+
+.coursee--duration,
+.coursee--difficulty {
+  font-weight: var(--reg);
   display: inline-block;
   height: 34px;
   border: 2px solid var(--white-95);
@@ -355,15 +360,23 @@ button {
   color: var(--grey-30);
   border-radius: var(--rad-6);
   margin: 10px 0;
-  font-size: 14px;
+  font-size: min(14px, 3.5vw); /* Adjust the maximum font size as needed */
+  max-width: 150px; /* Adjust the maximum width of the container */
+  overflow: hidden; /* Hide any content that overflows the box */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+  white-space: nowrap;
 }
 
-.course--description,
+.coursee--duration {
+  /* Your existing styles */
+  margin-right: 10px; /* Add margin to the right side */
+}
+
+.coursee--description,
 .testimonial--description {
   color: var(--grey-40);
   font-size: 14px;
 }
-
 
 .testimonial {
   padding: 20px;

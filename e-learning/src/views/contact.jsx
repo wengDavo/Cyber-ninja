@@ -1,40 +1,29 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// import "../components/styles/css/homepage.css";
+import "../components/styles/css/contact.css";
 import Landing from "../components/Landing";
-import Hero from "../components/Hero";
-import CompanyLogos from "../components/CompanyLogos";
-import VideoSection from "../components/VideoSection";
-import Info from "../components/Info";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
-import FAQS from "../components/Faqs";
+import Hero from "../components/pages/contact/Hero";
+import Contact from "../components/pages/contact/Contact";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 
-const Home = () => {
+const ContactHome = () => {
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
   // ]);
   // console.log(isLister())
   return (
-    <div>
-      <Landing>
+    
+      <body>
         <NavBar />
         <main id="main">
           <Hero />
-          <CompanyLogos />
-          <VideoSection />
-          <Info />
-          <Testimonials />
-          <Pricing />
-          <FAQS />
+          <Contact />
         </main>
         <Footer />
-      </Landing>
-    </div>
+      </body>
   );
 };
 
@@ -66,4 +55,4 @@ const Home = () => {
 //   );
 // };
 
-export default Home;
+export default ContactHome;

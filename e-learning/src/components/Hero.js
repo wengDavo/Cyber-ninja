@@ -4,8 +4,8 @@ import bolt from "./assets/icons/bolt.svg";
 
 const Hero = () => {
   return (
-    <section className="hero" style={{ display: "block" }}>
-      <article className="hero--top">
+    <section className="heroo">
+      <article className="heroo--top">
         <img src={threeLines} alt="" className="icon-lg fly" />
         <figure className="bg-orange-95 p-12">
           <img src={bolt} alt="" className="icon-m" />
@@ -14,13 +14,13 @@ const Hero = () => {
           <span className="orange-50">Unlock</span> Your Creative Potential
         </div>
       </article>
-      <article className="hero--center">
+      <article className="heroo--center">
         <div className="fs-24">With Online Design and Development Courses</div>
         <div className="fs-14 grey-60">
           Learn from Industry Experts and Enhance Your Skill
         </div>
       </article>
-      <article className="hero--bottom">
+      <article className="heroo--bottom">
         <button className="btn-lg bg-orange-50 white">Explore Courses</button>
         <button className="btn-lg" style={{ marginLeft: "10px" }}>
           View Pricing

@@ -43,7 +43,7 @@
 //
 //
 //
-.hero {
+.heroo {
   background-color: var(--white-97);
   text-align: center;
   padding: 0.5rem 0 ;
@@ -52,7 +52,7 @@
     margin-inline: auto;
   }
 }
-.hero--top {
+.heroo--top {
   height: var(--sp-76);
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@
     margin-inline: auto;
   }
 }
-.hero--center {
+.heroo--center {
   align-items: center;
   font-weight: var(--medium);
   line-height: 1.5;
@@ -82,7 +82,7 @@
     margin-inline: auto;
   }
 }
-.hero--bottom {
+.heroo--bottom {
   padding-top: var(--sp-50);
 }
 //
@@ -110,7 +110,10 @@
   }
 }
 //
-
+.video {
+  background-color: var(--orange-95);
+  height: clamp(17.125rem, 13.5137rem + 15.4083vw, 23.375rem);
+}
 //
 .info {
   background-color: var(--white-97);
@@ -152,7 +155,7 @@
   }
 }
 .benefits,
-.courses,
+.coursees,
 .testimonials {
   margin-top: 40px;
   display: grid;
@@ -164,7 +167,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.courses {
+.coursees {
   @include responsive($tablet) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -198,7 +201,7 @@
 }
 //
 
-.course {
+.coursee {
   background-color: var(--abs-white);
   border: 1px solid var(--white-90);
   padding: 10px;
@@ -206,18 +209,25 @@
   row-gap: 25px;
   border-radius: var(--rad-6);
 }
-.course--img {
+.coursee--img {
   width: 100%;
 }
-.course--instructor {
-  font-weight: var(--medium);
+.coursee--instructor {
+  font-weight: var(--reg);
   padding: 10px 0;
+  font-size: 24px;
 }
-.course--title {
+.coursee--title {
   font-weight: var(--medium);
 }
-.course--duration,
-.course--difficulty {
+.coursee--meta{
+  @include responsive($tablet){
+      display: inline-block;
+  }
+}
+.coursee--duration,
+.coursee--difficulty {
+  font-weight: var(--reg);
   display: inline-block;
   height: 34px;
   border: 2px solid var(--white-95);
@@ -225,9 +235,13 @@
   color: var(--grey-30);
   border-radius: var(--rad-6);
   margin: 10px 0;
-  font-size: 14px;
+  font-size: min(14px, 3.5vw); /* Adjust the maximum font size as needed */
+  max-width: 150px; /* Adjust the maximum width of the container */
+  overflow: hidden; /* Hide any content that overflows the box */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+  white-space: nowrap;
 }
-.course--description,
+.coursee--description,
 .testimonial--description {
   color: var(--grey-40);
   font-size: 14px;

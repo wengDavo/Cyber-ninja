@@ -2,19 +2,8 @@ import { useEffect, useState } from "react";
 import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-import Landing from "../components/Landing";
-import {
-  Container,
-  Form,
-  Row,
-  Col,
-  FormGroup,
-  Card,
-  CardTitle,
-  Input,
-  Label,
-  Button,
-} from "reactstrap";
+import Testimonials from "../components/Testimonials";
+import "../components/styles/css/login.css"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -48,97 +37,60 @@ const Login = () => {
   };
 
   return (
-    <Container fluid className="p-0 m-0">
-        <Row
-          style={{
-            marginLeft: 0,
-            marginRight: 0,
-            padding: "5%",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Card
-            style={{
-              marginLeft: 0,
-              marginRight: 0,
-              padding: "3%",
-              width: "600px",
-            }}
-            className="shadow-lg justify-content-center align-items-center"
-          >
-            <CardTitle>
-              {" "}
-              <h4 className="form-title">Login </h4>{" "}
-            </CardTitle>
-            <Form className="align-items-center" onSubmit={handleLogin}>
-              <Row
-                className="row-cols-lg-auto align-items-center"
-                style={{
-                  marginLeft: 0,
-                  marginRight: 0,
-                  padding: 0,
-                }}
-              >
-                <Col sm={12}>
-                  <FormGroup style={{ paddingBottom: 20 }}>
-                    <Label className="text-700" for="email">
-                      Email <span className="text-orange">*</span>
-                    </Label>
-                    <Input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="Enter Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </FormGroup>
-                </Col>
-              </Row>
-
-              <Row
-                className="row-cols-lg-auto align-items-center"
-                style={{ marginLeft: 0, marginRight: 0, padding: 0 }}
-              >
-                <Col sm={12}>
-                  <Label className="text-700" for="password">
-                    Password <span className="text-orange">*</span>
-                  </Label>
-                  <Input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Enter Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </Col>
-              </Row>
-
-              <Row
-                sm={12}
-                style={{
-                  marginLeft: 0,
-                  marginRight: 0,
-                  justifyContent: "center",
-                  paddingTop: "10%",
-                }}
-              >
-                <Button
-                  style={{ paddingLeft: "2%", paddingRight: "2%" }}
-                  className="text-align-center btn-custom"
-                  type="submit"
-                >
-                  Login
-                </Button>
-              </Row>
-            </Form>
-          </Card>
-        </Row>
-    </Container>
+    <body>
+      <section class="login">
+        <div>
+          <p class="login--title">Login</p>
+          <p class="login--msg">
+            Welcome back! Please log in to access your account.
+          </p>
+        </div>
+        <div>
+          <form action="" class="login--form">
+            <p class="login--item">
+              <label for="">Email</label>
+              <input
+                type="email"
+                name=""
+                id=""
+                placeholder="Enter your Email"
+              />
+            </p>
+            <p class="login--item">
+              <label for="">Password</label>
+              <input
+                type="password"
+                name=""
+                id=""
+                placeholder="Enter your Password"
+              />
+              <i>
+                <img src="/assets/icons/eye.svg" alt="" />
+              </i>
+            </p>
+            <a href="" class="login--forgot">
+              forgot password ?
+            </a>
+            <button type="submit" class="white p-12 rad-6 bg-orange-50">
+              Login
+            </button>
+          </form>
+          <div class="login--or">
+            <p></p>
+            <p>OR</p>
+            <p></p>
+          </div>
+          <div class="to-signup">
+            <p>Do not have an account? </p>
+            <a href="">Sign Up</a>
+            <i>
+              <img src="/assets/icons/north-e.svg" alt="" class="icon" />
+            </i>
+          </div>
+        </div>
+      </section>
+      <Testimonials />
+    </body>
   );
 };
 
