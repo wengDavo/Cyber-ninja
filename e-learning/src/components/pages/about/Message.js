@@ -5,8 +5,8 @@ const Message = () => {
   return (
     <section className="message">
       <article className="msg-container">
-        <p className="info">
-          <span className="orange-50">Together</span> , let's shape the future of
+        <p className="infoo">
+          <span className="orange-50" style ={{ display: "inline-block"}}>Together</span> , let's shape the future of
           digital innovation
         </p>
         <p className="description">
