@@ -402,7 +402,7 @@ button:hover{
 .message {
   background-color: var(--white-97);
   border-radius: var(--rad-6);
-  padding-bottom: 20px;
+  padding: 12px;
 }
 @media (min-width: 700px) {
   .message {
