@@ -35,7 +35,7 @@ const NavBar = () => {
         <img src={arrowRight} alt="" className="icon-sm" />
       </section>
       <nav className="nav">
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <figure className="nav--logo logo p-x-5">
             <img src={logo} alt="logo" />
           </figure>
@@ -43,21 +43,46 @@ const NavBar = () => {
         {isWideScreen && (
           <menu className="nav--menu">
             <li className="nav--menu--list">
-              <Link to="/courses">Home</Link>
+              <Link
+                to="/courses"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Home
+              </Link>
             </li>
 
             <li className="nav--menu--list">
-              <Link to="/courses">Courses</Link>
+              <Link
+                to="/courses"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Courses
+              </Link>
             </li>
 
             <li className="nav--menu--list">
-              <Link to="/courses">About Us</Link>
+              <Link
+                to="/courses"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                About Us
+              </Link>
             </li>
             <li className="nav--menu--list">
-              <Link to="/pricing">Pricing</Link>
+              <Link
+                to="/pricing"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Pricing
+              </Link>
             </li>
             <li className="nav--menu--list">
-              <Link to="/contact">Contact</Link>
+              <Link
+                to="/contact"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Contact
+              </Link>
             </li>
           </menu>
         )}
@@ -70,10 +95,16 @@ const NavBar = () => {
         )}
         {isWideScreen && (
           <div className="nav--btns">
-            <Link to="/register">
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <button className="btn-medium grey-15">Sign Up</button>
             </Link>
-            <Link to="/private">
+            <Link
+              to="/private"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <button
                 className="btn-medium bg-orange-50"
                 style={{ marginLeft: "10px" }}

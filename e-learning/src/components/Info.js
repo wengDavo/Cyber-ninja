@@ -111,7 +111,12 @@ const Info = () => {
             obcaecati nesciunt voluptates?
           </p>
           <button className="btn-medium bg-white-50 black">
-            <Link to="/courses">View All</Link>
+            <Link
+              to="/courses"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              View All
+            </Link>
           </button>
         </div>
       </article>
@@ -133,7 +138,10 @@ const Info = () => {
               appealing and user friendly websites
             </p>
           </div>
-          <Link to="/course">
+          <Link
+            to="/course"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
             <button className="p-x-24 p-y-14 medium white-97">
               Get it Now
             </button>

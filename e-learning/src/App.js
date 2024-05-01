@@ -36,7 +36,7 @@ function App() {
             path="/courses"
             element={
               // <PrivateRoute>
-                <Courses />
+              <Courses />
               // </PrivateRoute>
             }
           />
@@ -44,7 +44,7 @@ function App() {
             path="/course"
             element={
               // <PrivateRoute>
-                <Course />
+              <Course />
               // </PrivateRoute>
             }
           />
@@ -52,7 +52,7 @@ function App() {
             path="/about"
             element={
               // <PrivateRoute>
-                <About />
+              <About />
               // </PrivateRoute>
             }
           />
@@ -60,7 +60,7 @@ function App() {
             path="/contact"
             element={
               // <PrivateRoute>
-                <Contact />
+              <Contact />
               // </PrivateRoute>
             }
           />
@@ -68,7 +68,7 @@ function App() {
             path="/pricing"
             element={
               // <PrivateRoute>
-                <Pricing />
+              <Pricing />
               // </PrivateRoute>
             }
           />

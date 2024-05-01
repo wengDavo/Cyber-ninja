@@ -4,8 +4,8 @@ import { register } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import "../components/styles/css/signup.css";
-import eye from "../components/assets/icons/eye.svg"
-import northE from "../components/assets/icons/north-e.svg"
+import eye from "../components/assets/icons/eye.svg";
+import northE from "../components/assets/icons/north-e.svg";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 
@@ -54,7 +54,7 @@ function Register() {
       email,
       // username,
       password,
-      password2,
+      password2
       // phone_number,
       // user_type
     );
@@ -124,7 +124,12 @@ function Register() {
             </div>
             <div class="to-login">
               <p>ALready have an account? </p>
-              <Link to="/login">Login</Link>
+              <Link
+                to="/login"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Login
+              </Link>
               <i>
                 <img src={northE} alt="" class="icon" />
               </i>
@@ -132,7 +137,7 @@ function Register() {
           </div>
         </section>
         <section class="testti">
-        <Testimonials />
+          <Testimonials />
         </section>
       </main>
       <Footer />

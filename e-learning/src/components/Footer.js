@@ -38,11 +38,14 @@ const Footer = () => {
       </section>
       <section className="summary">
         <div>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
             <h4 className="semi-bold fs-18 p-b-5">Home</h4>
           </Link>
           <p className="summary--item">Benefits</p>
-          <Link to="/courses">
+          <Link
+            to="/courses"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
             <p className="summary--item">Our Courses</p>
           </Link>
           <p className="summary--item">Our Testimonials</p>

@@ -16,7 +16,10 @@ const Courses = () => {
               responsive design principles. Develop the skills to create
               visually appealing and user-friendly websites.
             </p>
-            <Link to="/course">
+            <Link
+              to="/course"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <button class="bg-white-97 p-12 rad-6 m-t-10 align-start">
                 View Course
               </button>

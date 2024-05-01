@@ -22,10 +22,16 @@ const Hero = () => {
         </div>
       </article>
       <article className="heroo--bottom">
-        <Link to="/courses">
+        <Link
+          to="/courses"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <button className="btn-lg bg-orange-50 white">Explore Courses</button>
         </Link>
-        <Link to="/pricing">
+        <Link
+          to="/pricing"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <button className="btn-lg" style={{ marginLeft: "10px" }}>
             View Pricing
           </button>

@@ -9,28 +9,56 @@ const SidePanel = ({ isOpen, toggleMenu }) => {
       <div className="side-panel-content">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <Link
+              to="/courses"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Courses
+            </Link>
           </li>
           <li>
-            <Link to="/about">About Us</Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              About Us
+            </Link>
           </li>
           <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link
+              to="/pricing"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Pricing
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link
+              to="/contact"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Contact
+            </Link>
           </li>
           <li>
-            <Link to="/register">
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <button className="btn-medium grey-15">Sign Up</button>
             </Link>
-            <Link to="/private">
+            <Link
+              to="/private"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <button
                 className="btn-medium bg-orange-50"
-                style={{ marginLeft: "10px" }}
+                style={{ marginLeft: "10px", color:"white" }}
               >
                 Login
               </button>
