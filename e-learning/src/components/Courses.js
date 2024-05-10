@@ -20,7 +20,7 @@ const Courses = () => {
               to="/course"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <button class="bg-white-97 p-12 rad-6 m-t-10 align-start">
+              <button class="bg-white-95 p-12 rad-6 m-t-10 align-star">
                 View Course
               </button>
             </Link>
@@ -33,12 +33,8 @@ const Courses = () => {
             <img src={womanDesktop} alt="" class="course--image" />
           </figure>
           <div class="course--info">
-            <button class="bg-white-97 p-12 rad-6 m-t-10 grey-35">
-              4 weeks
-            </button>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 m-l-10 grey-35">
-              Beginner
-            </button>
+            <span class=" rad-6 m-t-10 grey-35">4 weeks</span>
+            <span class=" rad-6 m-t-10 grey-35">Beginner</span>
             <p class="course--instructor medium m-y-20">By John Smith</p>
           </div>
         </div>
@@ -77,7 +73,7 @@ const Courses = () => {
               responsive design principles. Develop the skills to create
               visually appealing and user-friendly websites.
             </p>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 align-start">
+            <button class="bg-white-95 p-12 rad-6 m-t-10 align-start">
               View Course
             </button>
           </div>
@@ -89,12 +85,8 @@ const Courses = () => {
             <img src={womanDesktop} alt="" class="course--image" />
           </figure>
           <div class="course--info">
-            <button class="bg-white-97 p-12 rad-6 m-t-10  grey-35">
-              4 weeks
-            </button>
-            <button class="bg-white-97 p-12 rad-6 m-t-10 m-l-10 grey-35">
-              Beginner
-            </button>
+            <span class="rad-6 m-t-10 grey-35">4 weeks</span>
+            <span class="rad-6 m-t-10 grey-35">Beginner</span>
             <p class="course--instructor medium m-y-20">By John Smith</p>
           </div>
         </div>
