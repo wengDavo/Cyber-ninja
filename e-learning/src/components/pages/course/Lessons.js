@@ -5,37 +5,37 @@ import CourseContext from "../../../layouts/CourseContext";
 import useAxios from "../../../utils/useAxios";
 
 const VideoCourse = () => {
-  const [course, setCourse] = useState("");
-  const { selectedCourseId } = useContext(CourseContext);
+  // const [course, setCourse] = useState("");
+  // const { selectedCourseId } = useContext(CourseContext);
   const api = useAxios();
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        // await api.get("course/").then((response) => {
-        //   // Handle response data
-        //   setCourses(response.data);
-        //   console.log(courses);
-        // });
-        const response = await api.get(`/course/${selectedCourseId}`);
-        setCourse(response.data);
-        console.log(course);
-      } catch (error) {
-        if (error.response) {
-          // Request made but the server responded with an error
-          console.log(error.response);
-        } else if (error.request) {
-          // Request made but no response is received from the server.
-          console.log(error.request);
-        } else {
-          // Error occured while setting up the request
-          console.log("Error", error.message);
-        }
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCourses = async () => {
+  //     try {
+  //       // await api.get("course/").then((response) => {
+  //       //   // Handle response data
+  //       //   setCourses(response.data);
+  //       //   console.log(courses);
+  //       // });
+  //       const response = await api.get(`/course/${selectedCourseId}`);
+  //       setCourse(response.data);
+  //       console.log(course);
+  //     } catch (error) {
+  //       if (error.response) {
+  //         // Request made but the server responded with an error
+  //         console.log(error.response);
+  //       } else if (error.request) {
+  //         // Request made but no response is received from the server.
+  //         console.log(error.request);
+  //       } else {
+  //         // Error occured while setting up the request
+  //         console.log("Error", error.message);
+  //       }
+  //     }
+  //   };
 
-    fetchCourses();
-  }, [api]);
+  //   fetchCourses();
+  // }, [api]);
 
   return (
     <section className="lessons" style={{ paddingBottom: "20px" }}>

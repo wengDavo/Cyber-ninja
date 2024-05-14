@@ -2,22 +2,27 @@ import "../../styles/css/course.css";
 import React, { useContext, useEffect, useState } from "react";
 import CourseContext from "../../../layouts/CourseContext";
 import useAxios from "../../../utils/useAxios";
+import { useNavigate, useParams  } from "react-router-dom";
 
 const Hero = () => {
   const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(true); // Add loading state
   const { selectedCourseId } = useContext(CourseContext);
   const api = useAxios();
+  const navigate = useNavigate();
+
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchCourse = async () => {
+      // // Check if selectedCourseId is available
+      // if (!selectedCourseId) {
+      //   navigate("/courses"); // Redirect to courses page if no course is selected
+      //   return;
+      // }
+
       try {
-        // await api.get("course/").then((response) => {
-        //   // Handle response data
-        //   setCourses(response.data);
-        //   console.log(courses);
-        // });
-        const response = await api.get(`/course/${selectedCourseId}`);
+        const response = await api.get(`/course/${id || selectedCourseId}`);
         setCourse(response.data);
         setLoading(false);
         console.log(course);
@@ -29,14 +34,14 @@ const Hero = () => {
           // Request made but no response is received from the server.
           console.log(error.request);
         } else {
-          // Error occured while setting up the request
+          // Error occurred while setting up the request
           console.log("Error", error.message);
         }
       }
     };
 
     fetchCourse();
-  }, [api]);
+  }, [api, navigate, selectedCourseId]);
 
   return (
     <section className="hero">

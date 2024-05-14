@@ -15,7 +15,7 @@ import Course from "./views/course";
 import About from "./views/about";
 import Contact from "./views/contact";
 import Pricing from "./views/pricing";
-import { CourseProvider } from "./layouts/CourseContext"; 
+import { CourseProvider } from "./layouts/CourseContext";
 
 // library.add(fab, faFax, faPhone, faLocationPin)
 // console.log(library)
@@ -23,65 +23,64 @@ import { CourseProvider } from "./layouts/CourseContext";
 function App() {
   return (
     <BrowserRouter>
-    <CourseProvider> 
-      <MainWrapper>
-        <Routes>
-          <Route
-            path="/private"
-            element={
-              <PrivateRoute>
-                <Private />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/courses"
-            element={
-              // <PrivateRoute>
-              <Courses />
-              // </PrivateRoute>
-            }
-          />
-          <Route
-            path="/course"
-            element={
-              // <PrivateRoute>
-              <Course />
-              // </PrivateRoute>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              // <PrivateRoute>
-              <About />
-              // </PrivateRoute>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              // <PrivateRoute>
-              <Contact />
-              // </PrivateRoute>
-            }
-          />
-          <Route
-            path="/pricing"
-            element={
-              // <PrivateRoute>
-              <Pricing />
-              // </PrivateRoute>
-            }
-          />
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
-        </Routes>
-      </MainWrapper>
-      
-      </CourseProvider> 
+      <CourseProvider>
+        <MainWrapper>
+          <Routes>
+            <Route
+              path="/private"
+              element={
+                <PrivateRoute>
+                  <Private />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/courses"
+              element={
+                // <PrivateRoute>
+                <Courses />
+                // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/course/:id"
+              element={
+                // <PrivateRoute>
+                <Course />
+                // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                // <PrivateRoute>
+                <About />
+                // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                // <PrivateRoute>
+                <Contact />
+                // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/pricing"
+              element={
+                // <PrivateRoute>
+                <Pricing />
+                // </PrivateRoute>
+              }
+            />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
+          </Routes>
+        </MainWrapper>
+      </CourseProvider>
     </BrowserRouter>
   );
 }

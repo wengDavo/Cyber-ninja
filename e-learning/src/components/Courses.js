@@ -14,7 +14,9 @@ const Courses = () => {
   const { selectedCourseId, setSelectedCourseId } = useContext(CourseContext);
 
   const handleCourseClick = (id) => {
-    setSelectedCourseId(id);
+    if (id) {
+      setSelectedCourseId(id);
+    }
   };
 
   useEffect(() => {
@@ -54,7 +56,7 @@ const Courses = () => {
             <div className="course--meta">
               <p className="course--description">{course.description}</p>
               <Link
-                to="/course"
+                to={`/course/${course.id}`}
                 style={{ textDecoration: "none", color: "inherit" }}
                 onClick={() => handleCourseClick(course.id)}
               >
