@@ -16,12 +16,17 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     if (isLoggedIn()) {
       navigate("/");
     }
   }, []);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); // Toggle password visibility
+  };
 
   const resetForm = () => {
     setEmail("");
@@ -35,7 +40,13 @@ const Login = () => {
     console.log(password);
     if (error) {
       // alert(error);
-      console.log(error.response.data.detail);
+      console.log(error);
+      if (error.message === "Network Error") {
+        console.log(error.message);
+        setError(error.message);
+      } else {
+        console.log(error.response.data.detail);
+      }
     } else {
       console.log("ok");
       navigate("/");
@@ -71,7 +82,7 @@ const Login = () => {
               <p class="login--item">
                 <label for="">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   id="password"
                   placeholder="Enter your Password"
@@ -79,7 +90,7 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <i>
+                <i onClick={togglePasswordVisibility}>
                   <img src={eye} alt="" />
                 </i>
               </p>
