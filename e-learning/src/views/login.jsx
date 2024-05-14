@@ -17,6 +17,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null); // Define error state
 
   useEffect(() => {
     if (isLoggedIn()) {
