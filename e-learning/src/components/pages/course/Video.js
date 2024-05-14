@@ -1,5 +1,5 @@
 import "../../styles/css/course.css";
-const Video = () => {
+const Video = ({ course }) => {
   return (
     <section class="video">
       <video src=""></video>
