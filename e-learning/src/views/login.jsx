@@ -47,6 +47,7 @@ const Login = () => {
         setError(error.message);
       } else {
         console.log(error.response.data.detail);
+        setError(error.response.data.detail);
       }
     } else {
       console.log("ok");
