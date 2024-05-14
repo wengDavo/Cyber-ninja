@@ -110,13 +110,13 @@ const NavBar = () => {
 const LoggedInView = ({ user }) => {
   return (
     <div>
-      <Navbar.Text className="text-white">Welcome {user.username}</Navbar.Text>
+      {/* <Navbar.Text className="text-white">Welcome {user.username}</Navbar.Text> */}
       <Link to="/private" style={{ textDecoration: "none", color: "inherit" }}>
         <button
           className="btn-medium bg-orange-50"
           style={{ marginLeft: "10px" }}
         >
-          Profile
+          {user.username}
         </button>
       </Link>
       <Link to="/logout" style={{ textDecoration: "none", color: "inherit" }}>
