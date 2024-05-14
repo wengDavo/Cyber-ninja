@@ -1,9 +1,16 @@
 // SidePanel.js
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SidePanel.css"; // Import CSS file for styling
+import "./SidePanel.css";
+import { useAuthStore } from "../store/auth";
+import { LoggedOutView, LoggedInView } from "./Navbar";
 
 const SidePanel = ({ isOpen, toggleMenu }) => {
+  const [isLoggedIn, user] = useAuthStore((state) => [
+    state.isLoggedIn,
+    state.user,
+  ]);
+
   return (
     <div className={`side-panel ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
       <div className="side-panel-content">
@@ -46,7 +53,9 @@ const SidePanel = ({ isOpen, toggleMenu }) => {
             </Link>
           </li>
           <li>
-            <Link
+            {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
+
+            {/* <Link
               to="/register"
               style={{ textDecoration: "none", color: "inherit" }}
             >
@@ -62,7 +71,7 @@ const SidePanel = ({ isOpen, toggleMenu }) => {
               >
                 Login
               </button>
-            </Link>
+            </Link> */}
           </li>
         </ul>
         <button className="close-btn" onClick={toggleMenu}>
