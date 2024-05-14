@@ -15,6 +15,7 @@ import Course from "./views/course";
 import About from "./views/about";
 import Contact from "./views/contact";
 import Pricing from "./views/pricing";
+import { CourseProvider } from "./layouts/CourseContext"; 
 
 // library.add(fab, faFax, faPhone, faLocationPin)
 // console.log(library)
@@ -22,6 +23,7 @@ import Pricing from "./views/pricing";
 function App() {
   return (
     <BrowserRouter>
+    <CourseProvider> 
       <MainWrapper>
         <Routes>
           <Route
@@ -78,6 +80,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </MainWrapper>
+      
+      </CourseProvider> 
     </BrowserRouter>
   );
 }

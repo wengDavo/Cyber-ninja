@@ -18,7 +18,7 @@ const useAuthStore = create((set, get) => ({
     setUser: (user) => set({ allUserData: user}),
     setLoading: (loading) => set({ loading }),
     isLoggedIn: () => get().allUserData !== null,
-    isLister: () => get().allUserData?.user_type === '2',
+    // isLister: () => get().allUserData?.user_type === '2',
 }));
 
 if (process.env.NODE_ENV === 'development') {
