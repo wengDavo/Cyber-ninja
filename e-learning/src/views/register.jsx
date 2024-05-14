@@ -12,16 +12,19 @@ import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
 
 function Register() {
-  const [full_name, setFullName] = useState("");
-  // const [last_name, setLastName] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  // const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   // const [phone_number, setPhoneNumber] = useState("");
-  // const [user_type, setUserType] = useState("");
+  const [user_type, setUserType] = useState("");
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const navigate = useNavigate();
+  const [error, setError] = useState(null); // Define error state
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
 
   useEffect(() => {
     if (isLoggedIn()) {
@@ -29,38 +32,69 @@ function Register() {
     }
   }, []);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword); // Toggle password visibility
+  };
+
+  const togglePassword2Visibility = () => {
+    setShowPassword2(!showPassword2); // Toggle password visibility
+  };
+
   const resetForm = () => {
-    setFullName("");
-    // setLastName("");
+    setFirstName("");
+    setLastName("");
     setEmail("");
-    // setUsername("");
+    setUsername("");
     setPassword("");
     setPassword2("");
     // setPhoneNumber("");
-    // setUserType("");
+    setUserType("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (user_type === "Lister") {
-    //   setUserType(2);
-    // } else {
-    //   setUserType(3);
-    // }
-    // console.log(user_type);
+    setUserType(1);
+    console.log(first_name);
+    console.log(last_name);
+    console.log(email);
+    console.log(username);
+    console.log(password);
+    console.log(password2);
+    console.log(user_type);
+
+    if (password === password2) {
+      setUserType(1);
+    } else {
+      const error = "Passwords don't match";
+      console.log(error);
+    }
+    console.log(user_type);
     const { error } = await register(
-      full_name,
-      // last_name,
+      first_name,
+      last_name,
       email,
-      // username,
+      username,
       password,
-      password2
+      password2,
       // phone_number,
-      // user_type
+      user_type
     );
     if (error) {
-      alert(JSON.stringify(error));
+      // alert(JSON.stringify(error));
+      // alert(error);
       console.log(error);
+      if (error.message === "Network Error") {
+        console.log(error.message);
+        setError(error.message);
+      } else {
+        for (const field in error.response.data) {
+          if (error.response.data.hasOwnProperty(field)) {
+            // Log the error messages for each field
+            console.log(`${field}: ${error.response.data[field].join("  ")}`);
+            setError(error?.response?.data || {});
+          }
+        }
+      }
     } else {
       navigate("/");
       resetForm();
@@ -79,36 +113,112 @@ function Register() {
             </p>
           </div>
           <div>
-            <form action="" class="signup--form">
+            <form action="" class="signup--form" onSubmit={handleSubmit}>
               <p class="signup--item">
-                <label for="">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className={error && error.email ? "error" : ""}
                 />
+                {error && error.email && (
+                  <span className="error-message">
+                    {error.email.join("  ")}
+                  </span>
+                )}
               </p>
               <p class="signup--item">
-                <label for="">Full Name</label>
+                <label htmlFor="">First Name</label>
                 <input
                   type="text"
-                  name="full_name"
-                  id="full_name"
+                  name="first_name"
+                  id="first_name"
                   placeholder="Enter Your Name"
+                  value={first_name}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
                 />
               </p>
               <p class="signup--item">
-                <label for="">Password</label>
+                <label htmlFor="">Last Name</label>
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Enter your Password"
+                  type="text"
+                  name="last_name"
+                  id="last_name"
+                  placeholder="Enter Your Name"
+                  value={last_name}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
                 />
-                <i>
-                  <img src={eye} alt="" />
-                </i>
+              </p>
+              <p class="signup--item">
+                <label htmlFor="">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Enter Your Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  className={error && error.username ? "error" : ""}
+                />
+                {error && error.username && (
+                  <span className="error-message">
+                    {error.username.join("  ")}
+                  </span>
+                )}
+              </p>
+              <p class="signup--item">
+                <label htmlFor="">Password</label>
+                <div className="password-input-container">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    id="password"
+                    placeholder="Enter your Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    className={error && error.password ? "error" : ""}
+                  />
+                  <i onClick={togglePasswordVisibility}>
+                    <img src={eye} alt="" />
+                  </i>
+                </div>
+                {error && error.password && (
+                  <span className="error-message">
+                    {error.password.join("  ")}
+                  </span>
+                )}
+              </p>
+              <p class="signup--item">
+                <label htmlFor="">Confirm Password</label>
+                <div className="password-input-container">
+                  <input
+                    type={showPassword2 ? "text" : "password"}
+                    name="password2"
+                    id="password2"
+                    placeholder="Enter Password again"
+                    value={password2}
+                    onChange={(e) => setPassword2(e.target.value)}
+                    required
+                    className={error && error.password2 ? "error" : ""}
+                  />
+                  <i onClick={togglePassword2Visibility}>
+                    <img src={eye} alt="" />
+                  </i>
+                </div>
+                {error && error.password2 && (
+                  <span className="error-message">
+                    {error.password2.join("  ")}
+                  </span>
+                )}
               </p>
               <a href="" class="signup--policy">
                 I agree with Terms of Use and Privacy Policy

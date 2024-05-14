@@ -1,9 +1,10 @@
 import axios from "axios";
+// export const endpoint = "https://cyber-ninja-bckend.onrender.com/api/";
 
 const apiInstance = axios.create({
-    baseURL: 'http://localhost:8000/api/',
+    baseURL: 'https://cyber-ninja-bckend.onrender.com/api/',
     // tiemout after 5 seconds
-    timeout: 5000,
+    timeout: 50000,
     headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',

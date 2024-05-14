@@ -4,10 +4,10 @@ import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import Testimonials from "../components/Testimonials";
-import "../components/styles/css/login.css"
+import "../components/styles/css/login.css";
 import Footer from "../components/Footer";
-import eye from "../components/assets/icons/eye.svg"
-import northE from "../components/assets/icons/north-e.svg"
+import eye from "../components/assets/icons/eye.svg";
+import northE from "../components/assets/icons/north-e.svg";
 
 import NavBar from "../components/Navbar";
 
@@ -34,9 +34,10 @@ const Login = () => {
     console.log(email);
     console.log(password);
     if (error) {
-      alert(error);
-      console.log(error);
+      // alert(error);
+      console.log(error.response.data.detail);
     } else {
+      console.log("ok");
       navigate("/");
       resetForm();
     }
@@ -54,7 +55,7 @@ const Login = () => {
             </p>
           </div>
           <div>
-            <form action="" class="login--form">
+            <form action="" class="login--form" onSubmit={handleLogin}>
               <p class="login--item">
                 <label for="">Email</label>
                 <input
@@ -62,6 +63,9 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="Enter your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </p>
               <p class="login--item">
@@ -71,6 +75,9 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="Enter your Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
                 <i>
                   <img src={eye} alt="" />
@@ -98,7 +105,7 @@ const Login = () => {
           </div>
         </section>
         <section class="testti">
-        <Testimonials />
+          <Testimonials />
         </section>
       </main>
       <Footer />

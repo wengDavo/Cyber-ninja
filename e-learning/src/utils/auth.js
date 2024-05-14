@@ -9,15 +9,18 @@ export const login = async (email, password) => {
       email,
       password,
     });
+
     if (status === 200) {
       setAuthUser(data.access, data.refresh);
       console.log(data);
+      console.log("log");
     }
     return { data, error: null };
   } catch (error) {
+    console.log("fail");
     return {
       data: null,
-      error: error.response.data?.detail || "Something went wrong",
+      error: error,
     };
   }
 };
@@ -29,7 +32,6 @@ export const register = async (
   username,
   password,
   password2,
-  phone_number,
   user_type
 ) => {
   try {
@@ -40,7 +42,7 @@ export const register = async (
       username,
       password,
       password2,
-      phone_number,
+      // phone_number,
       user_type,
     });
     await login(email, password);
@@ -48,7 +50,7 @@ export const register = async (
   } catch (error) {
     return {
       data: null,
-      error: error.response.data || "Something went wrong",
+      error: error || "Something went wrong",
     };
   }
 };

@@ -4,10 +4,16 @@ import arrowRight from "./assets/icons/arrow-right.svg";
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
 import SidePanel from "./SidePanel";
+import Navbar from "react-bootstrap/Navbar";
+import { useAuthStore } from "../store/auth";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isWideScreen, setIsWideScreen] = useState(true);
+  const [isLoggedIn, user] = useAuthStore((state) => [
+    state.isLoggedIn,
+    state.user,
+  ]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 700px)");
@@ -43,10 +49,7 @@ const NavBar = () => {
         {isWideScreen && (
           <menu className="nav--menu">
             <li className="nav--menu--list">
-              <Link
-                to="/"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
                 Home
               </Link>
             </li>
@@ -95,28 +98,54 @@ const NavBar = () => {
         )}
         {isWideScreen && (
           <div className="nav--btns">
-            <Link
-              to="/register"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <button className="btn-medium grey-15">Sign Up</button>
-            </Link>
-            <Link
-              to="/private"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              <button
-                className="btn-medium bg-orange-50"
-                style={{ marginLeft: "10px" }}
-              >
-                Login
-              </button>
-            </Link>
+            {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
           </div>
         )}
       </nav>
       {!isWideScreen && <SidePanel isOpen={menuOpen} toggleMenu={toggleMenu} />}
     </header>
+  );
+};
+
+const LoggedInView = ({ user }) => {
+  return (
+    <div>
+      <Navbar.Text className="text-white">Welcome {user.username}</Navbar.Text>
+      <Link to="/private" style={{ textDecoration: "none", color: "inherit" }}>
+        <button
+          className="btn-medium bg-orange-50"
+          style={{ marginLeft: "10px" }}
+        >
+          Profile
+        </button>
+      </Link>
+      <Link to="/logout" style={{ textDecoration: "none", color: "inherit" }}>
+        <button
+          className="btn-medium bg-orange-50"
+          style={{ marginLeft: "10px" }}
+        >
+          Logout
+        </button>
+      </Link>
+    </div>
+  );
+};
+
+export const LoggedOutView = ({ title }) => {
+  return (
+    <div>
+      <Link to="/register" style={{ textDecoration: "none", color: "inherit" }}>
+        <button className="btn-medium grey-15">Sign Up</button>
+      </Link>
+      <Link to="/private" style={{ textDecoration: "none", color: "inherit" }}>
+        <button
+          className="btn-medium bg-orange-50"
+          style={{ marginLeft: "10px" }}
+        >
+          Login
+        </button>
+      </Link>
+    </div>
   );
 };
 
