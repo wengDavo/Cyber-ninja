@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom/dist";
 import React, { useContext, useEffect, useState } from "react";
 import CourseContext from "../layouts/CourseContext";
-import useAxios from "../utils/useAxios";
+import anyAxios from "../utils/anyAxios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthStore } from "../store/auth";
 // import "../components/styles/css/course.css";
@@ -17,7 +17,7 @@ const Course = () => {
   const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(true); // Add loading state
   const { selectedCourseId } = useContext(CourseContext);
-  const api = useAxios();
+  const api = anyAxios();
   const navigate = useNavigate();
 
   const { id } = useParams();

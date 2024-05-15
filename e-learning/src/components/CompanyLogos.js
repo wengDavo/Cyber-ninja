@@ -1,3 +1,4 @@
+// import "./styles/css/homepage.css";
 import Adobe from "./assets/icons/Adobe_Inc.-Logo.wine.svg";
 import Google from "./assets/icons/Google-Logo.wine.svg";
 import Metabo from "./assets/icons/Metabo-Logo.wine.svg";
@@ -16,26 +17,26 @@ const CompanyLogos = () => {
       <figure>
         <img src={Adobe} alt="adobe" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Google} alt="google" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Metabo} alt="metabo" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Netflix} alt="netflix" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Spotify} alt="spotify" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Zoom} alt="zoom" className="h-16 w-32" />
       </figure>
-      <figure className="company-logo">
+      <figure >
         <img src={Amazon} alt="amazon" className="h-16 w-32" />
       </figure>
     </section>
   );
 };
 
-export default CompanyLogos;
+export default CompanyLogos;    

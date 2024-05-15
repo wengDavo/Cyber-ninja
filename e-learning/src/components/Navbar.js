@@ -42,10 +42,8 @@ const NavBar = () => {
             </figure>
           </Link>
         </div>
-        <div className="ml-auto md:order-3">
-          {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
-        </div>
-        <div className="md:order-2">
+        {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
+        <div className="md:order-2 ml-auto ">
           <DesktopMenu />
           {isMenuOpen && (
             <MobileMenu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />

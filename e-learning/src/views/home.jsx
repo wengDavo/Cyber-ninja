@@ -12,11 +12,12 @@ import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
 
 const Home = () => {
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   // const [isLister, user] = useAuthStore((state) => [
   //   state.isLister,
   //   state.user,
   // ]);
-  // console.log(isLister())
+  console.log(isLoggedIn())
   return (
     <body className="p-2 space-y-4 md:p-4">
       <NavBar />

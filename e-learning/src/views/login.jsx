@@ -35,12 +35,13 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("ok");
     const { error } = await login(email, password);
     console.log(email);
     console.log(password);
     if (error) {
       // alert(error);
-      console.log(error);
+      console.log("ok");
       if (error.message === "Network Error") {
         console.log(error.message);
         setError(error.message);
@@ -50,7 +51,7 @@ const Login = () => {
       }
     } else {
       console.log("ok");
-      navigate("/dashboard");
+      navigate("/");
       resetForm();
     }
   };
@@ -124,7 +125,7 @@ const Login = () => {
             <div className="flex w-full justify-between items-center my-4 text-grey-60 gap-1 text-sm">
               <p className="w-full h-[1px] bg-grey-60"></p>
               <p>OR</p>
-              <p  className="w-full h-[1px] bg-grey-60"></p>
+              <p className="w-full h-[1px] bg-grey-60"></p>
             </div>
             <div className="text-sm leading-6 flex gap-2 items-center justify-center">
               <p>Do not have an account? </p>
@@ -135,7 +136,7 @@ const Login = () => {
             </div>
           </div>
         </section>
-        <section >
+        <section>
           <Testimonials />
         </section>
       </main>
