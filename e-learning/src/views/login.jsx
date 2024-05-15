@@ -4,7 +4,7 @@ import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import Testimonials from "../components/Testimonials";
-import "../components/styles/css/login.css";
+// import "../components/styles/css/login.css";
 import Footer from "../components/Footer";
 import eye from "../components/assets/icons/eye.svg";
 import northE from "../components/assets/icons/north-e.svg";

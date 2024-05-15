@@ -1,4 +1,4 @@
-import "./styles/css/homepage.css";
+// import "./styles/css/homepage.css";
 import Sarah from "./assets/photos/mobile/sarah.png";
 import Jason from "./assets/photos/mobile/jason.png";
 import Emily from "./assets/photos/mobile/emily.png";

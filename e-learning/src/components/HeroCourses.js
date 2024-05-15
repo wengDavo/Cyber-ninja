@@ -1,4 +1,4 @@
-import "../components/styles/css/courses.css";
+// import "../components/styles/css/courses.css";
 const HeroCourses = () => {
   return (
     <section className="hero">

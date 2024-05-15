@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { register } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-import "../components/styles/css/signup.css";
+// import "../components/styles/css/signup.css";
 import eye from "../components/assets/icons/eye.svg";
 import northE from "../components/assets/icons/north-e.svg";
 import Testimonials from "../components/Testimonials";

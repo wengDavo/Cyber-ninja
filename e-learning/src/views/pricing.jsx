@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// import "../components/styles/css/homepage.css";
+// // import "../components/styles/css/homepage.css";
 import Landing from "../components/Landing";
 import Hero from "../components/pages/pricing/Hero";
 import Pricing from "../components/Pricing";

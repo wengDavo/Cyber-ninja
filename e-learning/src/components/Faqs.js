@@ -1,4 +1,4 @@
-import "./styles/css/homepage.css";
+// import "./styles/css/homepage.css";
 
 const FAQS = () => {
   return (

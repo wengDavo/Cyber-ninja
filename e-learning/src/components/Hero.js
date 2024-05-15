@@ -1,4 +1,4 @@
-import "./styles/css/homepage.css";
+// import "./styles/css/homepage.css";
 import threeLines from "./assets/icons/three-lines.svg";
 import bolt from "./assets/icons/bolt.svg";
 import { Link } from "react-router-dom";

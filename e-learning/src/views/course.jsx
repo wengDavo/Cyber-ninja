@@ -4,7 +4,7 @@ import CourseContext from "../layouts/CourseContext";
 import useAxios from "../utils/useAxios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthStore } from "../store/auth";
-import "../components/styles/css/course.css";
+// import "../components/styles/css/course.css";
 import Landing from "../components/Landing";
 import Hero from "../components/pages/course/Hero";
 import Video from "../components/pages/course/Video";

@@ -1,4 +1,4 @@
-import "./styles/css/homepage.css";
+// import "./styles/css/homepage.css";
 import correct from "./assets/icons/correct.svg";
 import wrong from "./assets/icons/wrong.svg";
 

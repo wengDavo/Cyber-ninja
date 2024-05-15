@@ -1,5 +1,5 @@
 // import Container from "react-bootstrap/Container";
-import "./styles/css/homepage.css";
+// import "./styles/css/homepage.css";
 
 const Landing = ({ children }) => {
   return (
