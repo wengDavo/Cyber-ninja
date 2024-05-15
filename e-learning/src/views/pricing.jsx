@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// import "../components/styles/css/homepage.css";
 import Landing from "../components/Landing";
-import Hero from "../components/pages/pricing/Hero";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
+import FAQS from "../components/Faqs";
 
 import NavBar from "../components/Navbar";
 
@@ -18,8 +17,8 @@ const Home = () => {
     <body>
       <NavBar />
       <main id="main">
-        <Hero />
         <Pricing />
+        <FAQS />
       </main>
       <Footer />
     </body>

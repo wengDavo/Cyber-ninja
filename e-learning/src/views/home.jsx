@@ -4,6 +4,7 @@ import { useAuthStore } from "../store/auth";
 import Landing from "../components/Landing";
 import Hero from "../components/Hero";
 import CompanyLogos from "../components/CompanyLogos";
+
 import VideoSection from "../components/VideoSection";
 import Info from "../components/Info";
 import Testimonials from "../components/Testimonials";
@@ -20,9 +21,9 @@ const Home = () => {
   // ]);
   // console.log(isLister())
   return (
-    <body>
+    <body className="p-2 space-y-4 md:p-4">
       <NavBar />
-      <main id="main">
+      <main>
         <Hero />
         <CompanyLogos />
         <VideoSection />

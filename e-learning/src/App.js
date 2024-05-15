@@ -15,6 +15,8 @@ import Course from "./views/course";
 import About from "./views/about";
 import Contact from "./views/contact";
 import Pricing from "./views/pricing";
+import Dashboard from "./views/dashboard";
+
 
 // library.add(fab, faFax, faPhone, faLocationPin)
 // console.log(library)
@@ -76,6 +78,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </MainWrapper>
     </BrowserRouter>

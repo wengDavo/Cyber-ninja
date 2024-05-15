@@ -1,7 +1,7 @@
 // SidePanel.js
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SidePanel.css"; // Import CSS file for styling
+// import "./SidePanel.css"; // Import CSS file for styling
 
 const SidePanel = ({ isOpen, toggleMenu }) => {
   return (

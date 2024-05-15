@@ -1,72 +1,93 @@
-import "./styles/css/homepage.css";
-
+// import "./styles/css/homepage.css";
+import wrong from "./assets/icons/wrong.svg";
 const FAQS = () => {
   return (
-    <section className="faqs--container">
+    <section className="py-8 px-2 md:grid md:grid-cols-2">
       <article>
-        <h2 className="info--title">Frequently Asked Questions</h2>
-        <p className="info--description p-y-24">
+        <h2 className="font-semiBold h-10 flex items-center text-3xl md:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p className="leading-6 text-grey-35 md:w-[60%] py-6">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
-        <button className="p-12 rad-6">See All FAQ's</button>
+        <button className=" h-10 bg-white-97 rounded-regular px-4 mb-4">
+          See All FAQ's
+        </button>
       </article>
-      <article className="faqs">
-        <div className="faq">
-          <details className="faq--detail">
-            <summary className="faq--summary">
-              Can I enroll multiple courses at once?
+      <article className="faqs grid leading-6">
+        <div className="faq bg-abs-white md:p-5 rounded-regular my-1">
+          <details className="faq--detail group text-sm text-grey-30 p-5 border border-white-95">
+            <summary className="faq--summary text-grey-15 font-medium text-lg md:w-[80%] cursor-pointer list-none relative">
+              <figure className="absolute -right-1 -top-1 bg-orange-95 p-4">
+                <img
+                  src={wrong}
+                  alt=""
+                  className="group-open:rotate-0 rotate-45 transition-all duration-300"
+                />
+              </figure>
+              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
             </summary>
-            <p>
+            <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
               Absolutely! You can enroll in multiple courses simultaneously and
               access them at your convenience.
             </p>
           </details>
         </div>
-        <div className="faq">
-          <details className="faq--detail">
-            <summary className="faq--summary">
-              What kind of support can I expect from instructors?
+        <div className="faq bg-abs-white md:p-5 rounded-regular my-1">
+          <details className="faq--detail group text-sm text-grey-30 p-5 border border-white-95">
+            <summary className="faq--summary text-grey-15 font-medium text-lg md:w-[80%] cursor-pointer list-none relative">
+              <figure className="absolute -right-1 -top-1 bg-orange-95 p-4">
+                <img
+                  src={wrong}
+                  alt=""
+                  className="group-open:rotate-0 rotate-45 transition-all duration-300"
+                />
+              </figure>
+              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
             </summary>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-              corrupti. Officia corporis voluptatum ipsum ratione?
+            <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
+              Absolutely! You can enroll in multiple courses simultaneously and
+              access them at your convenience.
             </p>
           </details>
         </div>
-        <div className="faq">
-          <details className="faq--detail">
-            <summary className="faq--summary">
-              Are the courses self-paced or do they have specific start and end
-              dates?
+        <div className="faq bg-abs-white md:p-5 rounded-regular my-1">
+          <details className="faq--detail group text-sm text-grey-30 p-5 border border-white-95">
+            <summary className="faq--summary text-grey-15 font-medium text-lg md:w-[80%] cursor-pointer list-none relative">
+              <figure className="absolute -right-1 -top-1 bg-orange-95 p-4">
+                <img
+                  src={wrong}
+                  alt=""
+                  className="group-open:rotate-0 rotate-45 transition-all duration-300"
+                />
+              </figure>
+              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
             </summary>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-              corrupti. Officia corporis voluptatum ipsum ratione?
+            <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
+              Absolutely! You can enroll in multiple courses simultaneously and
+              access them at your convenience.
             </p>
           </details>
         </div>
-        <div className="faq">
-          <details className="faq--detail">
-            <summary className="faq--summary">
-              Are there any prerequisites for the courses?
+        <div className="faq bg-abs-white md:p-5 rounded-regular my-1">
+          <details className="faq--detail group text-sm text-grey-30 p-5 border border-white-95">
+            <summary className="faq--summary text-grey-15 font-medium text-lg md:w-[80%] cursor-pointer list-none relative">
+              <figure className="absolute -right-1 -top-1 bg-orange-95 p-4">
+                <img
+                  src={wrong}
+                  alt=""
+                  className="group-open:rotate-0 rotate-45 transition-all duration-300"
+                />
+              </figure>
+              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
             </summary>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-              corrupti. Officia corporis voluptatum ipsum ratione?
+            <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
+              Absolutely! You can enroll in multiple courses simultaneously and
+              access them at your convenience.
             </p>
           </details>
         </div>
-        <div className="faq">
-          <details className="faq--detail">
-            <summary className="faq--summary">
-              Can I download the course materials for offline access?
-            </summary>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-              corrupti. Officia corporis voluptatum ipsum ratione?
-            </p>
-          </details>
-        </div>
+        
       </article>
     </section>
   );
