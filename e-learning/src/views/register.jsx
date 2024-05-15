@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { register } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-import "../components/styles/css/signup.css";
+// import "../components/styles/css/signup.css";
 import eye from "../components/assets/icons/eye.svg";
 import northE from "../components/assets/icons/north-e.svg";
 import Testimonials from "../components/Testimonials";
@@ -105,16 +105,16 @@ function Register() {
     <body>
       <NavBar />
       <main id="mainn">
-        <section class="signup">
+        <section className="signup">
           <div>
-            <p class="signup--title">Sign Up</p>
-            <p class="signup--msg">
+            <p className="signup--title">Sign Up</p>
+            <p className="signup--msg">
               Create an account to unlock exclusive features.
             </p>
           </div>
           <div>
-            <form action="" class="signup--form" onSubmit={handleSubmit}>
-              <p class="signup--item">
+            <form action="" className="signup--form" onSubmit={handleSubmit}>
+              <p className="signup--item">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
@@ -132,7 +132,7 @@ function Register() {
                   </span>
                 )}
               </p>
-              <p class="signup--item">
+              <p className="signup--item">
                 <label htmlFor="">First Name</label>
                 <input
                   type="text"
@@ -144,7 +144,7 @@ function Register() {
                   required
                 />
               </p>
-              <p class="signup--item">
+              <p className="signup--item">
                 <label htmlFor="">Last Name</label>
                 <input
                   type="text"
@@ -156,7 +156,7 @@ function Register() {
                   required
                 />
               </p>
-              <p class="signup--item">
+              <p className="signup--item">
                 <label htmlFor="">Username</label>
                 <input
                   type="text"
@@ -174,7 +174,7 @@ function Register() {
                   </span>
                 )}
               </p>
-              <p class="signup--item">
+              <p className="signup--item">
                 <label htmlFor="">Password</label>
                 <div className="password-input-container">
                   <input
@@ -197,7 +197,7 @@ function Register() {
                   </span>
                 )}
               </p>
-              <p class="signup--item">
+              <p className="signup--item">
                 <label htmlFor="">Confirm Password</label>
                 <div className="password-input-container">
                   <input
@@ -220,19 +220,19 @@ function Register() {
                   </span>
                 )}
               </p>
-              <a href="" class="signup--policy">
+              <a href="" className="signup--policy">
                 I agree with Terms of Use and Privacy Policy
               </a>
-              <button type="submit" class="white p-12 rad-6 bg-orange-50">
+              <button type="submit" className="white p-12 rad-6 bg-orange-50">
                 Sign Up
               </button>
             </form>
-            <div class="signup--or">
+            <div className="signup--or">
               <p></p>
               <p>OR</p>
               <p></p>
             </div>
-            <div class="to-login">
+            <div className="to-login">
               <p>ALready have an account? </p>
               <Link
                 to="/login"
@@ -241,12 +241,12 @@ function Register() {
                 Login
               </Link>
               <i>
-                <img src={northE} alt="" class="icon" />
+                <img src={northE} alt="" className="icon" />
               </i>
             </div>
           </div>
         </section>
-        <section class="testti">
+        <section className="testti">
           <Testimonials />
         </section>
       </main>

@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom/dist";
-import { useAuthStore } from "../store/auth";
-import "../components/styles/css/about.css";
 import Landing from "../components/Landing";
-import Hero from "../components/pages/about/Hero";
-import Achievements from "../components/pages/about/Achievements";
-import Goals from "../components/pages/about/Goals";
-import Message from "../components/pages/about/Message";
+import HeroBar from "../components/HeroBar";
+import Achievements from "../components/Achievement";
+import Goals from "../components/Goal";
+import Message from "../components/Message";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
@@ -17,17 +15,21 @@ const About = () => {
   // ]);
   // console.log(isLister())
   return (
-    
-      <body>
-        <NavBar />
-        <main id="main">
-          <Hero />
-          <Achievements />
-          <Goals />
-          <Message />
-        </main>
-        <Footer />
-      </body>
+    <body>
+      <NavBar />
+      <main id="main">
+        <HeroBar
+          title={"About Cyber-Ninja"}
+          description={
+            "Welcome to our platform, where we are passionate about empowering individuals to master the world of design and development. We offer a wide range of online courses designed to equip learners with the skillsand knowledge needed to succeed in the ever-evolving digital landscape."
+          }
+        />
+        <Achievements />
+        <Goals />
+        <Message />
+      </main>
+      <Footer />
+    </body>
   );
 };
 

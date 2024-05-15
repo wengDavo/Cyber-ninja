@@ -56,8 +56,14 @@ export const register = async (
 };
 
 export const logout = () => {
+  console.log(Cookies.get('access_token'));
+  console.log(Cookies.get('refresh_token'));
   Cookies.remove("access_token");
-  Cookies.remove("refesh_token");
+  Cookies.remove("refresh_token");
+  console.log(Cookies.get('access_token'));
+  console.log(Cookies.get('refresh_token'));
+  console.log("/");
+  // setAuthUser(null);
   useAuthStore.getState().setUser(null);
 };
 

@@ -16,6 +16,7 @@ import About from "./views/about";
 import Contact from "./views/contact";
 import Pricing from "./views/pricing";
 import { CourseProvider } from "./layouts/CourseContext";
+import Dashboard from "./views/dashboard";
 
 // library.add(fab, faFax, faPhone, faLocationPin)
 // console.log(library)
@@ -72,6 +73,14 @@ function App() {
                 // <PrivateRoute>
                 <Pricing />
                 // </PrivateRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
               }
             />
             <Route path="/" element={<Home />} />

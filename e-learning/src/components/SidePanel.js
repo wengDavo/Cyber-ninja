@@ -1,7 +1,6 @@
 // SidePanel.js
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SidePanel.css";
 import { useAuthStore } from "../store/auth";
 import { LoggedOutView, LoggedInView } from "./Navbar";
 

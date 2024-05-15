@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
-import SidePanel from "./SidePanel";
-import Navbar from "react-bootstrap/Navbar";
 import { useAuthStore } from "../store/auth";
 
 const NavBar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isWideScreen, setIsWideScreen] = useState(true);
   const [isLoggedIn, user] = useAuthStore((state) => [
     state.isLoggedIn,
@@ -30,100 +28,50 @@ const NavBar = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
-    <header id="header">
-      <section className="header--info">
+    <header className="text-abs-white ">
+      <section className="bg-orange-50 h-[40px] text-center flex justify-center items-center gap-2 rounded-regular">
         <article>Free Courses Sales Ends Soon. Get it Now</article>
-        <img src={arrowRight} alt="" className="icon-sm" />
+        <img src={arrowRight} alt="" className="h-4" />
       </section>
-      <nav className="nav">
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <figure className="nav--logo logo p-x-5">
-            <img src={logo} alt="logo" />
-          </figure>
-        </Link>
-        {isWideScreen && (
-          <menu className="nav--menu">
-            <li className="nav--menu--list">
-              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                Home
-              </Link>
-            </li>
-
-            <li className="nav--menu--list">
-              <Link
-                to="/courses"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Courses
-              </Link>
-            </li>
-
-            <li className="nav--menu--list">
-              <Link
-                to="/about"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="nav--menu--list">
-              <Link
-                to="/pricing"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Pricing
-              </Link>
-            </li>
-            <li className="nav--menu--list">
-              <Link
-                to="/contact"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                Contact
-              </Link>
-            </li>
-          </menu>
-        )}
-        {!isWideScreen && (
-          <div className="nav--bar">
-            <figure className="nav--hamburger" onClick={toggleMenu}>
-              <img src={hamburger} alt="" />
+      <nav className="flex p-4 justify-around items-center relative">
+        <div>
+          <Link to="/">
+            <figure className="px-1">
+              <img src={logo} alt="logo" />
             </figure>
-          </div>
-        )}
-        {isWideScreen && (
-          <div className="nav--btns">
-            {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
-          </div>
-        )}
+          </Link>
+        </div>
+        {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
+        <div className="md:order-2 ml-auto ">
+          <DesktopMenu />
+          {isMenuOpen && (
+            <MobileMenu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+          )}
+          <figure className="group md:hidden ml-1 cursor-pointer">
+            <img
+              src={hamburger}
+              alt=""
+              className="cursor-pointer"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            />
+          </figure>
+        </div>
       </nav>
-      {!isWideScreen && <SidePanel isOpen={menuOpen} toggleMenu={toggleMenu} />}
     </header>
   );
 };
 
 export const LoggedInView = ({ user }) => {
   return (
-    <div>
-      {/* <Navbar.Text className="text-white">Welcome {user.username}</Navbar.Text> */}
-      <Link to="/private" style={{ textDecoration: "none", color: "inherit" }}>
-        <button
-          className="btn-medium grey-15"
-          style={{ marginLeft: "10px" }}
-        >
+    <div className="ml-auto md:order-3">
+      <Link to="/dashboard">
+        <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
           {user.username}
         </button>
       </Link>
-      <Link to="/logout" style={{ textDecoration: "none", color: "inherit" }}>
-        <button
-          className="btn-medium bg-orange-50"
-          style={{ marginLeft: "10px", color:"white"  }}
-        >
+      <Link to="/logout">
+        <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
           Logout
         </button>
       </Link>
@@ -133,20 +81,73 @@ export const LoggedInView = ({ user }) => {
 
 export const LoggedOutView = ({ title }) => {
   return (
-    <div>
-      <Link to="/register" style={{ textDecoration: "none", color: "inherit" }}>
-        <button className="btn-medium grey-15">Sign Up</button>
+    <div className="ml-auto md:order-3">
+      <Link to="/register">
+        <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
+          Sign Up
+        </button>
       </Link>
-      <Link to="/private" style={{ textDecoration: "none", color: "inherit" }}>
-        <button
-          className="btn-medium bg-orange-50"
-          style={{ marginLeft: "10px", color:"white"   }}
-        >
+      <Link to="/private">
+        <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
           Login
         </button>
       </Link>
     </div>
   );
 };
+
+function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
+  return (
+    <menu className="fixed bg-white-90 right-0 w-[60%] top-0 bottom-0 z-10 rounded-regular">
+      <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <Link to="/">Home</Link>
+      </li>
+      <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <Link to="/courses">Courses</Link>
+      </li>
+
+      <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <Link to="/about">About Us</Link>
+      </li>
+      <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <Link to="/pricing">Pricing</Link>
+      </li>
+      <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <Link to="/contact">Contact</Link>
+      </li>
+      <button
+        className="absolute top-3 right-1"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+        <div className="h-[3px] w-6 bg-grey-20 mb-1 rounded-regular rotate-45 translate-y-2"></div>
+        <div className="h-[3px] w-6 bg-grey-70 mb-1 rounded-regular -rotate-45"></div>
+      </button>
+    </menu>
+  );
+}
+
+function DesktopMenu() {
+  return (
+    <menu className="hidden md:flex md:text-grey-15 md:gap-x-3">
+      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+        <Link to="/">Home</Link>
+      </li>
+
+      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+        <Link to="/courses">Courses</Link>
+      </li>
+
+      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+        <Link to="/about">About Us</Link>
+      </li>
+      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+        <Link to="/pricing">Pricing</Link>
+      </li>
+      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+        <Link to="/contact">Contact</Link>
+      </li>
+    </menu>
+  );
+}
 
 export default NavBar;
