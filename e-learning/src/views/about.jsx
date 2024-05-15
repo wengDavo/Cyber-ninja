@@ -15,7 +15,7 @@ const About = () => {
   // ]);
   // console.log(isLister())
   return (
-    <body>
+    <body className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main id="main">
         <HeroBar

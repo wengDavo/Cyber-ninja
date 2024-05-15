@@ -12,7 +12,7 @@ const Dashboard = () => {
   ]);
 
   return (
-    <body>
+    <body className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main className="text-abs-white ">
         <section className="bg-orange-50 h-[40px] text-center flex justify-center items-center gap-2 rounded-regular">

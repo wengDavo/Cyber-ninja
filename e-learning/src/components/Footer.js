@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex flex-col gap-y-4 bg-white-97 md:py-6 md:px-20 md:flex-row md:justify-between py-3"
+      className="flex flex-col gap-y-4 bg-white-97 md:py-6 md:px-20 md:flex-row md:justify-between py-3 mt-3"
     >
       <section className="space-y-4">
         <figure >
