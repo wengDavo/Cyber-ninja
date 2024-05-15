@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom/dist";
-// import { useAuthStore } from "../store/auth";
-// // import "../components/styles/css/about.css";
 import Landing from "../components/Landing";
-// import Hero from "../components/pages/about/Hero";
 import HeroBar from "../components/HeroBar";
 import Achievements from "../components/Achievement";
 import Goals from "../components/Goal";

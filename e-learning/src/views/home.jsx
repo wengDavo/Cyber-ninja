@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
-// // import "../components/styles/css/homepage.css";
-import Landing from "../components/Landing";
 import Hero from "../components/Hero";
 import CompanyLogos from "../components/CompanyLogos";
 import VideoSection from "../components/VideoSection";
@@ -20,9 +18,9 @@ const Home = () => {
   // ]);
   // console.log(isLister())
   return (
-    <body>
+    <body className="p-2 space-y-4 md:p-4">
       <NavBar />
-      <main id="main">
+      <main>
         <Hero />
         <CompanyLogos />
         <VideoSection />

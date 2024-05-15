@@ -1,4 +1,3 @@
-// import "./styles/css/homepage.css";
 import Adobe from "./assets/icons/Adobe_Inc.-Logo.wine.svg";
 import Google from "./assets/icons/Google-Logo.wine.svg";
 import Metabo from "./assets/icons/Metabo-Logo.wine.svg";
@@ -11,29 +10,29 @@ const CompanyLogos = () => {
   return (
     <section
       className="no-scrollbar mx-auto w-[90%]
-    md:h-20 flex justify-center items-center border-[1px] border-solid border-white-95
-    md:p-6 md:justify-evenly divide-x-[1px] divide-solid divide-white-95 my-2"
+      md:h-20 flex justify-center items-center border-[1px] border-solid border-white-95
+      md:p-6 md:justify-evenly divide-x-[1px] divide-solid divide-white-95 my-2"
     >
-      <figure className="company-logo">
-        <img src={Adobe} alt="" className="icon" />
+      <figure>
+        <img src={Adobe} alt="adobe" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Google} alt="" className="icon" />
+        <img src={Google} alt="google" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Metabo} alt="" className="icon" />
+        <img src={Metabo} alt="metabo" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Netflix} alt="" className="icon" />
+        <img src={Netflix} alt="netflix" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Spotify} alt="" className="icon" />
+        <img src={Spotify} alt="spotify" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Zoom} alt="" className="icon" />
+        <img src={Zoom} alt="zoom" className="h-16 w-32" />
       </figure>
       <figure className="company-logo">
-        <img src={Amazon} alt="" className="icon" />
+        <img src={Amazon} alt="amazon" className="h-16 w-32" />
       </figure>
     </section>
   );

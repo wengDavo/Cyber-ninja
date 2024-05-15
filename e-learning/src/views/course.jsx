@@ -6,9 +6,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuthStore } from "../store/auth";
 // import "../components/styles/css/course.css";
 import Landing from "../components/Landing";
-import Hero from "../components/pages/course/Hero";
-import Video from "../components/pages/course/Video";
-import Lessons from "../components/pages/course/Lessons";
+import HeroBar from "../components/HeroBar copy";
+import Video from "../components/Video";
+import Lessons from "../components/Lessons";
 import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
@@ -64,7 +64,7 @@ const Course = () => {
       <main id="main">
         {!loading && (
           <>
-            <Hero course={course} />
+            <HeroBar course={course} />
             <Video course={course} />
             <Lessons course={course} />
           </>

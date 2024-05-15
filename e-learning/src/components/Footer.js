@@ -1,4 +1,3 @@
-// import "./styles/css/homepage.css";
 import { Link } from "react-router-dom";
 import emailIcn from "./assets/icons/emial-icon.svg";
 import logo from "./assets/icons/Logo.svg";
@@ -15,7 +14,7 @@ const Footer = () => {
       className="flex flex-col gap-y-4 bg-white-97 md:py-6 md:px-20 md:flex-row md:justify-between py-3"
     >
       <section className="space-y-4">
-        <figure>
+        <figure >
           <img src={logo} alt="" />
         </figure>
         <figure className="space-y-2">
