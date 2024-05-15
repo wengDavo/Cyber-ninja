@@ -60,7 +60,7 @@ const Login = () => {
     <div>
       <NavBar />
       <main className="md:grid md:grid-cols-2">
-        <section class="bg-white-97 border border-white-95 p-7 flex flex-col gap-8">
+        <section className="bg-white-97 border border-white-95 p-7 flex flex-col gap-8">
           <div>
             <p className="font-semiBold text-3xl mb-">Login</p>
             <p className="text-sm text-grey-30">
@@ -111,13 +111,13 @@ const Login = () => {
               </p>
               <a
                 href=""
-                class="text-sm leading-6 text-grey-30 text-right capitalize"
+                className="text-sm leading-6 text-grey-30 text-right capitalize"
               >
                 forgot password ?
               </a>
               <button
                 type="submit"
-                class="text-abs-white p-3 rounded-regular bg-orange-50"
+                className="text-abs-white p-3 rounded-regular bg-orange-50"
               >
                 Login
               </button>

@@ -104,10 +104,10 @@ function Register() {
     <body className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main className="md:grid md:grid-cols-2">
-        <section class="bg-white-97 border border-white-95 p-7 flex flex-col gap-8">
+        <section className="bg-white-97 border border-white-95 p-7 flex flex-col gap-8">
           <div className="text-center">
-            <p class="font-semiBold text-3xl mb-4">Sign Up</p>
-            <p class="signup--msg text-sm text-grey-30">
+            <p className="font-semiBold text-3xl mb-4">Sign Up</p>
+            <p className="signup--msg text-sm text-grey-30">
               Create an account to unlock exclusive features.
             </p>
           </div>
@@ -249,7 +249,7 @@ function Register() {
                 Sign Up
               </button>
             </form>
-            <div class="flex w-full justify-between items-center my-4 text-grey-60 gap-1 text-sm">
+            <div className="flex w-full justify-between items-center my-4 text-grey-60 gap-1 text-sm">
               <p className="w-full h-[1px] bg-grey-60"></p>
               <p>OR</p>
               <p className="w-full h-[1px] bg-grey-60"></p>
