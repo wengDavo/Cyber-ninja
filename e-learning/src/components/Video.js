@@ -1,7 +1,15 @@
-const Video = ({ course }) => {
+import React, { useContext, useEffect, useState } from "react";
+const Video = ({ course, selectedLessonId }) => {
+  useEffect(() => {
+    if (selectedLessonId) {
+      // Load the video based on the selected lesson ID
+      console.log("Selected Lesson ID:", selectedLessonId);
+    }
+  }, [selectedLessonId]);
+
   return (
-    <section className="video">
-      {/* <video src=""></video> */}
+    <section className="video p-3">
+      {/* <video src=""></video>
       {course.curriculums.map((curriculum) => (
         <div>
           {curriculum.lessons.map((lesson, index) => (
@@ -15,7 +23,9 @@ const Video = ({ course }) => {
             </div>
           ))}
         </div>
-      ))}
+      ))} */}
+
+      <h2>Selected Lesson: {selectedLessonId}</h2>
     </section>
   );
 };

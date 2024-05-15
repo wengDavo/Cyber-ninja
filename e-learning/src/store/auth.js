@@ -7,12 +7,16 @@ const useAuthStore = create((set, get) => ({
     loading:false,
     user: () => ({
         // fetch data or set as null
-        user_id: get().allUserData?.user_id || null,
+        user_id: get().allUserData?.user_id || get().allUserData?.id || null,
         username: get().allUserData?.username || null,
+        first_name: get().allUserData?.first_name || null,
+        last_name: get().allUserData?.last_name || null,
         user_type: get().allUserData?.user_type || null,
         email: get().allUserData?.email || null,
-        admin: get().allUserData?.admin || null,
-        created_at: get().allUserData?.created_at || null,
+        // admin: get().allUserData?.admin || null,
+        created_at: get().allUserData?.created_at || get().allUserData?.date_joined || null,
+        courses_enlisted: get().allUserData?.courses_enlisted || [], 
+    
         
     }),
     setUser: (user) => set({ allUserData: user}),

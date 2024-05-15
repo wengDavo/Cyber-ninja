@@ -51,7 +51,7 @@ const Login = () => {
       }
     } else {
       console.log("ok");
-      navigate("/");
+      navigate("/dashboard");
       resetForm();
     }
   };
