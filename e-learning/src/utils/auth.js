@@ -8,6 +8,7 @@ export const fetchProfile = async () => {
   const api = useAxios();
   try {
     const response = await api.get("profile/");
+    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Failed to fetch profile", error);

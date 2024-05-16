@@ -2,7 +2,7 @@ import axios from "axios";
 // export const endpoint = "https://cyber-ninja-bckend.onrender.com/api/";
 
 const apiInstance = axios.create({
-    baseURL: 'https://cyber-ninja-bckend.onrender.com/api/',
+    baseURL: 'http://127.0.0.1:8000/api/',
     // tiemout after 5 seconds
     timeout: 50000,
     headers: {

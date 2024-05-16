@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../utils/useAxios";
 import { useAuthStore } from "../store/auth";
@@ -9,6 +10,10 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const navigate = useNavigate();
   const setUser = useAuthStore((state) => state.setUser);
   const user = useAuthStore((state) => state.user());
+  const [err, setErr] = useState(null); // Define error state
+  fetchAndSetProfile();
+
+  // console.log(user.paid);
 
   const handleEnroll = async () => {
     if (!isLoggedIn()) {
@@ -28,13 +33,30 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
           // setUser(updatedUser);
           fetchAndSetProfile();
           console.log("Enrolled successfully:", response.data);
-
-          
         }
       } catch (error) {
-        console.error("Error enrolling in course:", error);
-        alert("There was an error enrolling in the course. Please try again.");
+        if (error.message === "Network Error") {
+          console.log(error.message);
+          setErr(error.message);
+        } else {
+          for (const field in error.response.data) {
+            if (error.response.data.hasOwnProperty(field)) {
+              // Log the error messages for each field
+              console.log(`${field}: ${error.response.data[field]}`);
+              setErr(error?.response?.data || {});
+              console.log(err);
+              if (err.unpaid) {
+                navigate("/pricing");
+              }
+            }
+          }
+        }
+        // console.error("Error enrolling in course:", error.response.data);
+        // alert("There was an error enrolling in the course. Please try again.");
       }
+      // if (error.unpaid) {
+      //   navigate("/pricing");
+      // }
     }
   };
 

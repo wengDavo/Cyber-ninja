@@ -5,14 +5,18 @@ import Footer from "../components/Footer";
 
 import NavBar from "../components/Navbar";
 import useAxios from "../utils/useAxios";
+import { fetchAndSetProfile } from "../utils/profile";
 
 const Dashboard = () => {
   const [profile, setProfile] = useState("");
+  fetchAndSetProfile();
+  
+  const user = useAuthStore((state) => state.user());
   // const [loading, setLoading] = useState(true); // Add loading state
-  const [isLoggedIn, user] = useAuthStore((state) => [
-    state.isLoggedIn,
-    state.user,
-  ]);
+  // const [isLoggedIn, user] = useAuthStore((state) => [
+  //   state.isLoggedIn,
+  //   state.user,
+  // ]);
   // const api = useAxios();
   // const id = user().username
 
@@ -52,8 +56,9 @@ const Dashboard = () => {
       <NavBar />
       <main className="text-abs-white ">
         <section className="bg-orange-50 h-[40px] text-center flex justify-center items-center gap-2 rounded-regular">
-          <article>{user().username}</article>
-          <article>{console.log(user())}</article>
+          <article>{user.username}</article>
+          {/* <article>{user.paid}</article> */}
+          {/* <article>{console.log(user)}</article> */}
         </section>
       </main>
       <Footer />
