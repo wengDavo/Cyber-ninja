@@ -1,0 +1,34 @@
+import timer from "../components/assets/icons/timer.svg";
+import stickynote from "../components/assets/icons/stickynote.svg";
+import profile from "../components/assets/icons/profile.svg";
+
+function ClassesCards() {
+  return (
+    <div
+      style={{ borderTopWidth: "10px", borderTopColor: "#FFEACC" }}
+      className="rounded-regular border border-white-90 p-2 space-y-2 md:min-w-[300px]  mx-auto mb-2"
+    >
+      <p className="text-lg">HTML</p>
+      <p className="text-sm text-grey-60">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+        dolorum!
+      </p>
+      <figure className="flex gap-x-2">
+        <img src={profile} alt="" />
+        <figcaption className="text-grey-60">Benjamin</figcaption>
+      </figure>
+      <div className="bg-white-90 flex justify-between">
+        <figure className="flex">
+          <img src={timer} alt="" style={{ width: "14px" }} />
+          <figcaption className="text-sm text-grey-40">3 Hours</figcaption>
+        </figure>
+        <figure className="flex">
+          <img src={stickynote} alt="" style={{ width: "14px" }} />
+          <figcaption className="text-sm text-grey-40">6 lessons</figcaption>
+        </figure>
+      </div>
+    </div>
+  );
+}
+
+export default ClassesCards;
