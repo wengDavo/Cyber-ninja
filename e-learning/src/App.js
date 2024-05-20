@@ -18,23 +18,20 @@ import Pricing from "./views/pricing";
 import { CourseProvider } from "./layouts/CourseContext";
 import Dashboard from "./views/dashboard";
 
-// library.add(fab, faFax, faPhone, faLocationPin)
-// console.log(library)
-
 function App() {
   return (
     <BrowserRouter>
       <CourseProvider>
         <MainWrapper>
           <Routes>
-            <Route
+            {/* <Route
               path="/private"
               element={
                 <PrivateRoute>
                   <Private />
                 </PrivateRoute>
               }
-            />
+            /> */}
             <Route
               path="/courses"
               element={

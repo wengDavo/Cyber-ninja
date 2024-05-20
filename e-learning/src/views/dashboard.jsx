@@ -74,8 +74,6 @@ const Dashboard = () => {
         </section>
         <section className="md:order-1" style={{ gridColumn: "1/3" }}>
           <MyClasses />
-          {/* <article>{user.paid}</article> */}
-          {/* <article>{console.log(user)}</article> */}
         </section>
       </main>
       {/* <Footer /> */}

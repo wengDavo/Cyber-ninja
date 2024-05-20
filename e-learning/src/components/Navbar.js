@@ -87,7 +87,7 @@ export const LoggedOutView = ({ title }) => {
           Sign Up
         </button>
       </Link>
-      <Link to="/private">
+      <Link to="/login">
         <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
           Login
         </button>

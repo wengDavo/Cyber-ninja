@@ -14,7 +14,6 @@ const Private = () => {
     state.isLister,
     state.user,
   ]);
-  console.log(isLister());
 
   useEffect(() => {
     const fetchData = async (user) => {
@@ -53,7 +52,6 @@ const Private = () => {
 };
 
 const ProfileView = ({ user }) => {
-  console.log(user)
   return (
     <section>
       <h1>Private</h1>

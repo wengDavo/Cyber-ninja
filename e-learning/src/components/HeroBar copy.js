@@ -11,9 +11,7 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const setUser = useAuthStore((state) => state.setUser);
   const user = useAuthStore((state) => state.user());
   const [err, setErr] = useState(null); // Define error state
-  // fetchAndSetProfile();
-
-  // console.log(user.paid);
+  fetchAndSetProfile();
 
   const handleEnroll = async () => {
     if (!isLoggedIn()) {
@@ -23,7 +21,6 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
         const response = await api.post(`enroll/`, { course_id: course.id });
         if (response.status === 200) {
           alert("You have successfully enrolled in the course.");
-          // console.log("Enrolled successfully:", response.data);
 
           // Update the user profile in the state with the new enrollment
           // const updatedUser = {

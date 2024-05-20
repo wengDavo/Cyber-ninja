@@ -8,10 +8,6 @@ import FAQS from "../components/Faqs";
 import NavBar from "../components/Navbar";
 
 const Home = () => {
-  // const [isLister, user] = useAuthStore((state) => [
-  //   state.isLister,
-  //   state.user,
-  // ]);
   // console.log(isLister())
   return (
     <body className="p-2 space-y-4 md:p-4">

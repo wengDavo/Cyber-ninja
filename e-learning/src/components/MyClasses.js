@@ -1,8 +1,11 @@
-
+import { useAuthStore } from "../store/auth";
 import timer from "../components/assets/icons/timer.svg";
 import ClassesCards from "../components/ClassesCards";
 
 function MyClasses() {
+  const user = useAuthStore((state) => state.user());
+  const user_courses = user.courses_enlisted;
+  console.log(user_courses);
   return (
     <>
       <article className=" bg-orange-80 h-32 md:h-80 relative rounded-regular">
@@ -23,10 +26,9 @@ function MyClasses() {
           </a>
         </div>
         <div className="grid grid-cols-2 gap-4 overflow-y-scroll md:flex no-scrollbar">
-          <ClassesCards />
-          <ClassesCards />
-          <ClassesCards />
-          <ClassesCards />
+          {user.courses_enlisted.map((course, index) => (
+            <ClassesCards key={index} course={course}   />
+          ))}
         </div>
       </article>
     </>

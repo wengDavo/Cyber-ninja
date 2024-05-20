@@ -12,10 +12,7 @@ const Logout = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const accessToken = localStorage.getItem("accessToken");
   const data = useAuthStore();
-  console.log(isLoggedIn());
-  console.log(data);
   const refreshToken = useAuthStore((state) => [data.refresh]);
-  console.log(refreshToken);
   const api = useAxios();
   useEffect(() => {
     const logOutBck = async () => {
@@ -34,12 +31,8 @@ const Logout = () => {
       } finally {
         logout();
         navigate("/");
-        console.log("/");
-        console.log(isLoggedIn());
         Cookies.remove("access_token");
         Cookies.remove("refresh_token");
-        console.log(Cookies.get('access_token'));
-        console.log(Cookies.get('refresh_token'));
       }
     };
     logOutBck();

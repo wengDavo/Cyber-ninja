@@ -17,7 +17,6 @@ const Home = () => {
   //   state.isLister,
   //   state.user,
   // ]);
-  console.log(isLoggedIn())
   return (
     <body className="p-2 space-y-4 md:p-4">
       <NavBar />

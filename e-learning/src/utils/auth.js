@@ -4,11 +4,10 @@ import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
 import useAxios from "./useAxios";
 
+const api = useAxios();
 export const fetchProfile = async () => {
-  const api = useAxios();
   try {
     const response = await api.get("profile/");
-    // console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Failed to fetch profile", error);
@@ -30,7 +29,6 @@ export const login = async (email, password) => {
       if (profile) {
         useAuthStore.getState().setUser(profile);
       }
-      console.log(data);
       console.log("log");
     }
     return { data, error: null };
@@ -74,13 +72,8 @@ export const register = async (
 };
 
 export const logout = () => {
-  console.log(Cookies.get("access_token"));
-  console.log(Cookies.get("refresh_token"));
   Cookies.remove("access_token");
   Cookies.remove("refresh_token");
-  console.log(Cookies.get("access_token"));
-  console.log(Cookies.get("refresh_token"));
-  console.log("/");
   // setAuthUser(null);
   useAuthStore.getState().setUser(null);
 };
@@ -137,7 +130,6 @@ export const getRefreshToken = async () => {
     }
     throw error; // Re-throw the error to propagate it if necessary
   }
-  console.log(response);
   return response.data;
 };
 
