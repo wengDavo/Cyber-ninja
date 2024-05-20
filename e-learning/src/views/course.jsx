@@ -26,7 +26,6 @@ const Course = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const user = useAuthStore((state) => state.user());
   const [error, setError] = useState(null); // Define error state
-  // console.log(user)
 
   const { id } = useParams();
 
@@ -36,7 +35,6 @@ const Course = () => {
         const response = await api2.get(`/course/${id || selectedCourseId}`);
         setCourse(response.data);
         setLoading(false);
-        // console.log(course);
       } catch (error) {
         if (error.response) {
           // Request made but the server responded with an error
@@ -62,16 +60,11 @@ const Course = () => {
   };
 
   const checkEnroll = (courseId) => {
-    // fetchAndSetProfile();
-    // console.log(user);
+    fetchAndSetProfile();
     // Ensure user and user.courses_enlisted are defined
     if (!user || !user.courses_enlisted) {
-      console.log("ball");
       return false; // Return false if user or user.courses_enlisted is undefined
     }
-    // user.courses_enlisted.some(
-    //   (enlistedCourse) => console.log(enlistedCourse)
-    // );
 
     return user.courses_enlisted.some(
       (enlistedCourse) => enlistedCourse.id === courseId
@@ -82,14 +75,12 @@ const Course = () => {
     if (!isLoggedIn()) {
       navigate("/login");
     } else {
-      console.log("click");
       handleLessonClick(lessonId);
     }
   };
 
   const handleLessonClick = async (lessonId) => {
     try {
-      console.log("aiit");
       const response = await api.get(`lesson/${lessonId}/`);
       // Handle the response as needed, e.g., show lesson content
       console.log(response.data);
@@ -100,7 +91,7 @@ const Course = () => {
           setError("No Lesson matches the given query.");
         } else if (error.response.status === 403) {
           setError("You must be enrolled in this course to access the lesson.");
-          console.log(error)
+          console.log(error);
         } else {
           setError("An error occurred while fetching the lesson.");
         }
@@ -109,12 +100,6 @@ const Course = () => {
       }
     }
   };
-
-  // const [isLister, user] = useAuthStore((state) => [
-  //   state.isLister,
-  //   state.user,
-  // ]);
-  // console.log(isLister())
 
   return (
     <body className="p-2 space-y-4 md:p-4">

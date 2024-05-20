@@ -35,13 +35,9 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log("ok");
     const { error } = await login(email, password);
-    console.log(email);
-    console.log(password);
     if (error) {
       // alert(error);
-      console.log("ok");
       if (error.message === "Network Error") {
         console.log(error.message);
         setError(error.message);
@@ -50,7 +46,6 @@ const Login = () => {
         setError(error.response.data.detail);
       }
     } else {
-      console.log("ok");
       navigate("/dashboard");
       resetForm();
     }

@@ -53,13 +53,6 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUserType(1);
-    console.log(first_name);
-    console.log(last_name);
-    console.log(email);
-    console.log(username);
-    console.log(password);
-    console.log(password2);
-    console.log(user_type);
 
     if (password === password2) {
       setUserType(1);
@@ -83,7 +76,6 @@ function Register() {
       // alert(error);
       console.log(error);
       if (error.message === "Network Error") {
-        console.log(error.message);
         setError(error.message);
       } else {
         for (const field in error.response.data) {

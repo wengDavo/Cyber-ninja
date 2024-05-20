@@ -25,11 +25,9 @@ const Courses = () => {
         // await api.get("course/").then((response) => {
         //   // Handle response data
         //   setCourses(response.data);
-        //   console.log(courses);
         // });
         const response = await api.get("course/");
         setCourses(response.data);
-        console.log(response.data);
       } catch (error) {
         if (error.response) {
           // Request made but the server responded with an error
