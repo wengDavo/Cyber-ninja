@@ -25,6 +25,7 @@ const Course = () => {
   const navigate = useNavigate();
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const user = useAuthStore((state) => state.user());
+  const [error, setError] = useState(null); // Define error state
   // console.log(user)
 
   const { id } = useParams();
@@ -40,10 +41,12 @@ const Course = () => {
         if (error.response) {
           // Request made but the server responded with an error
           console.log(error.response);
-        } else if (error.request) {
-          // Request made but no response is received from the server.
-          console.log(error.request);
-        } else {
+        }
+        // else if (error.request) {
+        //   // Request made but no response is received from the server.
+        //   console.log(error.request);
+        // }
+        else {
           // Error occurred while setting up the request
           console.log("Error", error.message);
         }
@@ -63,7 +66,7 @@ const Course = () => {
     // console.log(user);
     // Ensure user and user.courses_enlisted are defined
     if (!user || !user.courses_enlisted) {
-      console.log("ball")
+      console.log("ball");
       return false; // Return false if user or user.courses_enlisted is undefined
     }
     // user.courses_enlisted.some(
@@ -79,25 +82,30 @@ const Course = () => {
     if (!isLoggedIn()) {
       navigate("/login");
     } else {
-      console.log('click')
+      console.log("click");
       handleLessonClick(lessonId);
     }
   };
 
   const handleLessonClick = async (lessonId) => {
     try {
-      console.log("aiit")
+      console.log("aiit");
       const response = await api.get(`lesson/${lessonId}/`);
       // Handle the response as needed, e.g., show lesson content
       console.log(response.data);
       setSelectedLessonId(lessonId);
     } catch (error) {
-      if (error.response.status === 403) {
-        console.log(error);
-        // Handle forbidden response, e.g., redirect to a payment page or show an error message
-        navigate("/pricing");
+      if (error.response) {
+        if (error.response.status === 404) {
+          setError("No Lesson matches the given query.");
+        } else if (error.response.status === 403) {
+          setError("You must be enrolled in this course to access the lesson.");
+          console.log(error)
+        } else {
+          setError("An error occurred while fetching the lesson.");
+        }
       } else {
-        console.log(error);
+        setError("An error occurred while fetching the lesson.");
       }
     }
   };

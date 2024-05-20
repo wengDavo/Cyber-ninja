@@ -11,7 +11,7 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const setUser = useAuthStore((state) => state.setUser);
   const user = useAuthStore((state) => state.user());
   const [err, setErr] = useState(null); // Define error state
-  fetchAndSetProfile();
+  // fetchAndSetProfile();
 
   // console.log(user.paid);
 

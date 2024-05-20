@@ -9,20 +9,23 @@ export const fetchAndSetProfile = async () => {
 
   try {
     const response = await api.get("profile/");
+    console.log(response.data)
     const profile = response.data;
     setUser(profile);
   } catch (error) {
     if (error.message === "Network Error") {
-      console.log(error.message);
+      // console.log(error.message);
       setError(error.message);
     } else {
-      for (const field in error.response.data) {
-        if (error.response.data.hasOwnProperty(field)) {
-          // Log the error messages for each field
-          console.log(`${field}: ${error.response.data[field]}`);
-          setError(error?.response?.data || {});
-        }
-      }
+      // for (const field in error.response.data) {
+      //   if (error.response.data.hasOwnProperty(field)) {
+      //     // Log the error messages for each field
+      //     console.log(error);
+      //     console.log(`${field}: ${error.response.data[field]}`);
+      //     setError(error?.response?.data || {});
+      //   }
+      // }
+      console.log(error);
     }
   }
 };

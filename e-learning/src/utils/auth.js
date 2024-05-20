@@ -120,11 +120,33 @@ export const setAuthUser = (access_token, refresh_token) => {
 };
 
 export const getRefreshToken = async () => {
-  const refresh_token = Cookies.get("refresh_token");
-  const response = await axios.post("token/refresh/", {
-    refresh: refresh_token,
-  });
+  try {
+    const refresh_token = Cookies.get("refresh_token");
+    const response = await axios.post("token/refresh/", {
+      refresh: refresh_token,
+    });
+  } catch (error) {
+    if (error.response && error.message === "Request failed with status code 401") {
+      // Handle the blacklisted token scenario
+      console.error("Refresh token is blacklisted:", error.response.data);
+      // Perform any action you need to take when the token is blacklisted, such as logging out the user
+      handleBlacklistedToken();
+    } else {
+      // Handle other errors
+      console.error("Error refreshing token:", error);
+    }
+    throw error; // Re-throw the error to propagate it if necessary
+  }
+  console.log(response);
   return response.data;
+};
+
+const handleBlacklistedToken = () => {
+  // Clear any tokens or user data
+  Cookies.remove("refresh_token");
+  Cookies.remove("access_token");
+  // Redirect to login page or show a message to the user
+  window.location.href = "/login"; // Or any other logic to handle the user session
 };
 
 export const isAccessTokenExpired = (accessToken) => {
