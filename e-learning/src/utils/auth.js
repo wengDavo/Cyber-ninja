@@ -2,8 +2,6 @@ import { useAuthStore } from "../store/auth";
 import axios from "./axios";
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
-import useProfileUpdater from "../utils/profile";
-
 // const api = useAxios();
 // export const fetchProfile = async () => {
 //   try {
@@ -16,7 +14,6 @@ import useProfileUpdater from "../utils/profile";
 // };
 
 export const login = async (email, password) => {
-  const { fetchAndSetProfile } = useProfileUpdater();
   try {
     const { data, status } = await axios.post("token/", {
       email,
@@ -26,11 +23,6 @@ export const login = async (email, password) => {
     if (status === 200) {
       setAuthUser(data.access, data.refresh);
       // Fetch profile after successful login
-      const profile = await fetchAndSetProfile();
-      if (profile) {
-        useAuthStore.getState().setUser(profile);
-      }
-      console.log("log");
     }
     return { data, error: null };
   } catch (error) {

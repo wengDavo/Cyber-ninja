@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
+import useProfileUpdater from "../utils/profile";
+
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import eye from "../components/assets/icons/eye.svg";
@@ -17,6 +19,7 @@ const Login = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null); // Define error state
+  const { fetchAndSetProfile } = useProfileUpdater();
 
   useEffect(() => {
     if (isLoggedIn()) {
@@ -46,6 +49,11 @@ const Login = () => {
         setError(error.response.data.detail);
       }
     } else {
+      const profile = await fetchAndSetProfile();
+      if (profile) {
+        useAuthStore.getState().setUser(profile);
+      }
+      console.log("log");
       navigate("/dashboard");
       resetForm();
     }
