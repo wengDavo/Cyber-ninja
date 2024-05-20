@@ -11,15 +11,28 @@ import VideoSection from "../components/VideoSection";
 import MyClasses from "../components/MyClasses";
 import UserNavbar from "../components/UserNavbar";
 import useAxios from "../utils/useAxios";
-import { fetchAndSetProfile } from "../utils/profile";
+import useProfileUpdater from "../utils/profile";
 
 const Dashboard = () => {
   const [profile, setProfile] = useState("");
-  fetchAndSetProfile();
+  const { fetchAndSetProfile } = useProfileUpdater();
   const [date, setDate] = useState(new Date());
   const onChange = (nextDate) => setDate(nextDate);
 
   const user = useAuthStore((state) => state.user());
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await fetchAndSetProfile();
+        console.log("update profile done!");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+    fetchData();
+  }, [fetchAndSetProfile])
   // const [loading, setLoading] = useState(true); // Add loading state
   // const [isLoggedIn, user] = useAuthStore((state) => [
   //   state.isLoggedIn,

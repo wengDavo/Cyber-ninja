@@ -11,7 +11,7 @@ import Lessons from "../components/Lessons";
 import Footer from "../components/Footer";
 import axios from "axios";
 import useAxios from "../utils/useAxios";
-import { fetchAndSetProfile } from "../utils/profile";
+import useProfileUpdater from "../utils/profile";
 
 import NavBar from "../components/Navbar";
 
@@ -26,6 +26,7 @@ const Course = () => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
   const user = useAuthStore((state) => state.user());
   const [error, setError] = useState(null); // Define error state
+  const { fetchAndSetProfile } = useProfileUpdater();
 
   const { id } = useParams();
 
@@ -50,17 +51,26 @@ const Course = () => {
         }
       }
     };
-
+    const fetchData = async () => {
+      try {
+        await fetchAndSetProfile();
+        console.log("update profile done!");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
+    fetchData();
     fetchCourse();
     // checkEnroll(course.id);
-  }, [api, navigate, selectedCourseId]);
+  }, [api, navigate, selectedCourseId, fetchAndSetProfile]);
 
   const handleEnroll = (data) => {
     console.log("Enrolled successfully:", data);
   };
 
   const checkEnroll = (courseId) => {
-    fetchAndSetProfile();
+    // fetchAndSetProfile();
     // Ensure user and user.courses_enlisted are defined
     if (!user || !user.courses_enlisted) {
       return false; // Return false if user or user.courses_enlisted is undefined
