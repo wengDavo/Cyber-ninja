@@ -1,7 +1,11 @@
 import clock from "../components/assets/icons/clock.svg";
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Lessons = ({ course }) => {
+const Lessons = ({ course, onSelectLesson }) => {
+  const navigate = useNavigate();
+
+  
   return (
     <section
       className="lessons  grid gap-4 bg-white-97 p-5 md:grid-cols-2"
@@ -19,24 +23,25 @@ const Lessons = ({ course }) => {
             {curriculum.title}
           </p>
           <div className="topiccs  grid gap-y-4 ">
-            {curriculum.lessons.map((lesson, index) => (
+            {curriculum.lessons.map((lesson, lessonIndex) => (
               <div
                 className="group topicc border border-white-95 rounded-regular flex flex-col gap-y-8 p-5 md:flex-row md:justify-between md:items-center hover:border hover:border-orange-80 hover:shadow-md"
-                key={index}
+                key={lessonIndex}
+                onClick={() => onSelectLesson(lesson.id)} // Update the state with the selected lesson ID
               >
                 <div>
                   <p className="topicc--title  m-auto leading-6 font-medium">
                     {lesson.title}
                   </p>
                   <p className="topicc--number m-auto text-sm text-grey-35 border border-white-97 p-1">
-                    Lesson {index + 1}
+                    Lesson {lessonIndex + 1}
                   </p>
                 </div>
                 <p className="topicc--duration  bg-white-95 text-grey-35 mw-fit p-3 md:rounded-regular md:ml-auto group-hover:bg-orange-80 flex justify-between">
                   <i>
                     <img src={clock} alt="" />
                   </i>
-                  <span>45 Minutes</span>
+                  <span>{lesson.duration}</span>
                 </p>
               </div>
             ))}

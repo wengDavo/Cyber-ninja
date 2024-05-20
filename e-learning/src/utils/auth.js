@@ -2,6 +2,19 @@ import { useAuthStore } from "../store/auth";
 import axios from "./axios";
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
+import useAxios from "./useAxios";
+
+export const fetchProfile = async () => {
+  const api = useAxios();
+  try {
+    const response = await api.get("profile/");
+    // console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch profile", error);
+    return null;
+  }
+};
 
 export const login = async (email, password) => {
   try {
@@ -12,6 +25,11 @@ export const login = async (email, password) => {
 
     if (status === 200) {
       setAuthUser(data.access, data.refresh);
+      // Fetch profile after successful login
+      const profile = await fetchProfile();
+      if (profile) {
+        useAuthStore.getState().setUser(profile);
+      }
       console.log(data);
       console.log("log");
     }
@@ -56,12 +74,12 @@ export const register = async (
 };
 
 export const logout = () => {
-  console.log(Cookies.get('access_token'));
-  console.log(Cookies.get('refresh_token'));
+  console.log(Cookies.get("access_token"));
+  console.log(Cookies.get("refresh_token"));
   Cookies.remove("access_token");
   Cookies.remove("refresh_token");
-  console.log(Cookies.get('access_token'));
-  console.log(Cookies.get('refresh_token'));
+  console.log(Cookies.get("access_token"));
+  console.log(Cookies.get("refresh_token"));
   console.log("/");
   // setAuthUser(null);
   useAuthStore.getState().setUser(null);
@@ -102,11 +120,33 @@ export const setAuthUser = (access_token, refresh_token) => {
 };
 
 export const getRefreshToken = async () => {
-  const refresh_token = Cookies.get("refresh_token");
-  const response = await axios.post("token/refresh/", {
-    refresh: refresh_token,
-  });
+  try {
+    const refresh_token = Cookies.get("refresh_token");
+    const response = await axios.post("token/refresh/", {
+      refresh: refresh_token,
+    });
+  } catch (error) {
+    if (error.response && error.message === "Request failed with status code 401") {
+      // Handle the blacklisted token scenario
+      console.error("Refresh token is blacklisted:", error.response.data);
+      // Perform any action you need to take when the token is blacklisted, such as logging out the user
+      handleBlacklistedToken();
+    } else {
+      // Handle other errors
+      console.error("Error refreshing token:", error);
+    }
+    throw error; // Re-throw the error to propagate it if necessary
+  }
+  console.log(response);
   return response.data;
+};
+
+const handleBlacklistedToken = () => {
+  // Clear any tokens or user data
+  Cookies.remove("refresh_token");
+  Cookies.remove("access_token");
+  // Redirect to login page or show a message to the user
+  window.location.href = "/login"; // Or any other logic to handle the user session
 };
 
 export const isAccessTokenExpired = (accessToken) => {
