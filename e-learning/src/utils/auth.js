@@ -111,6 +111,7 @@ export const getRefreshToken = async () => {
     const response = await axios.post("token/refresh/", {
       refresh: refresh_token,
     });
+    return response.data;
   } catch (error) {
     if (error.response && error.message === "Request failed with status code 401") {
       // Handle the blacklisted token scenario
@@ -123,7 +124,6 @@ export const getRefreshToken = async () => {
     }
     throw error; // Re-throw the error to propagate it if necessary
   }
-  return response.data;
 };
 
 const handleBlacklistedToken = () => {
