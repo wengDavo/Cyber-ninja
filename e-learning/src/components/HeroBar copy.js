@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "../utils/useAxios";
 import { useAuthStore } from "../store/auth";
-import { fetchAndSetProfile } from "../utils/profile";
+import useProfileUpdater from "../utils/profile";
 
 const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
@@ -11,7 +11,7 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const setUser = useAuthStore((state) => state.setUser);
   const user = useAuthStore((state) => state.user());
   const [err, setErr] = useState(null); // Define error state
-  fetchAndSetProfile();
+  const { fetchAndSetProfile } = useProfileUpdater();
 
   const handleEnroll = async () => {
     if (!isLoggedIn()) {
@@ -21,14 +21,12 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
         const response = await api.post(`enroll/`, { course_id: course.id });
         if (response.status === 200) {
           alert("You have successfully enrolled in the course.");
-
-          // Update the user profile in the state with the new enrollment
-          // const updatedUser = {
-          //   ...user,
-          //   courses_enlisted: [...user.courses_enlisted, response.data.course],
-          // };
-          // setUser(updatedUser);
-          fetchAndSetProfile();
+          try {
+            await fetchAndSetProfile();
+            console.log("update profile done!");
+          } catch (error) {
+            console.log(error);
+          }
           console.log("Enrolled successfully:", response.data);
         }
       } catch (error) {
