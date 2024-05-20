@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="bg-white-99 text-center py-8 md:w-[80%] mx-auto space-y-6">
+    <section className="bg-white-97 text-center py-8 md:w-[80%] mx-auto space-y-6">
       <article className="h-20 flex items-center p-4 gap-4 font-semiBold text-grey-10 [word-sapcing:0.1rem] border-white-95 border-solid border-[1px] relative md:font-bold md:text-4xl md:w-fit md:mx-auto bg-abs-white rounded-regular">
         <img
           src={threeLines}
