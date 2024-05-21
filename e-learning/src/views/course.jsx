@@ -60,7 +60,7 @@ const Course = () => {
         console.log(error);
       }
     };
-    
+
     fetchData();
     fetchCourse();
     // checkEnroll(course.id);
@@ -124,7 +124,10 @@ const Course = () => {
               onEnroll={handleEnroll}
               isEnrolled={checkEnroll}
             />
-            <Video selectedLessonId={selectedLessonId} lesson={selectedLesson} />{" "}
+            <Video
+              selectedLessonId={selectedLessonId}
+              lesson={selectedLesson}
+            />{" "}
             {/* Pass selectedLessonId as prop */}
             <Lessons course={course} onSelectLesson={handleLessonSelect} />{" "}
             {/* Pass setSelectedLessonId as prop */}

@@ -6,7 +6,7 @@ const useProfileUpdater = () => {
   const api = useAxios();
   const setUser = useAuthStore.getState().setUser;
   const [error, setError] = useState(null); // Define error state
-  
+
   const fetchAndSetProfile = async () => {
     try {
       const response = await api.get("profile/");
