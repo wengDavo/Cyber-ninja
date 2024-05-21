@@ -19,6 +19,7 @@ const Course = () => {
   const [course, setCourse] = useState("");
   const [loading, setLoading] = useState(true); // Add loading state
   const [selectedLessonId, setSelectedLessonId] = useState(null); // State to track selected lesson ID
+  const [selectedLesson, setSelectedLesson] = useState([]); // State to track selected lesson ID
   const { selectedCourseId } = useContext(CourseContext);
   const api = useAxios();
   const api2 = anyAxios();
@@ -94,6 +95,7 @@ const Course = () => {
       const response = await api.get(`lesson/${lessonId}/`);
       // Handle the response as needed, e.g., show lesson content
       console.log(response.data);
+      setSelectedLesson(response.data);
       setSelectedLessonId(lessonId);
     } catch (error) {
       if (error.response) {
@@ -122,7 +124,7 @@ const Course = () => {
               onEnroll={handleEnroll}
               isEnrolled={checkEnroll}
             />
-            <Video course={course} selectedLessonId={selectedLessonId} />{" "}
+            <Video selectedLessonId={selectedLessonId} lesson={selectedLesson} />{" "}
             {/* Pass selectedLessonId as prop */}
             <Lessons course={course} onSelectLesson={handleLessonSelect} />{" "}
             {/* Pass setSelectedLessonId as prop */}
