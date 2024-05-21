@@ -113,7 +113,10 @@ export const getRefreshToken = async () => {
     });
     return response.data;
   } catch (error) {
-    if (error.response && error.message === "Request failed with status code 401") {
+    if (
+      error.response &&
+      error.message === "Request failed with status code 401"
+    ) {
       // Handle the blacklisted token scenario
       console.error("Refresh token is blacklisted:", error.response.data);
       // Perform any action you need to take when the token is blacklisted, such as logging out the user
