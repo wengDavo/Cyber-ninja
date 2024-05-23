@@ -4,6 +4,16 @@ import CourseContext from "../layouts/CourseContext";
 import anyAxios from "../utils/anyAxios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthStore } from "../store/auth";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LoadingSpinner from "../components/LoadingSpinner";
 import Landing from "../components/Landing";
 import HeroBar from "../components/HeroBar copy";
 import Video from "../components/Video";
@@ -40,7 +50,9 @@ const Course = () => {
       } catch (error) {
         if (error.response) {
           // Request made but the server responded with an error
-          console.log(error.response);
+          toast.error(error.response, {
+            autoClose: 3000,
+          });
         }
         // else if (error.request) {
         //   // Request made but no response is received from the server.
@@ -48,14 +60,15 @@ const Course = () => {
         // }
         else {
           // Error occurred while setting up the request
-          console.log("Error", error.message);
+          toast.error(error.message, {
+            autoClose: 3000,
+          });
         }
       }
     };
     const fetchData = async () => {
       try {
         await fetchAndSetProfile();
-        console.log("update profile done!");
       } catch (error) {
         console.log(error);
       }
@@ -94,20 +107,34 @@ const Course = () => {
     try {
       const response = await api.get(`lesson/${lessonId}/`);
       // Handle the response as needed, e.g., show lesson content
-      console.log(response.data);
       setSelectedLesson(response.data);
       setSelectedLessonId(lessonId);
     } catch (error) {
+      toast.dismiss();
       if (error.response) {
         if (error.response.status === 404) {
+          toast.error("Failed to login. Please try again later.", {
+            autoClose: 3000,
+          });
           setError("No Lesson matches the given query.");
         } else if (error.response.status === 403) {
+          toast.error(
+            "You must be enrolled in this course to access the lesson.",
+            {
+              autoClose: 3000,
+            }
+          );
           setError("You must be enrolled in this course to access the lesson.");
-          console.log(error);
         } else {
+          toast.error("An error occurred while fetching the lesson.", {
+            autoClose: 3000,
+          });
           setError("An error occurred while fetching the lesson.");
         }
       } else {
+        toast.error("An error occurred while fetching the lesson.", {
+          autoClose: 3000,
+        });
         setError("An error occurred while fetching the lesson.");
       }
     }
@@ -117,17 +144,25 @@ const Course = () => {
     <body className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main id="main">
-        {!loading && (
+        {loading ? (
+          <LoadingSpinner />
+        ) : (
           <>
             <HeroBar
               course={course}
               onEnroll={handleEnroll}
               isEnrolled={checkEnroll}
             />
-            <Video
-              selectedLessonId={selectedLessonId}
-              lesson={selectedLesson}
-            />{" "}
+            {!selectedLessonId ? (
+              null
+            ) : (
+              <>
+                <Video
+                  selectedLessonId={selectedLessonId}
+                  lesson={selectedLesson}
+                />{" "}
+              </>
+            )}
             {/* Pass selectedLessonId as prop */}
             <Lessons course={course} onSelectLesson={handleLessonSelect} />{" "}
             {/* Pass setSelectedLessonId as prop */}

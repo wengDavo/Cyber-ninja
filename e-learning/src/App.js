@@ -1,4 +1,13 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom/dist";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Home from "./views/home";
 import MainWrapper from "./layouts/Mainwrapper";
 import Login from "./views/login";
@@ -19,6 +28,7 @@ function App() {
     <BrowserRouter>
       <CourseProvider>
         <MainWrapper>
+          <ToastContainer />
           <Routes>
             {/* <Route
               path="/private"

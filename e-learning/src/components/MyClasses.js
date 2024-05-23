@@ -5,7 +5,7 @@ import ClassesCards from "../components/ClassesCards";
 function MyClasses() {
   const user = useAuthStore((state) => state.user());
   const user_courses = user.courses_enlisted;
-  console.log(user_courses);
+
   return (
     <>
       <article className=" bg-orange-80 h-32 md:h-80 relative rounded-regular">

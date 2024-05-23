@@ -1,6 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { register } from "../utils/auth";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import eye from "../components/assets/icons/eye.svg";
@@ -58,9 +67,11 @@ function Register() {
       setUserType(1);
     } else {
       const error = "Passwords don't match";
-      console.log(error);
+
+      toast.error(error, {
+        autoClose: 3000,
+      });
     }
-    console.log(user_type);
     const { error } = await register(
       first_name,
       last_name,
@@ -72,17 +83,18 @@ function Register() {
       user_type
     );
     if (error) {
-      // alert(JSON.stringify(error));
-      // alert(error);
-      console.log(error);
       if (error.message === "Network Error") {
         setError(error.message);
+        toast.error(error.message, {
+          autoClose: 3000,
+        });
       } else {
         for (const field in error.response.data) {
           if (error.response.data.hasOwnProperty(field)) {
             // Log the error messages for each field
-            console.log(`${field}: ${error.response.data[field].join("  ")}`);
-            setError(error?.response?.data || {});
+            toast.error(error.response.data[field], {
+              autoClose: 3000,
+            });setError(error?.response?.data || {});
           }
         }
       }

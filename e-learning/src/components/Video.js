@@ -1,11 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 const Video = ({ selectedLessonId, lesson }) => {
-  // useEffect(() => {
-  //   if (selectedLessonId) {
-  //     // Load the video based on the selected lesson ID
-  //     console.log("Selected Lesson ID:", selectedLessonId);
-  //   }
-  // }, [selectedLessonId]);
 
   return (
     <section className="video p-3">

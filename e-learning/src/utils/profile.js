@@ -1,6 +1,15 @@
 import { useAuthStore } from "../store/auth";
 import { useEffect, useState } from "react";
 import useAxios from "../utils/useAxios";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const useProfileUpdater = () => {
   const api = useAxios();
@@ -13,8 +22,10 @@ const useProfileUpdater = () => {
       const profile = response.data;
       setUser(profile);
     } catch (error) {
-      if (error.message === "Network Error") {
-        console.log(error.message);
+      if (error.message === "Network Error") { 
+        toast.error(error.message, {
+          autoClose: 3000,
+        });
         // setError(error.message);
       } else {
         // for (const field in error.response.data) {
@@ -25,7 +36,9 @@ const useProfileUpdater = () => {
         //     setError(error?.response?.data || {});
         //   }
         // }
-        console.log(error);
+        toast.error(error, {
+          autoClose: 3000,
+        });;
       }
     }
   };

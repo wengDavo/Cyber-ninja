@@ -5,6 +5,15 @@ import { useNavigate } from "react-router-dom/dist";
 import useAxios from "../utils/useAxios";
 import { useAuthStore } from "../store/auth";
 import { jwtDecode } from "jwt-decode";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 
 const Logout = () => {
@@ -22,14 +31,23 @@ const Logout = () => {
         }
       } catch (error) {
         if (error.response) {
-          console.log(error.response);
+          toast.error(error.response, {
+            autoClose: 3000,
+          });
         } else if (error.request) {
-          console.log(error.request);
-        } else {
-          console.log("Error", error.message);
+          toast.error(error.request, {
+            autoClose: 3000,
+          });
+        } else {         
+          toast.error(error.message, {
+            autoClose: 3000,
+          });
         }
       } finally {
         logout();
+        toast.success("Successfully logged out!", {
+          autoClose: 3000,
+        });
         navigate("/");
         Cookies.remove("access_token");
         Cookies.remove("refresh_token");

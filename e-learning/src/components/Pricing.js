@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
-import  useAxios  from "../utils/useAxios";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
 import correct from "./assets/icons/correct.svg";
 import wrong from "./assets/icons/wrong.svg";
@@ -13,18 +22,16 @@ const Pricing = () => {
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
-  console.log(user)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         await fetchAndSetProfile();
-        console.log("update profile done!");
       } catch (error) {
         console.log(error);
       }
     };
-    
+
     fetchData();
   }, [fetchAndSetProfile]);
 
@@ -33,11 +40,12 @@ const Pricing = () => {
       const response = await api.post("subscribe/", {
         duration_months: duration,
       });
-      alert(response.data.detail);
+      toast.success(response.data.detail, { autoClose: 3000 });
       navigate("/courses");
     } catch (error) {
-      console.error("Error subscribing:", error);
-      alert("Failed to subscribe. Please try again.");
+      toast.success("Failed to subscribe. Please try again.", {
+        autoClose: 3000,
+      });
     }
   };
 
@@ -46,15 +54,18 @@ const Pricing = () => {
       const response = await api.post("extend_subscription/", {
         duration_months: duration,
       });
-      alert(response.data.detail);
+      toast.success(response.data.detail, { autoClose: 3000 });
       navigate("/courses");
     } catch (error) {
-      console.error("Error subscribing:", error);
-      alert("Failed to subscribe. Please try again.");
+      toast.success("Failed to extend subscription. Please try again.", {
+        autoClose: 3000,
+      })
     }
   };
 
-  const handleButtonClick = user?.paid ? handleExtendSubscribe : handleSubscribe;
+  const handleButtonClick = user?.paid
+    ? handleExtendSubscribe
+    : handleSubscribe;
 
   return (
     <section>
@@ -225,9 +236,9 @@ const Pricing = () => {
             <button
               className="bg-orange-50 p-3 text-abs-white rounded-regular"
               onClick={handleButtonClick}
-
             >
-              {user?.paid ? "Extend Subscription" : "Subscribe"} ({duration === 1 ? "1 Month" : "12 Months"})
+              {user?.paid ? "Extend Subscription" : "Subscribe"} (
+              {duration === 1 ? "1 Month" : "12 Months"})
             </button>
           </div>
         </article>
