@@ -1,7 +1,3 @@
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
-// import { faFax, faPhone, faLocationPin } from '@fortawesome/free-solid-svg-icons'
-
 import { Route, Routes, BrowserRouter } from "react-router-dom/dist";
 import Home from "./views/home";
 import MainWrapper from "./layouts/Mainwrapper";
