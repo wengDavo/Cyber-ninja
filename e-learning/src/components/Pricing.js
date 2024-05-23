@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
-import  useAxios  from "../utils/useAxios";
+import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
 import correct from "./assets/icons/correct.svg";
 import wrong from "./assets/icons/wrong.svg";
 import HeroBar from "./HeroBar";
+import { free, paid } from "./PricingFeatureData";
+import PricingFeature from "./PricingFeature";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
@@ -13,7 +15,7 @@ const Pricing = () => {
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
-  console.log(user)
+  console.log(user);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +26,7 @@ const Pricing = () => {
         console.log(error);
       }
     };
-    
+
     fetchData();
   }, [fetchAndSetProfile]);
 
@@ -54,7 +56,9 @@ const Pricing = () => {
     }
   };
 
-  const handleButtonClick = user?.paid ? handleExtendSubscribe : handleSubscribe;
+  const handleButtonClick = user?.paid
+    ? handleExtendSubscribe
+    : handleSubscribe;
 
   return (
     <section>
@@ -62,7 +66,7 @@ const Pricing = () => {
         <HeroBar
           title={"Our Pricing"}
           description={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, earum consequatur architecto labore vero recusandae adipisci libero id nostrum perspiciatis maiores magni ipsa ratione ex non voluptates! Dolorem, perferendis unde."
+            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. Explore our pricing plans below to find the perfect fit for you"
           }
         />
         <div className="pricing--btn-container h-fit w-fit mx-auto p-3 bg-abs-white border-[1px] border-solid border-white-95 flex gap-4 justify-evenly mb-5">
@@ -95,62 +99,9 @@ const Pricing = () => {
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            <figure className="--feature flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={wrong} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={wrong} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
+            {free.map((feature, idx) => {
+              return <PricingFeature key={idx} {...feature} />;
+            })}
             <button className="bg-orange-50 p-3 text-abs-white rounded-regular">
               Get Started
             </button>
@@ -166,68 +117,15 @@ const Pricing = () => {
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            <figure className="--feature flex flex-row justify-between p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
+            {paid.map((feature, idx) => {
+              return <PricingFeature key={idx} {...feature} />;
+            })}
             <button
               className="bg-orange-50 p-3 text-abs-white rounded-regular"
               onClick={handleButtonClick}
-
             >
-              {user?.paid ? "Extend Subscription" : "Subscribe"} ({duration === 1 ? "1 Month" : "12 Months"})
+              {user?.paid ? "Extend Subscription" : "Subscribe"} (
+              {duration === 1 ? "1 Month" : "12 Months"})
             </button>
           </div>
         </article>

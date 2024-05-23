@@ -24,11 +24,14 @@ const FAQS = () => {
                   className="group-open:rotate-0 rotate-45 transition-all duration-300"
                 />
               </figure>
-              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
+              <p className="w-[80%]">How do I sign up for an account?</p>
             </summary>
             <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
-              Absolutely! You can enroll in multiple courses simultaneously and
-              access them at your convenience.
+              To create an account, simply visit our website and click on the
+              "Sign Up" or "Get Started" button. Follow the prompts to enter
+              your email address, create a password, and complete the
+              registration process. Once registered, you'll have access to our
+              platform and can start exploring our courses immediately.
             </p>
           </details>
         </div>
@@ -42,11 +45,16 @@ const FAQS = () => {
                   className="group-open:rotate-0 rotate-45 transition-all duration-300"
                 />
               </figure>
-              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
+              <p className="w-[80%]">
+                Can I access my courses on multiple devices?
+              </p>
             </summary>
             <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
-              Absolutely! You can enroll in multiple courses simultaneously and
-              access them at your convenience.
+              Yes, you can access your courses on multiple devices such as
+              laptops, desktop computers, tablets, and smartphones. Simply log
+              in to your account on the device of your choice, and your progress
+              and course history will sync across all devices automatically for
+              seamless learning anytime, anywhere.
             </p>
           </details>
         </div>
@@ -60,11 +68,16 @@ const FAQS = () => {
                   className="group-open:rotate-0 rotate-45 transition-all duration-300"
                 />
               </figure>
-              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
+              <p className="w-[80%]">
+                Are certificates of completion provided for courses?
+              </p>
             </summary>
             <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
-              Absolutely! You can enroll in multiple courses simultaneously and
-              access them at your convenience.
+              Yes, upon successfully completing a course, you will receive a
+              certificate of completion to showcase your achievement.
+              Certificates can be downloaded or shared directly from your
+              account. Please note that certificates are available for certain
+              courses and may have specific completion criteria.
             </p>
           </details>
         </div>
@@ -78,15 +91,20 @@ const FAQS = () => {
                   className="group-open:rotate-0 rotate-45 transition-all duration-300"
                 />
               </figure>
-              <p className="w-[80%]">Can I enroll multiple courses at once?</p>
+              <p className="w-[80%]">
+                How can I get help if I encounter any issues or have questions?
+              </p>
             </summary>
             <p className="pl-1  mt-4 w-[60%] border-t border-t-white-90 ">
-              Absolutely! You can enroll in multiple courses simultaneously and
-              access them at your convenience.
+              If you encounter any issues or have questions about our platform,
+              courses, or account, our dedicated support team is here to assist
+              you. You can reach out to us through the "Contact Us" page on our
+              website or email us directly at our contact page. We strive to
+              provide timely and helpful assistance to ensure you have a smooth
+              learning experience.
             </p>
           </details>
         </div>
-        
       </article>
     </section>
   );
