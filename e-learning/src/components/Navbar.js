@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
+import close from "./assets/icons/close.svg";
+import Backdrop from "./Backdrop";
+
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
 import logout from "../components/assets/icons/logout.svg";
@@ -100,31 +103,32 @@ export const LoggedOutView = ({ title }) => {
 
 function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
   return (
-    <menu className="fixed bg-white-90 right-0 w-[60%] top-0 bottom-0 z-10 rounded-regular">
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/courses">Courses</Link>
-      </li>
+    <Backdrop onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <menu className="z-20 bg-abs-white h-full w-[50%] ml-auto">
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/courses">Courses</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/about">About Us</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/pricing">Pricing</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/contact">Contact</Link>
+        </li>
+        <img
+          src={close}
+          alt=""
+          className="h-6 absolute top-3 right-1"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
+      </menu>
+    </Backdrop>
 
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/about">About Us</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/pricing">Pricing</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/contact">Contact</Link>
-      </li>
-      <button
-        className="absolute top-3 right-1"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <div className="h-[3px] w-6 bg-grey-20 mb-1 rounded-regular rotate-45 translate-y-2"></div>
-        <div className="h-[3px] w-6 bg-grey-70 mb-1 rounded-regular -rotate-45"></div>
-      </button>
-    </menu>
   );
 }
 

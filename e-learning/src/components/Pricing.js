@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
 import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
-import correct from "./assets/icons/correct.svg";
-import wrong from "./assets/icons/wrong.svg";
 import HeroBar from "./HeroBar";
 import { free, paid } from "./PricingFeatureData";
 import PricingFeature from "./PricingFeature";
