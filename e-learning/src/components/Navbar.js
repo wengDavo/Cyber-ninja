@@ -11,26 +11,10 @@ import { useAuthStore } from "../store/auth";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isWideScreen, setIsWideScreen] = useState(true);
   const [isLoggedIn, user] = useAuthStore((state) => [
     state.isLoggedIn,
     state.user,
   ]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 700px)");
-    setIsWideScreen(mediaQuery.matches);
-
-    const handleResize = () => {
-      setIsWideScreen(mediaQuery.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleResize);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleResize);
-    };
-  }, []);
 
   return (
     <header className="text-abs-white ">
