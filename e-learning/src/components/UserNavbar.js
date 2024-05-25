@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import logout from "../components/assets/icons/logout.svg";
 import search from "../components/assets/icons/search-normal.svg";
 
@@ -15,20 +24,21 @@ function UserNavbar() {
   const cancelSubscription = async () => {
     try {
       const response = await api.post("unsubscribe/");
-      alert(response.data.detail);
+      toast.success(response.data.detail, {
+        autoClose: 3000,
+      });
       navigate("/courses");
     } catch (error) {
-      console.error("Error unsubscribing:", error);
-      alert("Failed to unsubscribe. Please try again.");
+      toast.error("Failed to unsubscribe. Please try again later.", {
+        autoClose: 3000,
+      });
     }
   };
   const redirectSubscribe = () => {
-    navigate("/pricing")
-  }
+    navigate("/pricing");
+  };
 
-  const handleButtonClick = user?.paid
-    ? cancelSubscription
-    : redirectSubscribe;
+  const handleButtonClick = user?.paid ? cancelSubscription : redirectSubscribe;
   return (
     <>
       <form action="" className="grow">

@@ -1,6 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
+
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
 import HeroBar from "./HeroBar";
@@ -21,7 +31,6 @@ const Pricing = () => {
     const fetchData = async () => {
       try {
         await fetchAndSetProfile();
-        console.log("update profile done!");
       } catch (error) {
         console.log(error);
       }
@@ -35,11 +44,12 @@ const Pricing = () => {
       const response = await api.post("subscribe/", {
         duration_months: duration,
       });
-      alert(response.data.detail);
+      toast.success(response.data.detail, { autoClose: 3000 });
       navigate("/courses");
     } catch (error) {
-      console.error("Error subscribing:", error);
-      alert("Failed to subscribe. Please try again.");
+      toast.success("Failed to subscribe. Please try again.", {
+        autoClose: 3000,
+      });
     }
   };
 
@@ -48,11 +58,12 @@ const Pricing = () => {
       const response = await api.post("extend_subscription/", {
         duration_months: duration,
       });
-      alert(response.data.detail);
+      toast.success(response.data.detail, { autoClose: 3000 });
       navigate("/courses");
     } catch (error) {
-      console.error("Error subscribing:", error);
-      alert("Failed to subscribe. Please try again.");
+      toast.success("Failed to extend subscription. Please try again.", {
+        autoClose: 3000,
+      })
     }
   };
 
@@ -146,9 +157,11 @@ const Pricing = () => {
               className="bg-orange-50 p-3 text-abs-white rounded-regular"
               onClick={handleButtonClick}
             >
+
               {/* {user?.paid ? "Extend Subscription" : "Subscribe"} (
               {duration === 1 ? "1 Month" : "12 Months"}) */}
               Subscribe {pricing.duration}
+
             </button>
           </div>
         </article>

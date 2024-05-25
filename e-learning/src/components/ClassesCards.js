@@ -1,13 +1,9 @@
-// import { useAuthStore } from "../store/auth";
 import timer from "../components/assets/icons/timer.svg";
 import stickynote from "../components/assets/icons/stickynote.svg";
 import profile from "../components/assets/icons/profile.svg";
 
 function ClassesCards({ course }) {
-  // const user = useAuthStore((state) => state.user());
-  // const user_courses = user.courses_enlisted;
-  console.log(course);
-  // console.log(key)
+
   return (
     <section>
       {/* {user_courses.map((course) => ( */}

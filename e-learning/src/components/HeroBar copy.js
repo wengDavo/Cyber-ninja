@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useAxios from "../utils/useAxios";
 import { useAuthStore } from "../store/auth";
 import useProfileUpdater from "../utils/profile";
 
 const HeroBar = ({ course, onEnroll, isEnrolled }) => {
   const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+  const [loading, setLoading] = useState(true); // Add loading state
   const api = useAxios();
   const navigate = useNavigate();
   const setUser = useAuthStore((state) => state.setUser);
@@ -20,26 +30,29 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
       try {
         const response = await api.post(`enroll/`, { course_id: course.id });
         if (response.status === 200) {
-          alert("You have successfully enrolled in the course.");
+          toast.success("You have successfully enrolled in the course.", {
+            autoClose: 3000,
+          });
           try {
             await fetchAndSetProfile();
-            console.log("update profile done!");
           } catch (error) {
             console.log(error);
           }
-          console.log("Enrolled successfully:", response.data);
         }
       } catch (error) {
         if (error.message === "Network Error") {
-          console.log(error.message);
           setErr(error.message);
+          toast.error(error.message, {
+            autoClose: 3000,
+          });
         } else {
           for (const field in error.response.data) {
             if (error.response.data.hasOwnProperty(field)) {
               // Log the error messages for each field
-              console.log(`${field}: ${error.response.data[field]}`);
               setErr(error?.response?.data || {});
-              console.log(err);
+              toast.error(error.response.data[field], {
+                autoClose: 3000,
+              });
               if (err.unpaid) {
                 navigate("/pricing");
               }

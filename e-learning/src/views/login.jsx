@@ -4,6 +4,15 @@ import { login } from "../utils/auth";
 import { useNavigate } from "react-router-dom/dist";
 import { useAuthStore } from "../store/auth";
 import useProfileUpdater from "../utils/profile";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
@@ -38,24 +47,33 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const { error } = await login(email, password);
-    if (error) {
-      // alert(error);
-      if (error.message === "Network Error") {
-        console.log(error.message);
-        setError(error.message);
+    try {
+      toast.info("Logging in...");
+      const { error } = await login(email, password);
+      if (error) {
+        // alert(error);
+        if (error.message === "Network Error") {
+          setError(error.message);
+          toast.error("Network error. Please try again.", { autoClose: 3000 });
+        } else {
+          setError(error.response.data.detail);
+          toast.error(error.response.data.detail, { autoClose: 3000 });
+        }
       } else {
-        console.log(error.response.data.detail);
-        setError(error.response.data.detail);
+        const profile = await fetchAndSetProfile();
+        if (profile) {
+          useAuthStore.getState().setUser(profile);
+        }
+        toast.dismiss();
+        toast.success("Login Successful..", { autoClose: 3000 });
+        navigate("/dashboard");
+        resetForm();
       }
-    } else {
-      const profile = await fetchAndSetProfile();
-      if (profile) {
-        useAuthStore.getState().setUser(profile);
-      }
-      console.log("log");
-      navigate("/dashboard");
-      resetForm();
+    } catch (error) {
+      toast.dismiss();
+      toast.error("Failed to login. Please try again later.", {
+        autoClose: 3000,
+      });
     }
   };
 
