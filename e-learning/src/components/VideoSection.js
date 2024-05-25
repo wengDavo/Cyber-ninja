@@ -1,8 +1,16 @@
-
+import cyberVideo from "./assets/videos/hero-cyber-video.mp4";
 const CompanyLogos = () => {
   return (
-    <section className="bg-orange-95 h-32 md:h-60">
-      <video src=""></video>
+    <section className="">
+      <video
+        src={cyberVideo}
+        autoPlay="true"
+        controls
+        className="md:w-[80%] md:mx-auto"
+        controlsList="nodownload"
+        preload="metadata"
+        muted
+      />
     </section>
   );
 };

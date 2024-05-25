@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
+import close from "./assets/icons/close.svg";
+import Backdrop from "./Backdrop";
+
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
 import logout from "../components/assets/icons/logout.svg";
@@ -8,26 +11,10 @@ import { useAuthStore } from "../store/auth";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isWideScreen, setIsWideScreen] = useState(true);
   const [isLoggedIn, user] = useAuthStore((state) => [
     state.isLoggedIn,
     state.user,
   ]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 700px)");
-    setIsWideScreen(mediaQuery.matches);
-
-    const handleResize = () => {
-      setIsWideScreen(mediaQuery.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleResize);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleResize);
-    };
-  }, []);
 
   return (
     <header className="text-abs-white ">
@@ -65,25 +52,42 @@ const NavBar = () => {
 
 export const LoggedInView = ({ user }) => {
   return (
-    <div className="ml-auto md:order-3">
+    <div className="ml-auto md:order-3 flex justify-between space-x-2">
+      <Link to="/subscribe">
+        <button className="h-10 text-grey-15 rounded-regular bg-abs-white border border-white-90 md:p-2 px-1">
+          Susbribe
+        </button>
+      </Link>
       <Link to="/dashboard">
+        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+          Dashboard
+        </button>
+      </Link>
+
+      <Link to="/logout">
+        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+          Logout
+        </button>
+      </Link>
+      {/* <Link to="/dashboard">
         <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
           {user.username}
         </button>
       </Link>
       <Link to="/logout">
         <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
-          {/* <img src={logout} alt="logout" /> */}
+          <img src={logout} alt="logout" />
           Logout
         </button>
-      </Link>
+      </Link> */}
+      <Link to=""></Link>
     </div>
   );
 };
 
 export const LoggedOutView = ({ title }) => {
   return (
-    <div className="ml-auto md:order-3">
+    <div className="ml-auto md:order-3 flex">
       <Link to="/register">
         <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
           Sign Up
@@ -100,31 +104,31 @@ export const LoggedOutView = ({ title }) => {
 
 function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
   return (
-    <menu className="fixed bg-white-90 right-0 w-[60%] top-0 bottom-0 z-10 rounded-regular">
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/courses">Courses</Link>
-      </li>
-
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/about">About Us</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/pricing">Pricing</Link>
-      </li>
-      <li className="text-orange-50 py-3 px-5 rounded-regular">
-        <Link to="/contact">Contact</Link>
-      </li>
-      <button
-        className="absolute top-3 right-1"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <div className="h-[3px] w-6 bg-grey-20 mb-1 rounded-regular rotate-45 translate-y-2"></div>
-        <div className="h-[3px] w-6 bg-grey-70 mb-1 rounded-regular -rotate-45"></div>
-      </button>
-    </menu>
+    <Backdrop onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <menu className="z-20 bg-abs-white h-full w-[50%] ml-auto">
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/courses">Courses</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/about">About Us</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/pricing">Pricing</Link>
+        </li>
+        <li className="text-orange-50 py-3 px-5 rounded-regular">
+          <Link to="/contact">Contact</Link>
+        </li>
+        <img
+          src={close}
+          alt=""
+          className="h-6 absolute top-3 right-1"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        />
+      </menu>
+    </Backdrop>
   );
 }
 

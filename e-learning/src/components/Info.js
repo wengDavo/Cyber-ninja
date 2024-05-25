@@ -16,9 +16,14 @@ const Info = () => {
         </h3>
         <div className="flex flex-col md:flex-row md:justify-between">
           <p className="leading-6 text-grey-35 md:w-[60%]">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-            excepturi? Rerum et id beatae alias ipsam soluta cupiditate
-            molestiae? Distinctio.
+            Our platform boasts a set of features that facilitate collaboration
+            among learners, such as comprehensive learning resources,
+            interactive and engaging content, expert led intstructions. These
+            tools enable students to interact, share ideas, and learn from each
+            other, fostering a sense of community and enhancing the learning
+            experience. Collaboration also helps develop critical thinking and
+            communication skills, which are essential in both academic and
+            professional settings.
           </p>
           <button className="w-20 h-10 rounded-regular self-end text-abs-black bg-white-95">
             View All
@@ -30,11 +35,14 @@ const Info = () => {
           <p className="text-5xl font-bold text-right">01</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Flexible Learning Schedule
+              Comprehensive Learning Resources
             </h3>
             <p className="text-grey-60 text-sm">
-              Fit yout courseework around your existing commitments and
-              obligations.
+              Our e-learning application offers a wide range of courses,
+              tutorials, and resources covering all aspects of cybersecurity.
+              From fundamental concepts to advanced techniques, learners can
+              access a rich repository of information designed to cater to all
+              skill levels.
             </p>
           </div>
           <figure className="ml-auto">
@@ -45,11 +53,13 @@ const Info = () => {
           <p className=" text-5xl font-bold text-right">02</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Expert Instruction
+              Interactive and Engaging Content
             </h3>
             <p className="text-grey-60 text-sm">
-              Learn from industry experts who have hands-on experience in
-              cyber-security.
+              To enhance the learning experience, the app features interactive
+              modules, hands-on labs, and real-world simulations. These engaging
+              tools help learners apply theoretical knowledge in practical
+              scenarios, reinforcing their understanding and boosting retention.
             </p>
           </div>
           <figure className="ml-auto">
@@ -60,11 +70,14 @@ const Info = () => {
           <p className=" text-5xl font-bold text-right">03</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Diverse Course Offerings
+              Expert-Led Instruction
             </h3>
             <p className="text-grey-60 text-sm">
-              Explre a wide range of designs and development coursees covering
-              various topics.
+              Learn from industry experts with years of experience in
+              cybersecurity. Our instructors provide insights, best practices,
+              and up-to-date information on the latest threats and security
+              measures, ensuring learners receive high-quality and relevant
+              education.
             </p>
           </div>
           <figure className="ml-auto">
@@ -75,11 +88,14 @@ const Info = () => {
           <p className=" text-5xl font-bold text-right">04</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Update Curriculum
+              Flexible and Accessible Learning
             </h3>
             <p className="text-grey-60 text-sm">
-              Access coursees with up-to-dat content reflection the latest
-              trends and industry practices
+              Cyber Ninja is designed for flexibility, allowing users to learn
+              at their own pace and on their own schedule. With mobile
+              accessibility, learners can access courses and resources anytime,
+              anywhere, making it convenient for busy professionals and students
+              alike to advance their cybersecurity skills.
             </p>
           </div>
           <figure className="ml-auto">
@@ -90,11 +106,15 @@ const Info = () => {
           <p className=" text-5xl font-bold text-right">05</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Update Curriculum
+              Tailored Learning Experience
             </h3>
             <p className="text-grey-60 text-sm">
-              Access coursees with up-to-dat content reflection the latest
-              trends and industry practices
+              Cyber Ninja offers personalized learning paths designed to match
+              each user's unique needs and goals. By leveraging advanced
+              algorithms and user data, the app creates customized content and
+              exercises that align with individual learning styles and pace.
+              This ensures that users receive the most relevant and effective
+              educational experience, enhancing their progress and retention.
             </p>
           </div>
           <figure className="ml-auto">
@@ -105,11 +125,15 @@ const Info = () => {
           <p className=" text-5xl font-bold text-right">06</p>
           <div>
             <h3 className="font-semiBold text-2xl text-grey-20">
-              Update Curriculum
+              Real-Time Progress Tracking
             </h3>
             <p className="text-grey-60 text-sm">
-              Access coursees with up-to-dat content reflection the latest
-              trends and industry practices
+              Cyber Ninja features real-time progress tracking, allowing users
+              to monitor their achievements and areas for improvement
+              continuously. The app provides detailed analytics and insights
+              into performance, helping users stay motivated and focused on
+              their learning objectives. With instant feedback and progress
+              reports.
             </p>
           </div>
           <figure className="ml-auto">
@@ -123,9 +147,12 @@ const Info = () => {
         </h3>
         <div className="flex flex-col md:flex-row md:justify-between">
           <p className="leading-6 text-grey-35 md:w-[60%]">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-            labore vitae officiis libero hic veritatis laudantium maiores
-            obcaecati nesciunt voluptates?
+            Cyber Ninja provides a diverse range of courses designed to meet
+            the educational needs and interests of all our users. Our curriculum
+            is developed by experts in each field and incorporates the latest
+            advancements in educational technology to ensure a comprehensive and
+            engaging learning experience. Here’s a brief overview of the courses
+            we offer:
           </p>
           <button className="w-20 h-10 rounded-regular bg-white-95 text-abs-black">
             <Link to="/courses" className="">

@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
+
 import {
   ToastContainer,
   toast,
@@ -12,9 +13,10 @@ import {
 import "react-toastify/dist/ReactToastify.css";
 import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
-import correct from "./assets/icons/correct.svg";
-import wrong from "./assets/icons/wrong.svg";
 import HeroBar from "./HeroBar";
+import { free, paid } from "./PricingFeatureData";
+import PricingFeature from "./PricingFeature";
+import PricingType from "./PricingType";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
@@ -22,6 +24,8 @@ const Pricing = () => {
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
+  const [pricing, setPricing] = useState({ duration: "Month" });
+  console.log(user);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,7 +77,7 @@ const Pricing = () => {
         <HeroBar
           title={"Our Pricing"}
           description={
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, earum consequatur architecto labore vero recusandae adipisci libero id nostrum perspiciatis maiores magni ipsa ratione ex non voluptates! Dolorem, perferendis unde."
+            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. Explore our pricing plans below to find the perfect fit for you"
           }
         />
         <div className="pricing--btn-container h-fit w-fit mx-auto p-3 bg-abs-white border-[1px] border-solid border-white-95 flex gap-4 justify-evenly mb-5">
@@ -81,7 +85,10 @@ const Pricing = () => {
             className={`w-20 h-10 ${
               duration === 1 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
-            onClick={() => setDuration(1)}
+            onClick={() => {
+              setPricing({ duration: "Month" });
+              setDuration(1);
+            }}
           >
             Monthly
           </button>
@@ -89,7 +96,10 @@ const Pricing = () => {
             className={`w-20 h-10 ${
               duration === 12 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
-            onClick={() => setDuration(12)}
+            onClick={() => {
+              setDuration(12);
+              setPricing({ duration: "Year" });
+            }}
           >
             Yearly
           </button>
@@ -101,67 +111,22 @@ const Pricing = () => {
             Free Plan
           </p>
           <div className=" text-center">
-            <span className=" text-5xl font-semiBold">$0</span>
-            <span className=" text-grey-30">/month</span>
+            {(function () {
+              switch (pricing.duration) {
+                case "Month":
+                  return <PricingType amount={0} duration={"month"} />;
+                case "Year":
+                  return <PricingType amount={0} duration={"year"} />;
+                default:
+                  return <></>;
+              }
+            })()}
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            <figure className="--feature flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={wrong} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={wrong} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
+            {free.map((feature, idx) => {
+              return <PricingFeature key={idx} {...feature} />;
+            })}
             <button className="bg-orange-50 p-3 text-abs-white rounded-regular">
               Get Started
             </button>
@@ -172,73 +137,31 @@ const Pricing = () => {
             Paid Plan
           </p>
           <div className=" text-center">
-            <span className=" text-5xl font-semiBold">$100</span>
-            <span className="  text-grey-30">/month</span>
+            {(function () {
+              switch (pricing.duration) {
+                case "Month":
+                  return <PricingType amount={100} duration={"month"} />;
+                case "Year":
+                  return <PricingType amount={1200} duration={"year"} />;
+                default:
+                  return <></>;
+              }
+            })()}
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            <figure className="--feature flex flex-row justify-between p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
-            <figure className="flex flex-row justify-between items-baseline p-3 bg-white-97 text-grey-30">
-              <i className="bg-orange-95 p-2">
-                <img src={correct} alt="" />
-              </i>
-              <p className="self-center md:mr-auto md:ml-6">
-                Access to selected free courses.
-              </p>
-            </figure>
+            {paid.map((feature, idx) => {
+              return <PricingFeature key={idx} {...feature} />;
+            })}
             <button
               className="bg-orange-50 p-3 text-abs-white rounded-regular"
               onClick={handleButtonClick}
             >
-              {user?.paid ? "Extend Subscription" : "Subscribe"} (
-              {duration === 1 ? "1 Month" : "12 Months"})
+
+              {/* {user?.paid ? "Extend Subscription" : "Subscribe"} (
+              {duration === 1 ? "1 Month" : "12 Months"}) */}
+              Subscribe {pricing.duration}
+
             </button>
           </div>
         </article>
