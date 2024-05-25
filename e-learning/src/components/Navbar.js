@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
 import close from "./assets/icons/close.svg";
 import Backdrop from "./Backdrop";
+import useAxios from "../utils/useAxios";
+import { useNavigate } from "react-router-dom/dist";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
 
 import logo from "./assets/icons/Logo.svg";
 import hamburger from "./assets/icons/hamburger.svg";
@@ -11,10 +21,9 @@ import { useAuthStore } from "../store/auth";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoggedIn, user] = useAuthStore((state) => [
-    state.isLoggedIn,
-    state.user,
-  ]);
+  const [isLoggedIn] = useAuthStore((state) => [state.isLoggedIn]);
+
+  const user = useAuthStore((state) => state.user());
 
   return (
     <header className="text-abs-white ">
@@ -51,11 +60,34 @@ const NavBar = () => {
 };
 
 export const LoggedInView = ({ user }) => {
+  const api = useAxios();
+  const navigate = useNavigate();
+  const cancelSubscription = async () => {
+    try {
+      const response = await api.post("unsubscribe/");
+      toast.success(response.data.detail, {
+        autoClose: 3000,
+      });
+      navigate("/courses");
+    } catch (error) {
+      toast.error("Failed to unsubscribe. Please try again later.", {
+        autoClose: 3000,
+      });
+    }
+  };
+  const redirectSubscribe = () => {
+    navigate("/pricing");
+  };
+  const handleButtonClick = user?.paid ? cancelSubscription : redirectSubscribe;
+
   return (
     <div className="ml-auto md:order-3 flex justify-between space-x-2">
-      <Link to="/subscribe">
-        <button className="h-10 text-grey-15 rounded-regular bg-abs-white border border-white-90 md:p-2 px-1">
-          Susbribe
+      <Link to="/pricing">
+        <button
+          onClick={handleButtonClick}
+          className="h-10 text-grey-15 rounded-regular bg-abs-white border border-white-90 md:p-2 px-1"
+        >
+          {user?.paid ? " Cancel Subscription" : "Subscribe Now"}
         </button>
       </Link>
       <Link to="/dashboard">
