@@ -6,6 +6,7 @@ import useProfileUpdater from "../utils/profile";
 import HeroBar from "./HeroBar";
 import { free, paid } from "./PricingFeatureData";
 import PricingFeature from "./PricingFeature";
+import PricingType from "./PricingType";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
@@ -13,6 +14,7 @@ const Pricing = () => {
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
+  const [pricing, setPricing] = useState({ type: "month" });
   console.log(user);
 
   useEffect(() => {
@@ -72,7 +74,10 @@ const Pricing = () => {
             className={`w-20 h-10 ${
               duration === 1 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
-            onClick={() => setDuration(1)}
+            onClick={() => {
+              setPricing({ type: "month" });
+              setDuration(1);
+            }}
           >
             Monthly
           </button>
@@ -80,7 +85,10 @@ const Pricing = () => {
             className={`w-20 h-10 ${
               duration === 12 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
-            onClick={() => setDuration(12)}
+            onClick={() => {
+              setDuration(12);
+              setPricing({ type: "year" });
+            }}
           >
             Yearly
           </button>
@@ -92,8 +100,16 @@ const Pricing = () => {
             Free Plan
           </p>
           <div className=" text-center">
-            <span className=" text-5xl font-semiBold">$0</span>
-            <span className=" text-grey-30">/month</span>
+            {(function () {
+              switch (pricing.type) {
+                case "month":
+                  return <PricingType amount={0} duration={"month"} />;
+                case "year":
+                  return <PricingType amount={0} duration={"year"} />;
+                default:
+                  return <></>;
+              }
+            })()}
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>
@@ -110,8 +126,16 @@ const Pricing = () => {
             Paid Plan
           </p>
           <div className=" text-center">
-            <span className=" text-5xl font-semiBold">$100</span>
-            <span className="  text-grey-30">/month</span>
+            {(function () {
+              switch (pricing.type) {
+                case "month":
+                  return <PricingType amount={100} duration={"month"} />;
+                case "year":
+                  return <PricingType amount={1200} duration={"year"} />;
+                default:
+                  return <></>;
+              }
+            })()}
           </div>
           <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
             <p className=" pt-4 text-lg font-semiBold">Available Features</p>

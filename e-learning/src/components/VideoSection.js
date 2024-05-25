@@ -6,7 +6,7 @@ const CompanyLogos = () => {
         src={cyberVideo}
         autoPlay="true"
         controls
-        className="h-full md:w-[80%] md:mx-auto"
+        className="md:w-[80%] md:mx-auto"
         controlsList="nodownload"
         preload="metadata"
         muted

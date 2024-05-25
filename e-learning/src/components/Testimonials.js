@@ -55,8 +55,7 @@ const s = () => {
         </div>
         <div className=" p-5 bg-white-99">
           <p className=" text-grey-40 text-sm self-end">
-            "I had zero coding experience before I started using [Your App
-            Name]. The technology and coding courses are incredibly
+            "I had zero coding experience before I started using Cyber Ninja. The technology and coding courses are incredibly
             user-friendly and comprehensive. The hands-on projects and
             problem-solving exercises made learning Python and JavaScript fun
             and manageable. I'm now confident enough to take on freelance
