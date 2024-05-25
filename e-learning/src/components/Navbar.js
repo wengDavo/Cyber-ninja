@@ -39,7 +39,7 @@ const NavBar = () => {
             </figure>
           </Link>
         </div>
-        {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
+        {isLoggedIn() ? <LoggedInView user={user} /> : <LoggedOutView />}
         <div className="md:order-2 ml-auto ">
           <DesktopMenu />
           {isMenuOpen && (
@@ -59,9 +59,11 @@ const NavBar = () => {
   );
 };
 
-export const LoggedInView = ({ user }) => {
+export const LoggedInView = () => {
   const api = useAxios();
   const navigate = useNavigate();
+
+  const user = useAuthStore((state) => state.user());
   const cancelSubscription = async () => {
     try {
       const response = await api.post("unsubscribe/");
