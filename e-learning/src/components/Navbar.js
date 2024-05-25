@@ -52,25 +52,42 @@ const NavBar = () => {
 
 export const LoggedInView = ({ user }) => {
   return (
-    <div className="ml-auto md:order-3">
+    <div className="ml-auto md:order-3 flex justify-between space-x-2">
+      <Link to="/subscribe">
+        <button className="h-10 text-grey-15 rounded-regular bg-abs-white border border-white-90 md:p-2 px-1">
+          Susbribe
+        </button>
+      </Link>
       <Link to="/dashboard">
+        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+          Dashboard
+        </button>
+      </Link>
+
+      <Link to="/logout">
+        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+          Logout
+        </button>
+      </Link>
+      {/* <Link to="/dashboard">
         <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
           {user.username}
         </button>
       </Link>
       <Link to="/logout">
         <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
-          {/* <img src={logout} alt="logout" /> */}
+          <img src={logout} alt="logout" />
           Logout
         </button>
-      </Link>
+      </Link> */}
+      <Link to=""></Link>
     </div>
   );
 };
 
 export const LoggedOutView = ({ title }) => {
   return (
-    <div className="ml-auto md:order-3">
+    <div className="ml-auto md:order-3 flex">
       <Link to="/register">
         <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
           Sign Up
@@ -112,7 +129,6 @@ function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
         />
       </menu>
     </Backdrop>
-
   );
 }
 

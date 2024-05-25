@@ -51,19 +51,13 @@ function UserNavbar() {
       </form>
       {isSearching || (
         <div className="flex gap-4">
-          <section className="flex">
-            <button
-              className="w-auto h-auto text-white-15 rounded-regular bg-orange-50 border border-white-97 p-3"
-              onClick={handleButtonClick}
-            >
-              {user?.paid ? " Cancel Subscription" : "Subscribe Now"}
-            </button>
-          </section>
           <section className="grid">
             <p className="font-medium text-grey-40 text-lg">
               Welcome, {user.first_name} {user.last_name}
             </p>
-            <p className="text-sm text-grey-60">Have a good day</p>
+            <p className="text-sm text-grey-60 hidden md:block">
+              Have a good day
+            </p>
           </section>
         </div>
       )}

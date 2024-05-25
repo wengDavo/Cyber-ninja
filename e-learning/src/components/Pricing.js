@@ -14,7 +14,7 @@ const Pricing = () => {
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
-  const [pricing, setPricing] = useState({ type: "month" });
+  const [pricing, setPricing] = useState({ duration: "Month" });
   console.log(user);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const Pricing = () => {
               duration === 1 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
             onClick={() => {
-              setPricing({ type: "month" });
+              setPricing({ duration: "Month" });
               setDuration(1);
             }}
           >
@@ -87,7 +87,7 @@ const Pricing = () => {
             } rounded-regular`}
             onClick={() => {
               setDuration(12);
-              setPricing({ type: "year" });
+              setPricing({ duration: "Year" });
             }}
           >
             Yearly
@@ -101,10 +101,10 @@ const Pricing = () => {
           </p>
           <div className=" text-center">
             {(function () {
-              switch (pricing.type) {
-                case "month":
+              switch (pricing.duration) {
+                case "Month":
                   return <PricingType amount={0} duration={"month"} />;
-                case "year":
+                case "Year":
                   return <PricingType amount={0} duration={"year"} />;
                 default:
                   return <></>;
@@ -127,10 +127,10 @@ const Pricing = () => {
           </p>
           <div className=" text-center">
             {(function () {
-              switch (pricing.type) {
-                case "month":
+              switch (pricing.duration) {
+                case "Month":
                   return <PricingType amount={100} duration={"month"} />;
-                case "year":
+                case "Year":
                   return <PricingType amount={1200} duration={"year"} />;
                 default:
                   return <></>;
@@ -146,8 +146,9 @@ const Pricing = () => {
               className="bg-orange-50 p-3 text-abs-white rounded-regular"
               onClick={handleButtonClick}
             >
-              {user?.paid ? "Extend Subscription" : "Subscribe"} (
-              {duration === 1 ? "1 Month" : "12 Months"})
+              {/* {user?.paid ? "Extend Subscription" : "Subscribe"} (
+              {duration === 1 ? "1 Month" : "12 Months"}) */}
+              Subscribe {pricing.duration}
             </button>
           </div>
         </article>

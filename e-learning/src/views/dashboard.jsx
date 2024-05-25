@@ -83,15 +83,15 @@ const Dashboard = () => {
         className="flex flex-col gap-4 md:grid md:grid-cols-3"
         style={{ gridColumn: "3/4" }}
       >
+        <section className="md:order-1" style={{ gridColumn: "1/3" }}>
+          <MyClasses />
+        </section>
         <section className="grid gap-4 md:order-2 ">
           <Calendar onChange={onChange} value={date} />
           <VideoSection />
         </section>
-        <section className="md:order-1" style={{ gridColumn: "1/3" }}>
-          <MyClasses />
-        </section>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </body>
   );
 };
