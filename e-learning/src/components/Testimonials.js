@@ -7,7 +7,7 @@ const s = () => {
   return (
     <section className="m-4">
       <article>
-        <h2 className="font-semiBold h-10 flex items-center text-3xl md:text-4xl">
+        <h2 className="flex items-center h-10 text-3xl font-semiBold md:text-4xl">
           Testimonies
         </h2>
         <div className="flex flex-col md:flex-row md:justify-between">
@@ -18,15 +18,15 @@ const s = () => {
             transformed their lives and careers through our platform. Here are
             some of their inspiring stories:
           </p>
-          <button className="w-20 h-10 rounded-regular self-end text-abs-black bg-white-95">
+          <button className="self-end w-20 h-10 rounded-regular text-abs-black bg-white-95">
             View All
           </button>
         </div>
       </article>
       <article className="grid leading-6 md:grid-cols-2 ">
         <div className="p-5 bg-white-99">
-          <p className="text-grey-40 text-sm">
-            "I've always wanted to learn French, but my busy schedule made it
+          <p className="text-sm text-grey-40">
+            "I've always wanted to learn Penetration Testing, but my busy schedule made it
             difficult to attend traditional classes. Cyber Ninja has been a
             game-changer for me! The personalized learning paths and interactive
             exercises keep me engaged, and I can study whenever it suits me.
@@ -37,11 +37,11 @@ const s = () => {
             <figcaption>Sarah M., Language Learner</figcaption>
           </figure>
         </div>
-        <div className=" p-5 bg-white-99">
-          <p className=" text-grey-40 text-sm self-end">
-            "As a project manager, staying updated with the latest skills is
-            crucial. The professional development courses on Cyber Ninja have
-            not only helped me enhance my leadership and communication skills
+        <div className="p-5 bg-white-99">
+          <p className="self-end text-sm text-grey-40">
+            "As a manager, staying updated with the latest skills is
+            crucial. The professional Certifiec Ethical Hacking courses on Cyber Ninja have
+            not only helped me enhance my ethical hacking skills
             but also provided practical insights I could immediately apply at
             work. The real-time progress tracking keeps me motivated and on
             track with my learning goals."
@@ -53,26 +53,24 @@ const s = () => {
             </figcaption>
           </figure>
         </div>
-        <div className=" p-5 bg-white-99">
-          <p className=" text-grey-40 text-sm self-end">
-            "I had zero coding experience before I started using Cyber Ninja. The technology and coding courses are incredibly
-            user-friendly and comprehensive. The hands-on projects and
-            problem-solving exercises made learning Python and JavaScript fun
-            and manageable. I'm now confident enough to take on freelance
-            projects!"
+        <div className="p-5 bg-white-99">
+          <p className="self-end text-sm text-grey-40">
+            "I had zero ethical hacking experience before I started using Cyber Ninja. The introduction to ethical hacking courses are incredibly
+            user-friendly and comprehensive I still can't believe i got this all for the price. The hands-on projects and
+            capture the flag exercises made learning ethical hacking fun
+            and manageable. I'm now confident enough to aplly for a job"
           </p>
           <figure className="border-t-[1px] mt-4 pt-4 border-solid border-white-90 flex items-center gap-x-4 p-2">
             <img src={Emily} alt="" />
             <figcaption>Emily R., Aspiring Developer</figcaption>
           </figure>
         </div>
-        <div className=" p-5 bg-white-99">
-          <p className=" text-grey-40 text-sm self-end">
-            "The health and wellness courses on Cyber Ninja have transformed my
-            lifestyle. The variety of fitness routines and nutrition advice has
-            helped me achieve a balanced and healthy life. The ability to track
+        <div className="p-5 bg-white-99">
+          <p className="self-end text-sm text-grey-40">
+            "The Malware and Attack Technologies courses on Cyber Ninja have transformed my thinking and how i approach ethical hacking. The variety of lessons and tips the instructors bring has
+            helped me achieve a lot. The ability to track
             my progress and get instant feedback keeps me motivated to reach my
-            fitness goals."
+            goals."
           </p>
           <figure className="border-t-[1px] mt-4 pt-4 border-solid border-white-90 flex items-center gap-x-4 p-2">
             <img src={Michael} alt="" />

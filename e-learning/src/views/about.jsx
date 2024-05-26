@@ -15,7 +15,7 @@ const About = () => {
         <HeroBar
           title={"About Cyber-Ninja"}
           description={
-            "Welcome to our platform, where we are passionate about empowering individuals to master the world of design and development. We offer a wide range of online courses designed to equip learners with the skillsand knowledge needed to succeed in the ever-evolving digital landscape."
+            "Welcome to Cyber Ninja We are passionate about empowering individuals and organizations with the knowledge and skills they need to succeed in the ever-evolving field of cybersecurity.At our core, we believe that education is the key to building a safer and more secure digital world. That's why we've created a platform that offers comprehensive, up-to-date training programs, expert-led instruction, and hands-on learning experiences."
           }
         />
         <Achievements />

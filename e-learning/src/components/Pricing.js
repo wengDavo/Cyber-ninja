@@ -76,7 +76,7 @@ const Pricing = () => {
         <HeroBar
           title={"Our Pricing"}
           description={
-            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. Explore our pricing plans below to find the perfect fit for you"
+            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. We offer comprehensive content reviws and practice questions to reinforce key conecpts.These guides enable a tailored and self paced preparatino for the certification exams, Explore our pricing plans below to find the perfect fit for you, "
           }
         />
         <div className="pricing--btn-container h-fit w-fit mx-auto p-3 bg-abs-white border-[1px] border-solid border-white-95 flex gap-4 justify-evenly mb-5">

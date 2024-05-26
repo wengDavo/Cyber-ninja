@@ -31,7 +31,7 @@ const NavBar = () => {
         <Link to="/pricing">
           Free Courses Sales Ends Soon. Get it Now
         </Link>
-        <img src={arrowRight} alt="" className="h-4" />
+        <img src={arrowRight} alt="" className="self-center h-4" />
       </section>
       <nav className="relative flex items-center justify-around p-4">
         <div>

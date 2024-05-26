@@ -3,8 +3,8 @@ import wrong from "./assets/icons/wrong.svg";
 
 export const free = [
   { feature: "Access to Basic Courses", status: correct },
-  { feature: "Yearly Course Updates", status: correct },
   { feature: "Basic Customer Support", status: correct },
+  { feature: "Video Courses", status: wrong },
   { feature: "The Certified Ethical Hacker Exam", status: wrong },
   { feature: "CEH study guides", status: wrong },
   { feature: "Sample questions banks", status: wrong },
@@ -18,6 +18,7 @@ export const months4 = [
     feature: "Remote procturing for CEH will cost and individual $100",
     status: correct,
   },
+  { feature: "Video Courses", status: correct },
   { feature: "CEH study guides", status: correct },
   { feature: "Sample questions banks", status: correct },
   { feature: "Flashcards and notebooks", status: correct },
@@ -31,6 +32,7 @@ export const months8 = [
     feature: "Remote procturing for CEH will cost and individual $100",
     status: correct,
   },
+  { feature: "Video Courses", status: correct },
   { feature: "CEH study guides", status: correct },
   { feature: "Sample questions banks", status: correct },
   { feature: "Flashcards and notebooks", status: correct },
@@ -46,6 +48,7 @@ export const yearly = [
     feature: "Remote procturing for CEH will cost and individual $100",
     status: correct,
   },
+  { feature: "Video Courses", status: correct },
   { feature: "CEH study guides", status: correct },
   { feature: "Sample questions banks", status: correct },
   { feature: "Flashcards and notebooks", status: correct },

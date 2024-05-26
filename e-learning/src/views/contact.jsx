@@ -12,7 +12,7 @@ const ContactHome = () => {
         <HeroBar
           title={"Contact Us"}
           description={
-            " Welcome to our UI/UX Design course! This comprehensive program will equip you with the knowledge and skills to create exceptional user interfaces (UI) and enhance user experiences (UX). Dive into the world of design thinking, wireframing, prototyping, and usability testing. Below is an overview of the curriculum"
+            "Have a question, feedback, or just want to say hello? We’d love to hear from you! Our team is here to assist you with any inquiries you may have. Feel free to reach out to us using the contact form below.Whether you're interested in learning more about our courses, have technical issues, or want to explore partnership opportunities, we're here to help. Your satisfaction is our priority, and we're committed to providing timely and helpful support."
           }
         />
         <Contact />
