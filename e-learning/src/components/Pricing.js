@@ -1,17 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuthStore } from "../store/auth";
 
-import {
-  ToastContainer,
-  toast,
-  Slide,
-  Zoom,
-  Flip,
-  Bounce,
-} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
 import HeroBar from "./HeroBar";
 import { free, yearly, months4, months8 } from "./PricingFeatureData";
@@ -19,12 +9,9 @@ import PricingCard from "./PricingCard";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
-  const navigate = useNavigate();
-  const api = useAxios();
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
   const [pricing, setPricing] = useState({ duration: "Month" });
-  console.log(user);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,38 +24,6 @@ const Pricing = () => {
 
     fetchData();
   }, [fetchAndSetProfile]);
-
-  const handleSubscribe = async () => {
-    try {
-      const response = await api.post("subscribe/", {
-        duration_months: duration,
-      });
-      toast.success(response.data.detail, { autoClose: 3000 });
-      navigate("/courses");
-    } catch (error) {
-      toast.success("Failed to subscribe. Please try again.", {
-        autoClose: 3000,
-      });
-    }
-  };
-
-  const handleExtendSubscribe = async () => {
-    try {
-      const response = await api.post("extend_subscription/", {
-        duration_months: duration,
-      });
-      toast.success(response.data.detail, { autoClose: 3000 });
-      navigate("/courses");
-    } catch (error) {
-      toast.success("Failed to extend subscription. Please try again.", {
-        autoClose: 3000,
-      });
-    }
-  };
-
-  const handleButtonClick = user?.paid
-    ? handleExtendSubscribe
-    : handleSubscribe;
 
   return (
     <section id="pricing">
@@ -131,7 +86,14 @@ const Pricing = () => {
                 </>
               );
             case "Year":
-              return <PricingCard planType={"Paid"} amount={"950"} duration={"year"} features={yearly} />
+              return (
+                <PricingCard
+                  planType={"Paid"}
+                  amount={"950"}
+                  duration={"year"}
+                  features={yearly}
+                />
+              );
             default:
               return <></>;
           }
