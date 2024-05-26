@@ -71,7 +71,7 @@ const Pricing = () => {
     : handleSubscribe;
 
   return (
-    <section>
+    <section id="pricing">
       <article>
         <HeroBar
           title={"Our Pricing"}

@@ -28,10 +28,12 @@ const NavBar = () => {
   return (
     <header className="text-abs-white ">
       <section className="bg-orange-50 h-[40px] text-center flex justify-center items-center gap-2 rounded-regular">
-        <article>Free Courses Sales Ends Soon. Get it Now</article>
+        <Link to="/pricing">
+          Free Courses Sales Ends Soon. Get it Now
+        </Link>
         <img src={arrowRight} alt="" className="h-4" />
       </section>
-      <nav className="flex p-4 justify-around items-center relative">
+      <nav className="relative flex items-center justify-around p-4">
         <div>
           <Link to="/">
             <figure className="px-1">
@@ -40,12 +42,12 @@ const NavBar = () => {
           </Link>
         </div>
         {isLoggedIn() ? <LoggedInView user={user} /> : <LoggedOutView />}
-        <div className="md:order-2 ml-auto ">
+        <div className="ml-auto md:order-2 ">
           <DesktopMenu />
           {isMenuOpen && (
             <MobileMenu setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
           )}
-          <figure className="group md:hidden ml-1 cursor-pointer">
+          <figure className="ml-1 cursor-pointer group md:hidden">
             <img
               src={hamburger}
               alt=""
@@ -83,33 +85,33 @@ export const LoggedInView = () => {
   const handleButtonClick = user?.paid ? cancelSubscription : redirectSubscribe;
 
   return (
-    <div className="ml-auto md:order-3 flex justify-between space-x-2">
+    <div className="flex justify-between ml-auto space-x-2 md:order-3">
       <Link to="/pricing">
         <button
           onClick={handleButtonClick}
-          className="h-10 text-grey-15 rounded-regular bg-abs-white border border-white-90 md:p-2 px-1"
+          className="h-10 px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2"
         >
           {user?.paid ? " Cancel Subscription" : "Subscribe Now"}
         </button>
       </Link>
       <Link to="/dashboard">
-        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+        <button className="h-10 px-1 bg-orange-50 rounded-regular md:p-2">
           Dashboard
         </button>
       </Link>
 
       <Link to="/logout">
-        <button className="h-10 bg-orange-50 rounded-regular md:p-2 px-1">
+        <button className="h-10 px-1 bg-orange-50 rounded-regular md:p-2">
           Logout
         </button>
       </Link>
       {/* <Link to="/dashboard">
-        <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
+        <button className="w-20 h-10 border text-grey-15 rounded-regular bg-abs-white border-white-97">
           {user.username}
         </button>
       </Link>
       <Link to="/logout">
-        <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
+        <button className="w-20 h-10 ml-3 bg-orange-50 rounded-regular">
           <img src={logout} alt="logout" />
           Logout
         </button>
@@ -121,14 +123,14 @@ export const LoggedInView = () => {
 
 export const LoggedOutView = ({ title }) => {
   return (
-    <div className="ml-auto md:order-3 flex">
+    <div className="flex ml-auto md:order-3">
       <Link to="/register">
-        <button className="w-20 h-10 text-grey-15 rounded-regular bg-abs-white border border-white-97">
+        <button className="w-20 h-10 border text-grey-15 rounded-regular bg-abs-white border-white-97">
           Sign Up
         </button>
       </Link>
       <Link to="/login">
-        <button className="w-20 h-10 bg-orange-50 ml-3 rounded-regular">
+        <button className="w-20 h-10 ml-3 bg-orange-50 rounded-regular">
           Login
         </button>
       </Link>
@@ -140,25 +142,25 @@ function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
   return (
     <Backdrop onClick={() => setIsMenuOpen(!isMenuOpen)}>
       <menu className="z-20 bg-abs-white h-full w-[50%] ml-auto">
-        <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <li className="px-5 py-3 text-orange-50 rounded-regular">
           <Link to="/">Home</Link>
         </li>
-        <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <li className="px-5 py-3 text-orange-50 rounded-regular">
           <Link to="/courses">Courses</Link>
         </li>
-        <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <li className="px-5 py-3 text-orange-50 rounded-regular">
           <Link to="/about">About Us</Link>
         </li>
-        <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <li className="px-5 py-3 text-orange-50 rounded-regular">
           <Link to="/pricing">Pricing</Link>
         </li>
-        <li className="text-orange-50 py-3 px-5 rounded-regular">
+        <li className="px-5 py-3 text-orange-50 rounded-regular">
           <Link to="/contact">Contact</Link>
         </li>
         <img
           src={close}
           alt=""
-          className="h-6 absolute top-3 right-1"
+          className="absolute h-6 top-3 right-1"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
       </menu>
@@ -169,21 +171,21 @@ function MobileMenu({ isMenuOpen, setIsMenuOpen }) {
 function DesktopMenu() {
   return (
     <menu className="hidden md:flex md:text-grey-15 md:gap-x-3">
-      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+      <li className="px-5 py-3 hover:bg-white-95 rounded-regular">
         <Link to="/">Home</Link>
       </li>
 
-      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+      <li className="px-5 py-3 hover:bg-white-95 rounded-regular">
         <Link to="/courses">Courses</Link>
       </li>
 
-      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+      <li className="px-5 py-3 hover:bg-white-95 rounded-regular">
         <Link to="/about">About Us</Link>
       </li>
-      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+      <li className="px-5 py-3 hover:bg-white-95 rounded-regular">
         <Link to="/pricing">Pricing</Link>
       </li>
-      <li className="py-3 px-5 hover:bg-white-95 rounded-regular">
+      <li className="px-5 py-3 hover:bg-white-95 rounded-regular">
         <Link to="/contact">Contact</Link>
       </li>
     </menu>
