@@ -48,7 +48,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      toast.info("Logging in...");
+      toast.loading("Logging in...");
       const { error } = await login(email, password);
       if (error) {
         // alert(error);
