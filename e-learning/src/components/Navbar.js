@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
+// import logout from "./assets/icons/logout.svg";
 import close from "./assets/icons/close.svg";
 import Backdrop from "./Backdrop";
 import useAxios from "../utils/useAxios";
@@ -15,6 +16,7 @@ import {
 } from "react-toastify";
 
 import logo from "./assets/icons/Logo.svg";
+import dashboard from "./assets/icons/dashboard.svg";
 import hamburger from "./assets/icons/hamburger.svg";
 import logout from "../components/assets/icons/logout.svg";
 import { useAuthStore } from "../store/auth";
@@ -28,9 +30,7 @@ const NavBar = () => {
   return (
     <header className="text-abs-white ">
       <section className="bg-orange-50 h-[40px] text-center flex justify-center items-center gap-2 rounded-regular">
-        <Link to="/pricing">
-          Free Courses Sales Ends Soon. Get it Now
-        </Link>
+        <Link to="/pricing">Free Courses Sales Ends Soon. Get it Now</Link>
         <img src={arrowRight} alt="" className="self-center h-4" />
       </section>
       <nav className="relative flex items-center justify-around p-4">
@@ -85,25 +85,26 @@ export const LoggedInView = () => {
   const handleButtonClick = user?.paid ? cancelSubscription : redirectSubscribe;
 
   return (
-    <div className="flex justify-between ml-auto space-x-2 md:order-3">
+    <div className="flex justify-between ml-auto space-x-2 md:order-3 ">
       <Link to="/pricing">
         <button
-          onClick={handleButtonClick}
-          className="h-10 px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2"
+          // onClick={handleButtonClick}
+          className="px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2 h-8"
         >
-          {user?.paid ? " Cancel Subscription" : "Subscribe Now"}
+          {/* {user?.paid ? " Cancel Plan" : "Subscribe Now"} */}
         </button>
       </Link>
       <Link to="/dashboard">
-        <button className="h-10 px-1 bg-orange-50 rounded-regular md:p-2">
+        <button className="h-8 px-1 bg-orange-50 rounded-regular md:p-2">
           Dashboard
         </button>
       </Link>
 
       <Link to="/logout">
-        <button className="h-10 px-1 bg-orange-50 rounded-regular md:p-2">
+        {/* <button className="h-10 px-1 bg-orange-50 rounded-regular md:p-2">
           Logout
-        </button>
+        </button> */}
+        <img src={logout} alt="" className="h-8 px-1 md:p-2 " />
       </Link>
       {/* <Link to="/dashboard">
         <button className="w-20 h-10 border text-grey-15 rounded-regular bg-abs-white border-white-97">
