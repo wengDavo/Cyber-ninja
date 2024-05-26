@@ -98,7 +98,6 @@ const Pricing = () => {
               return <></>;
           }
         })()}
-        ;
       </div>
     </section>
   );
