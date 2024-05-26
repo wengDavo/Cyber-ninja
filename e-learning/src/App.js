@@ -82,7 +82,7 @@ function App() {
               path="/dashboard"
               element={
                 // <PrivateRoute>
-                  <Dashboard />
+                <Dashboard />
                 // </PrivateRoute>
               }
             />
