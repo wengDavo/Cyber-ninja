@@ -123,6 +123,7 @@ export const getRefreshToken = async () => {
     } else {
       // Handle other errors
       console.error("Error refreshing token:", error);
+      handleBlacklistedToken();
     }
     throw error; // Re-throw the error to propagate it if necessary
   }
