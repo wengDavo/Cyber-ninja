@@ -47,6 +47,7 @@ const Logout = () => {
         logout();
         toast.success("Successfully logged out!", {
           autoClose: 3000,
+          toastId: 47,
         });
         navigate("/");
         Cookies.remove("access_token");
