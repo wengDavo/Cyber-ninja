@@ -72,6 +72,8 @@ function Register() {
         autoClose: 3000,
       });
     }
+
+    toast.loading("Signing up...");
     const { error } = await register(
       first_name,
       last_name,
@@ -85,6 +87,7 @@ function Register() {
     if (error) {
       if (error.message === "Network Error") {
         setError(error.message);
+        toast.dismiss();
         toast.error(error.message, {
           autoClose: 3000,
         });
@@ -92,13 +95,19 @@ function Register() {
         for (const field in error.response.data) {
           if (error.response.data.hasOwnProperty(field)) {
             // Log the error messages for each field
+            toast.dismiss();
             toast.error(error.response.data[field], {
               autoClose: 3000,
-            });setError(error?.response?.data || {});
+            });
+            setError(error?.response?.data || {});
           }
         }
       }
     } else {
+      toast.dismiss();
+      toast.success("Registered successfully", {
+        autoClose: 3000,
+      });
       navigate("/");
       resetForm();
     }
@@ -186,7 +195,7 @@ function Register() {
                   className="p-5 border border-white-95 placeholder:leading-6 placeholder:text-sm placeholder:capitalize"
                 />
                 {error && error.username && (
-                  <span className="error-message">
+                  <span className="text-red-30">
                     {error.username.join("  ")}
                   </span>
                 )}

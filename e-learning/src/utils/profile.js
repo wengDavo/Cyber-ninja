@@ -25,6 +25,7 @@ const useProfileUpdater = () => {
       if (error.message === "Network Error") { 
         toast.error(error.message, {
           autoClose: 3000,
+          toastId: 54,
         });
         // setError(error.message);
       } else {
@@ -38,6 +39,7 @@ const useProfileUpdater = () => {
         // }
         toast.error(error, {
           autoClose: 3000,
+          toastId: 49,
         });;
       }
     }
