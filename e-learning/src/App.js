@@ -29,6 +29,10 @@ function App() {
       <CourseProvider>
         <MainWrapper>
           <ToastContainer />
+
+          <head>
+            <meta name="cryptomus" content="8cd5eef4" />
+          </head>
           <Routes>
             {/* <Route
               path="/private"
@@ -82,7 +86,7 @@ function App() {
               path="/dashboard"
               element={
                 // <PrivateRoute>
-                  <Dashboard />
+                <Dashboard />
                 // </PrivateRoute>
               }
             />
