@@ -81,9 +81,9 @@ const Login = () => {
     <body className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main className="md:grid md:grid-cols-2">
-        <section className="bg-white-97 border border-white-95 p-7 flex flex-col gap-8">
+        <section className="flex flex-col gap-8 border bg-white-97 border-white-95 p-7">
           <div>
-            <p className="font-semiBold text-3xl mb-">Login</p>
+            <p className="text-3xl font-semiBold mb-">Login</p>
             <p className="text-sm text-grey-30">
               Welcome back! Please log in to access your account.
             </p>
@@ -94,7 +94,7 @@ const Login = () => {
               className="flex flex-col gap-4"
               onSubmit={handleLogin}
             >
-              <p className="flex flex-col gap-2 relative">
+              <p className="relative flex flex-col gap-2">
                 <label for="" className="text-sm leading-6">
                   Email
                 </label>
@@ -109,7 +109,7 @@ const Login = () => {
                   required
                 />
               </p>
-              <p className="flex flex-col gap-2 relative">
+              <p className="relative flex flex-col gap-2">
                 <label for="" className="text-sm leading-6">
                   Password
                 </label>
@@ -132,23 +132,23 @@ const Login = () => {
               </p>
               <a
                 href=""
-                className="text-sm leading-6 text-grey-30 text-right capitalize"
+                className="text-sm leading-6 text-right capitalize text-grey-30"
               >
                 forgot password ?
               </a>
               <button
                 type="submit"
-                className="text-abs-white p-3 rounded-regular bg-orange-50"
+                className="p-3 text-abs-white rounded-regular bg-orange-50"
               >
                 Login
               </button>
             </form>
-            <div className="flex w-full justify-between items-center my-4 text-grey-60 gap-1 text-sm">
+            <div className="flex items-center justify-between w-full gap-1 my-4 text-sm text-grey-60">
               <p className="w-full h-[1px] bg-grey-60"></p>
               <p>OR</p>
               <p className="w-full h-[1px] bg-grey-60"></p>
             </div>
-            <div className="text-sm leading-6 flex gap-2 items-center justify-center">
+            <div className="flex items-center justify-center gap-2 text-sm leading-6">
               <p>Do not have an account? </p>
               <Link to="/register">Sign Up</Link>
               <i>

@@ -3,20 +3,57 @@ import wrong from "./assets/icons/wrong.svg";
 
 export const free = [
   { feature: "Access to Basic Courses", status: correct },
-  { feature: "Yearly Course Updates", status: correct },
   { feature: "Basic Customer Support", status: correct },
-  { feature: "Ad-Supported Experience", status: correct },
-  { feature: "Daily Course Update", status: correct },
-  { feature: "Course Progress Tracking", status: wrong },
-  { feature: "Personalized Tutoring", status: wrong },
+  { feature: "Video Courses", status: wrong },
+  { feature: "The Certified Ethical Hacker Exam", status: wrong },
+  { feature: "CEH study guides", status: wrong },
+  { feature: "Sample questions banks", status: wrong },
+  { feature: "Certified Information Security Manager Exams", status: wrong },
 ];
 
-export const paid = [
-  { feature: "Unlimited Access to All Courses", status: correct },
-  { feature: "Comprehensive Course Progress Tracking", status: correct },
-  { feature: "Priority Community Support", status: correct },
-  { feature: "Daily Course Updates", status: correct },
-  { feature: "Ad-Free Experience", status: correct },
-  { feature: "Offline Access", status: correct },
-  { feature: "Flexible Billing", status: correct },
+export const months4 = [
+  { feature: "Self paced Certified Ethical Hacker Programme", status: correct },
+  { feature: "The Certified Ethical Hacker Exam", status: correct },
+  {
+    feature: "Remote procturing for CEH will cost and individual $100",
+    status: correct,
+  },
+  { feature: "Video Courses", status: correct },
+  { feature: "CEH study guides", status: correct },
+  { feature: "Sample questions banks", status: correct },
+  { feature: "Flashcards and notebooks", status: correct },
+  { feature: "Certified Information Security Manager Exams", status: correct },
+];
+
+export const months8 = [
+  { feature: "Self paced Certified Ethical Hacker Programme", status: correct },
+  { feature: "The Certified Ethical Hacker Exam", status: correct },
+  {
+    feature: "Remote procturing for CEH will cost and individual $100",
+    status: correct,
+  },
+  { feature: "Video Courses", status: correct },
+  { feature: "CEH study guides", status: correct },
+  { feature: "Sample questions banks", status: correct },
+  { feature: "Flashcards and notebooks", status: correct },
+  { feature: "Certified Information Security Manager Exams", status: correct },
+  { feature: "Certified Cloud Security Professional", status: correct },
+  { feature: "CompTIA Security +", status: correct },
+  { feature: "Exam Retakes", status: correct },
+];
+export const yearly = [
+  { feature: "Self paced Certified Ethical Hacker Programme", status: correct },
+  { feature: "The Certified Ethical Hacker Exam", status: correct },
+  {
+    feature: "Remote procturing for CEH will cost and individual $100",
+    status: correct,
+  },
+  { feature: "Video Courses", status: correct },
+  { feature: "CEH study guides", status: correct },
+  { feature: "Sample questions banks", status: correct },
+  { feature: "Flashcards and notebooks", status: correct },
+  { feature: "Certified Information Security Manager Exams", status: correct },
+  { feature: "Certified Cloud Security Professional", status: correct },
+  { feature: "CompTIA Security +", status: correct },
+  { feature: "Exam Retakes", status: correct },
 ];

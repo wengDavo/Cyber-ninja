@@ -14,9 +14,9 @@ const CoursesHome = () => {
       <NavBar />
       <main id="main">
         <HeroBar
-          title={"Online Course on Design and Developmemt"}
+          title={"Online Courses On Ethical Hacking"}
           description={
-            "Welcome to our online course page, where you can enhance your skills indesign and development. Choose from our carefully curated selection of 10 courses designed to provide you with comprehensive knowledge and practical experience. Explore the courses below and find the perfect fit for your learning journey"
+            "Welcome to our courses page, where you can explore our comprehensive offerings in cybersecurity education. Whether you're just starting your journey in cybersecurity or looking to advance your skills and career, we have a range of courses to meet your needs.Our courses are designed and developed by industry experts to provide you with the knowledge and skills necessary to excel in today's cybersecurity landscape. From foundational concepts to advanced techniques, each course is crafted to be engaging, practical, and relevant to real-world scenarios."
           }
         />
         <Courses />

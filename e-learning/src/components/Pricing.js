@@ -14,9 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 import useAxios from "../utils/useAxios";
 import useProfileUpdater from "../utils/profile";
 import HeroBar from "./HeroBar";
-import { free, paid } from "./PricingFeatureData";
-import PricingFeature from "./PricingFeature";
-import PricingType from "./PricingType";
+import { free, yearly, months4, months8 } from "./PricingFeatureData";
+import PricingCard from "./PricingCard";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
@@ -63,7 +62,7 @@ const Pricing = () => {
     } catch (error) {
       toast.success("Failed to extend subscription. Please try again.", {
         autoClose: 3000,
-      })
+      });
     }
   };
 
@@ -72,12 +71,12 @@ const Pricing = () => {
     : handleSubscribe;
 
   return (
-    <section>
+    <section id="pricing">
       <article>
         <HeroBar
           title={"Our Pricing"}
           description={
-            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. Explore our pricing plans below to find the perfect fit for you"
+            "At Cyber Ninja, we believe that quality education should be accessible to everyone. That's why we offer a range of flexible pricing options to suit your budget and learning goals. We offer comprehensive content reviws and practice questions to reinforce key conecpts.These guides enable a tailored and self paced preparatino for the certification exams, Explore our pricing plans below to find the perfect fit for you, "
           }
         />
         <div className="pricing--btn-container h-fit w-fit mx-auto p-3 bg-abs-white border-[1px] border-solid border-white-95 flex gap-4 justify-evenly mb-5">
@@ -105,66 +104,39 @@ const Pricing = () => {
           </button>
         </div>
       </article>
-      <div className=" grid gap-8 bg-abs-white md:grid-cols-2">
-        <article className=" grid gap-y-8 border-[1px] border-solid border-white-95 rounded-regular p-5 bg-abs-white">
-          <p className=" py-2 px-6 flex justify-center items-center border-[1px] border-solid border-orange-90 bg-orange-97">
-            Free Plan
-          </p>
-          <div className=" text-center">
-            {(function () {
-              switch (pricing.duration) {
-                case "Month":
-                  return <PricingType amount={0} duration={"month"} />;
-                case "Year":
-                  return <PricingType amount={0} duration={"year"} />;
-                default:
-                  return <></>;
-              }
-            })()}
-          </div>
-          <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
-            <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            {free.map((feature, idx) => {
-              return <PricingFeature key={idx} {...feature} />;
-            })}
-            <button className="bg-orange-50 p-3 text-abs-white rounded-regular">
-              Get Started
-            </button>
-          </div>
-        </article>
-        <article className=" grid gap-y-8 border-[1px] border-solid  border-white-95 rounded-regular p-5 bg-abs-white">
-          <p className=" py-2 px-6 flex justify-center items-center border-[1px] border-solid border-orange-90 bg-orange-97">
-            Paid Plan
-          </p>
-          <div className=" text-center">
-            {(function () {
-              switch (pricing.duration) {
-                case "Month":
-                  return <PricingType amount={100} duration={"month"} />;
-                case "Year":
-                  return <PricingType amount={1200} duration={"year"} />;
-                default:
-                  return <></>;
-              }
-            })()}
-          </div>
-          <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
-            <p className=" pt-4 text-lg font-semiBold">Available Features</p>
-            {paid.map((feature, idx) => {
-              return <PricingFeature key={idx} {...feature} />;
-            })}
-            <button
-              className="bg-orange-50 p-3 text-abs-white rounded-regular"
-              onClick={handleButtonClick}
-            >
-
-              {/* {user?.paid ? "Extend Subscription" : "Subscribe"} (
-              {duration === 1 ? "1 Month" : "12 Months"}) */}
-              Subscribe {pricing.duration}
-
-            </button>
-          </div>
-        </article>
+      <div className="grid gap-8 bg-abs-white md:grid-cols-2">
+        {(function () {
+          switch (pricing.duration) {
+            case "Month":
+              return (
+                <>
+                  <PricingCard
+                    planType={"Free"}
+                    amount={"0"}
+                    duration={"month"}
+                    features={free}
+                  />
+                  <PricingCard
+                    planType={"Paid"}
+                    amount={"300"}
+                    duration={"4 months"}
+                    features={months4}
+                  />
+                  <PricingCard
+                    planType={"Paid"}
+                    amount={"611"}
+                    duration={"8 months"}
+                    features={months8}
+                  />
+                </>
+              );
+            case "Year":
+              return <PricingCard planType={"Paid"} amount={"950"} duration={"year"} features={yearly} />
+            default:
+              return <></>;
+          }
+        })()}
+        ;
       </div>
     </section>
   );

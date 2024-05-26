@@ -11,26 +11,26 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex flex-col gap-y-4 bg-white-97 md:py-6 md:px-20 md:flex-row md:justify-between py-3 mt-3"
+      className="flex flex-col py-3 mt-3 gap-y-4 bg-white-97 md:py-6 md:px-20 md:flex-row md:justify-between"
     >
       <section className="space-y-4">
-        <figure >
+        <figure>
           <img src={logo} alt="" />
         </figure>
         <figure className="space-y-2">
-          <div className="flex  items-center">
+          <div className="flex items-center">
             <i>
               <img src={emailIcn} alt="" className="h-5 aspect-square" />
             </i>
             <span>skillninja@gmail.com</span>
           </div>
-          <div className="flex  items-center">
+          <div className="flex items-center">
             <i>
               <img src={phoneIcn} alt="" className="h-5 aspect-square" />
             </i>
             <span>+91 92231 9301</span>
           </div>
-          <div className="flex  items-center">
+          <div className="flex items-center">
             <i>
               <img src={locationIcn} alt="" className="h-5 aspect-square" />
             </i>
@@ -41,7 +41,7 @@ const Footer = () => {
       <section className="grid grid-cols-2 md:gap-x-16">
         <div>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <h4 className="font-semiBold text-lg pb-1">Home</h4>
+            <h4 className="pb-1 text-lg font-semiBold">Home</h4>
           </Link>
           <p className="summary--item">Benefits</p>
           <Link
@@ -54,14 +54,21 @@ const Footer = () => {
           <p className="text-grey-35">Our FAQ</p>
         </div>
         <div>
-          <h4 className="font-semiBold text-lg pb-1">About Us</h4>
-          <p className="text-grey-35">Company</p>
-          <p className="text-grey-35">Achievments</p>
-          <p className="text-grey-35">Our Goals</p>
+          <h4 className="pb-1 text-lg font-semiBold">About Us</h4>
+        
+          <p className="text-grey-35">
+            <Link to="/contact">Contact Us</Link>
+          </p>
+          <p className="text-grey-35">
+            <Link to="/about">Achievments</Link>
+          </p>
+          <p className="text-grey-35">
+            <Link to="/about">Our Goals</Link>
+          </p>
         </div>
       </section>
       <section className="social-info">
-        <div className="font-semiBold text-lg pb-1">Social Profiles</div>
+        <div className="pb-1 text-lg font-semiBold">Social Profiles</div>
         <figure className="flex gap-x-4">
           <i>
             <img src={facebookIcn} alt="" />

@@ -1,10 +1,10 @@
 function PricingFeature({feature, status}){
     return (
-      <figure className="flex flex-row items-baseline p-3 bg-white-97 text-grey-30 gap-2">
-        <i className="bg-orange-95 p-2">
+      <figure className="flex flex-row items-baseline gap-2 p-3 bg-white-97 text-grey-30">
+        <i className="p-2 bg-orange-95">
           <img src={status} alt="" />
         </i>
-        <p className="self-center ">{feature}</p>
+        <p className="self-center text-sm md:text-lg">{feature}</p>
       </figure>
     );
 };

@@ -5,63 +5,103 @@ import boltShield from "./assets/icons/bolt-shield.svg";
 
 const Achievements = () => {
   return (
-    <section className="grid gap-8 bg-white-97 rounded-regular p-3">
+    <section className="grid gap-8 p-3 bg-white-97 rounded-regular">
       <article>
-        <h3 className="font-medium text-2xl leading-6 text-grey-20 underline decoration-wavy decoration-orange-90 mb-4">
+        <h3 className="mb-4 text-2xl font-medium leading-6 underline text-grey-20 decoration-wavy decoration-orange-90">
           Achievements
         </h3>
-        <p className="leading-6 text-sm text-grey-35">
+        <p className="text-sm leading-6 text-grey-35">
           Our commitment to excellence has led us to achieve significant
           milestones along our journey. Here are some of our notable
           achievements
         </p>
       </article>
       <article className="grid gap-4 md:grid-cols-2">
-        <div className="border border-white-95 p-8 grid rounded-regular">
+        <div className="grid p-8 border border-white-95 rounded-regular">
           <figure>
             <img
               src={crown}
               alt=""
-              className="border border-orange-90 bg-orange-97 p-3 rounded-regular"
+              className="p-3 border border-orange-90 bg-orange-97 rounded-regular"
             />
           </figure>
           <p className="text-lg font-medium">Trusted by Thousands</p>
-          <p className="bg-white-97 rounded-regular  md:flex md:items-center md:justify-between">
-            We have successfully served thousands of students, helping them
-            unlock their potential and achieve their career goals.
+          <p className="bg-white-97 rounded-regular md:flex md:items-center md:justify-between">
+            Our e-learning application for cybersecurity is trusted by thousands
+            of learners and professionals around the world. We take pride in
+            being the platform of choice for individuals and organizations
+            seeking to enhance their cybersecurity knowledge and skills. Here
+            are companies and institutions that rely on us: Fortune 500
+            Companies sucha as IBM and CISCO, Educational Institutions,
+            Government Agencies, Cyber-Security Firms such as Symantec, McAfee
+            and Palo Alto
           </p>
         </div>
-        <div className="border border-white-95 p-8 grid rounded-regular">
+        <div className="grid p-8 border border-white-95 rounded-regular">
           <figure>
-            <img src={medal} alt="" className="border border-orange-90 bg-orange-97 p-3 rounded-regular" />
+            <img
+              src={medal}
+              alt=""
+              className="p-3 border border-orange-90 bg-orange-97 rounded-regular"
+            />
           </figure>
           <p className="text-lg font-medium">Award-Winning Courses</p>
-          <p className="bg-white-97 rounded-regular  md:flex md:items-center md:justify-between">
+          <p className="bg-white-97 rounded-regular md:flex md:items-center md:justify-between">
             Our courses have received recognition and accolades in the industry
             for their quality, depth of content, and effective teaching
-            methodologies.
+            methodologies and we offer numerous certifications such as the
+            Certified Information Securty Manager (CISM) certificate, Certified
+            Information Systems Auditor (CISA) certificate, The Certified
+            Informations Systems Security Proffessional (CISSP) certificate,
+            Certified Cliuse Security Professionla (CCSP) certificate, CompTIA
+            Security +, GIAC Security Essential (GSEC) and so much more .
           </p>
         </div>
-        <div className="border border-white-95 p-8 grid rounded-regular">
+        <div className="grid p-8 border border-white-95 rounded-regular">
           <figure>
-            <img src={twoMasks} alt="" className="border border-orange-90 bg-orange-97 p-3 rounded-regular" />
+            <img
+              src={twoMasks}
+              alt=""
+              className="p-3 border border-orange-90 bg-orange-97 rounded-regular"
+            />
           </figure>
           <p className="text-lg font-medium">Positive Student Feedback</p>
-          <p className="bg-white-97 rounded-regular  md:flex md:items-center md:justify-between">
+          <p className="bg-white-97 rounded-regular md:flex md:items-center md:justify-between">
             We take pride in the positive feedback we receive from our students,
             who appreciate the practicality and relevance of our course
-            materials.
+            materials. Our commitment to providing high-quality education is
+            reflected in the positive outcomes and feedback from our users. We
+            continuously update our content, integrate new technologies, and
+            seek input from industry experts to maintain the highest standards
+            of excellence. This dedication ensures that our platform remains a
+            leading resource for cybersecurity education. Join the many
+            individuals and organizations who have experienced the
+            transformative impact of our e-learning application. Enhance your
+            cybersecurity knowledge, advance your career, and contribute to a
+            safer digital world with our trusted platform.
           </p>
         </div>
-        <div className="border border-white-95 p-8 grid rounded-regular">
+        <div className="grid p-8 border border-white-95 rounded-regular">
           <figure>
-            <img src={boltShield} alt="" className="border border-orange-90 bg-orange-97 p-3 rounded-regular" />
+            <img
+              src={boltShield}
+              alt=""
+              className="p-3 border border-orange-90 bg-orange-97 rounded-regular"
+            />
           </figure>
           <p className="text-lg font-medium">Industry Partnerships</p>
-          <p className="bg-white-97 rounded-regular  md:flex md:items-center md:justify-between">
-            We have established strong partnerships with industry leaders,
-            enabling us to provide our students with access to the latest tools
-            and technologies
+          <p className="bg-white-97 rounded-regular md:flex md:items-center md:justify-between">
+            Our e-learning application for cybersecurity is built on strong
+            partnerships with leading organizations in the cybersecurity
+            industry. These collaborations ensure that our content is relevant,
+            up-to-date, and meets the highest standards of excellence. Here are
+            some of our key industry partners: The International Information
+            System Security Certification Consortium, or (ISC)², is a global
+            leader in cybersecurity certifications CompTIA is a leading provider
+            of vendor-neutral IT certifications. ISACA is a global association
+            that provides knowledge and certifications for information systems
+            governance, control, security, and audit professionals. Cisco is a
+            worldwide leader in IT and networking.
           </p>
         </div>
       </article>
