@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import arrowRight from "./assets/icons/arrow-right.svg";
-// import logout from "./assets/icons/logout.svg";
 import close from "./assets/icons/close.svg";
 import Backdrop from "./Backdrop";
 import useAxios from "../utils/useAxios";
@@ -16,7 +15,6 @@ import {
 } from "react-toastify";
 
 import logo from "./assets/icons/Logo.svg";
-import dashboard from "./assets/icons/dashboard.svg";
 import hamburger from "./assets/icons/hamburger.svg";
 import logout from "../components/assets/icons/logout.svg";
 import { useAuthStore } from "../store/auth";
