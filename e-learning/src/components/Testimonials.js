@@ -10,17 +10,14 @@ const s = () => {
         <h2 className="flex items-center h-10 text-3xl font-semiBold md:text-4xl">
           Testimonies
         </h2>
-        <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="">
           <p className="leading-6 text-grey-35 md:w-[60%]">
             At Cyber Ninja, we pride ourselves on providing an exceptional
             learning experience tailored to each individual's needs. But don't
-            just take our word for it—hear directly from our users who have
+            just take our word for it hear directly from our users who have
             transformed their lives and careers through our platform. Here are
             some of their inspiring stories:
           </p>
-          <button className="self-end w-20 h-10 rounded-regular text-abs-black bg-white-95">
-            View All
-          </button>
         </div>
       </article>
       <article className="grid leading-6 md:grid-cols-2 ">
@@ -67,14 +64,14 @@ const s = () => {
         </div>
         <div className="p-5 bg-white-99">
           <p className="self-end text-sm text-grey-40">
-            "The Malware and Attack Technologies courses on Cyber Ninja have transformed my thinking and how i approach ethical hacking. The variety of lessons and tips the instructors bring has
+            "The Malware and Attack Technologies courses on Cyber Ninja have transformed my thinking and how I approach ethical hacking. The variety of lessons and tips the instructors bring has
             helped me achieve a lot. The ability to track
             my progress and get instant feedback keeps me motivated to reach my
             goals."
           </p>
           <figure className="border-t-[1px] mt-4 pt-4 border-solid border-white-90 flex items-center gap-x-4 p-2">
             <img src={Michael} alt="" />
-            <figcaption>Michael B., Fitness Enthusiast</figcaption>
+            <figcaption>Michael B., Fullstack Developer</figcaption>
           </figure>
         </div>
       </article>

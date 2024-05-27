@@ -33,7 +33,7 @@ function MyClasses() {
         <article className=" bg-orange-80 h-32 md:h-80 relative rounded-regular min-w-full">
           <div className="absolute left-0 bottom-0 p-2 text-abs-white">
             <p>Jss</p>
-            <p>11 lessons</p>
+            <p>11 lessons</p> 
           </div>
           <figure className="flex absolute right-0 bottom-0 p-2 text-abs-white">
             <img src={timer} alt="" />

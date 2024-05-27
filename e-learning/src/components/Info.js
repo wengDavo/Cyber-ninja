@@ -14,7 +14,7 @@ const Info = () => {
         <h3 className="font-semiBold h-10 flex items-center text-3xl md:text-4xl">
           Benefits
         </h3>
-        <div className="flex flex-col md:flex-row md:justify-between">
+        <div className="">
           <p className="leading-6 text-grey-35 md:w-[60%]">
             Our platform boasts a set of features that facilitate collaboration
             among learners, such as comprehensive learning resources,
@@ -25,9 +25,6 @@ const Info = () => {
             communication skills, which are essential in both academic and
             professional settings.
           </p>
-          <button className="w-20 h-10 rounded-regular self-end text-abs-black bg-white-95">
-            View All
-          </button>
         </div>
       </article>
       <article className="grid leading-6 gap-7 md:grid-cols-3">
@@ -147,11 +144,11 @@ const Info = () => {
         </h3>
         <div className="flex flex-col md:flex-row md:justify-between">
           <p className="leading-6 text-grey-35 md:w-[60%]">
-            Cyber Ninja provides a diverse range of courses designed to meet
-            the educational needs and interests of all our users. Our curriculum
-            is developed by experts in each field and incorporates the latest
+            Cyber Ninja provides a diverse range of courses designed to meet the
+            educational needs and interests of all our users. Our curriculum is
+            developed by experts in each field and incorporates the latest
             advancements in educational technology to ensure a comprehensive and
-            engaging learning experience. Here’s a brief overview of the courses
+            engaging learning experience. Here's a brief overview of the courses
             we offer:
           </p>
           <button className="w-20 h-10 rounded-regular bg-white-95 text-abs-black">

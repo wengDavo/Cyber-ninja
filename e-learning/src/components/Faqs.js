@@ -9,16 +9,19 @@ const FAQS = () => {
           Frequently Asked Questions
         </h2>
         <p className="leading-6 text-grey-35 md:w-[60%] py-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          At Cyber Ninja, we pride ourselves on providing an exceptional
+          learning experience tailored to each individual's needs. But don't
+          just take our word for it hear directly from our users who have
+          transformed their lives and careers through our platform. Here are
+          some of their inspiring stories:
         </p>
-        <button className=" h-10 bg-white-97 rounded-regular px-4 mb-4">
-          See All FAQ's
-        </button>
       </article>
       <article className="faqs grid leading-6">
-        {faqs.map((faq, idx)=>{{
-          return <Accordion {...faq} key={idx}/>
-        }})}
+        {faqs.map((faq, idx) => {
+          {
+            return <Accordion {...faq} key={idx} />;
+          }
+        })}
       </article>
     </section>
   );
