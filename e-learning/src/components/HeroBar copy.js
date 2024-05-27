@@ -36,7 +36,9 @@ const HeroBar = ({ course, onEnroll, isEnrolled }) => {
           try {
             await fetchAndSetProfile();
           } catch (error) {
-            console.log(error);
+            toast.error(error, {
+              autoClose: 3000,
+            });
           }
         }
       } catch (error) {
