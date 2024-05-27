@@ -86,7 +86,7 @@ export const LoggedInView = () => {
     <div className="flex justify-between ml-auto space-x-2 md:order-3 ">
       <Link to="/pricing">
         <button
-          // onClick={handleButtonClick}
+          onClick={handleButtonClick}
           className="px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2 h-8"
         >
           {user?.paid ? " Cancel Plan" : "Subscribe Now"}
