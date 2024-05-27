@@ -9,7 +9,7 @@ import NavBar from "../components/Navbar";
 const About = () => {
 
   return (
-    <body className="p-2 space-y-4 md:p-4">
+    <div className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main id="main">
         <HeroBar
@@ -23,7 +23,7 @@ const About = () => {
         <Message />
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

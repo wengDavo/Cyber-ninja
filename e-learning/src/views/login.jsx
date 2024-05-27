@@ -78,7 +78,7 @@ const Login = () => {
   };
 
   return (
-    <body className="p-2 space-y-4 md:p-4">
+    <div className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main className="md:grid md:grid-cols-2">
         <section className="flex flex-col gap-8 border bg-white-97 border-white-95 p-7">
@@ -162,7 +162,7 @@ const Login = () => {
         </section>
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

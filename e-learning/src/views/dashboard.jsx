@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/auth";
 import Footer from "../components/Footer";
+import {
+  ToastContainer,
+  toast,
+  Slide,
+  Zoom,
+  Flip,
+  Bounce,
+} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import NavBar from "../components/Navbar";
 import "../styles/calendar.css";
@@ -26,7 +35,10 @@ const Dashboard = () => {
       try {
         await fetchAndSetProfile();
       } catch (error) {
-        console.log(error);
+        toast.error(error, {
+          autoClose: 3000,
+          toastId: 488,
+        });;
       }
     };
 
@@ -34,7 +46,7 @@ const Dashboard = () => {
   }, [fetchAndSetProfile]);
   
   return (
-    <body className="p-2 space-y-4 md:p-4">
+    <div className="p-2 space-y-4 md:p-4">
       {" "}
       <NavBar />
       <header className="flex gap-4  h-16">
@@ -53,7 +65,7 @@ const Dashboard = () => {
         </section>
       </main>
       {/* <Footer /> */}
-    </body>
+    </div>
   );
 };
 export default Dashboard;
