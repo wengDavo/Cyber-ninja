@@ -70,7 +70,10 @@ const Course = () => {
       try {
         await fetchAndSetProfile();
       } catch (error) {
-        console.log(error);
+        toast.error(error, {
+          autoClose: 3000,
+          toastId: 418,
+        });;
       }
     };
 
@@ -141,7 +144,7 @@ const Course = () => {
   };
 
   return (
-    <body className="p-2 space-y-4 md:p-4">
+    <div className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main id="main">
         {loading ? (
@@ -170,7 +173,7 @@ const Course = () => {
         )}
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import PricingFeature from "./PricingFeature";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   ToastContainer,
   toast,
@@ -28,48 +29,102 @@ function PricingCard({ planType, amount, duration, features }) {
   const navigate = useNavigate();
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
+
+  // const handleSubscribe = async () => {
+  //   const durationMonths = getDurationInMonths(duration);
+  //   if (durationMonths === 0) {
+  //     return;
+  //   } else {
+  //     try {
+  //       const response = await api.post("subscribe/", {
+  //         duration_months: durationMonths,
+  //       });
+  //       toast.success(response.data.detail, { autoClose: 3000 });
+  //       navigate("/courses");
+  //     } catch (error) {
+  //       toast.error("Failed to subscribe. Please try again.", {
+  //         autoClose: 3000,
+  //       });
+  //     }
+  //   }
+  // };
 
   const handleSubscribe = async () => {
-    const durationMonths = getDurationInMonths(duration);
-    if (durationMonths === 0) {
-      return;
+    if (!isLoggedIn()) {
+      navigate("/login");
     } else {
-      try {
-        const response = await api.post("subscribe/", {
-          duration_months: durationMonths,
-        });
-        toast.success(response.data.detail, { autoClose: 3000 });
-        navigate("/courses");
-      } catch (error) {
-        toast.error("Failed to subscribe. Please try again.", {
-          autoClose: 3000,
-        });
+      const durationMonths = getDurationInMonths(duration);
+      if (durationMonths === 0) {
+        return;
+      } else {
+        try {
+          const NowPaymentsApi = window.NOWPaymentsApiJS;
+          if (NowPaymentsApi) {
+            const NPApi5 = new NowPaymentsApi({
+              apiKey: "1PX46YZ-3DR401W-N8T8V6R-435B8DF",
+            });
+            const response = await NPApi5.createInvoice({
+              price_amount: amount,
+              price_currency: "usd",
+              ipn_callback_url:
+                "https://cyber-ninja-bckend.onrender.com/api/ipn/",
+              order_id: `user_${user.user_id}_subscribe_${durationMonths}`,
+              order_description: `Subscription for ${durationMonths} months`,
+              success_url:
+                "https://cyber-ninja-pied.vercel.app/payment/success/",
+              cancel_url: "https://cyber-ninja-pied.vercel.app/payment/cancel/",
+            });
+
+            if (response.invoice_url) {
+              // Save invoice details to backend
+              try {
+                await api.post("save-invoice/", {
+                  user_id: user.user_id,
+                  subscription_type: user?.paid ? "extend" : "subscribe",
+                  invoice_id: response.id,
+                  duration_months: durationMonths,
+                });
+                toast.success("Invoice Successfully Created");
+        
+                // Redirect to payment
+                window.location.href = response.invoice_url;
+              } catch (error) {
+                toast.error(error);
+              }
+            }
+          } else {
+            toast.error("Payment Gateway is not available.");
+          }
+        } catch (error) {
+          toast.error("Error initializing Payment Gateway:", error);
+        }
       }
     }
   };
 
-  const handleExtendSubscribe = async () => {
-    const durationMonths = getDurationInMonths(duration);
-    if (durationMonths === 0) {
-      return;
-    } else {
-      try {
-        const response = await api.post("extend_subscription/", {
-          duration_months: durationMonths,
-        });
-        toast.success(response.data.detail, { autoClose: 3000 });
-        navigate("/courses");
-      } catch (error) {
-        toast.error("Failed to extend subscription. Please try again.", {
-          autoClose: 3000,
-        });
-      }
-    }
-  };
+  // const handleExtendSubscribe = async () => {
+  //   const durationMonths = getDurationInMonths(duration);
+  //   if (durationMonths === 0) {
+  //     return;
+  //   } else {
+  //     try {
+  //       const response = await api.post("extend_subscription/", {
+  //         duration_months: durationMonths,
+  //       });
+  //       toast.success(response.data.detail, { autoClose: 3000 });
+  //       navigate("/courses");
+  //     } catch (error) {
+  //       toast.error("Failed to extend subscription. Please try again.", {
+  //         autoClose: 3000,
+  //       });
+  //     }
+  //   }
+  // };
 
-  const handleButtonClick = user?.paid
-    ? handleExtendSubscribe
-    : handleSubscribe;
+  // const handleButtonClick = user?.paid
+  //   ? handleExtendSubscribe
+  //   : handleSubscribe;
 
   return (
     <article className=" grid gap-y-8 border-[1px] border-solid border-white-95 rounded-regular p-5 bg-abs-white">
@@ -87,7 +142,7 @@ function PricingCard({ planType, amount, duration, features }) {
         })}
         <button
           className="p-3 bg-orange-50 text-abs-white rounded-regular"
-          onClick={handleButtonClick}
+          onClick={handleSubscribe}
         >
           Get Started
         </button>

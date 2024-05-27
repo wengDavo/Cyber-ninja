@@ -43,7 +43,7 @@ export const register = async (
   user_type
 ) => {
   try {
-    const { data } = await axios.post("register/", {
+    const { data, status } = await axios.post("register/", {
       first_name,
       last_name,
       email,
@@ -53,7 +53,9 @@ export const register = async (
       // phone_number,
       user_type,
     });
-    await login(email, password);
+    if (status === 200) {
+      await login(email, password);
+    }
     return { data, error: null };
   } catch (error) {
     return {
@@ -121,7 +123,7 @@ export const getRefreshToken = async () => {
       handleBlacklistedToken();
     } else {
       // Handle other errors
-      console.error("Error refreshing token:", error);
+      // console.error("Error refreshing token:", error);
 
       Cookies.remove("refresh_token");
       Cookies.remove("access_token");

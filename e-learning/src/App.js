@@ -20,6 +20,8 @@ import Course from "./views/course";
 import About from "./views/about";
 import Contact from "./views/contact";
 import Pricing from "./views/pricing";
+import CancelPage from "./views/cancelPayment";
+import SuccessPage from "./views/successPayment";
 import { CourseProvider } from "./layouts/CourseContext";
 import Dashboard from "./views/dashboard";
 
@@ -81,11 +83,14 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                // <PrivateRoute>
-                <Dashboard />
-                // </PrivateRoute>
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
               }
             />
+            <Route path="/payment/success" element={<SuccessPage/>} />
+            <Route path="/payment/cancel" element={<CancelPage/>} />
+
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

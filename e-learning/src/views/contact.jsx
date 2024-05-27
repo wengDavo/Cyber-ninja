@@ -6,7 +6,7 @@ import NavBar from "../components/Navbar";
 
 const ContactHome = () => {
   return (
-    <body className="p-2 space-y-4 md:p-4">
+    <div className="p-2 space-y-4 md:p-4">
       <NavBar />
       <main id="main">
         <HeroBar
@@ -18,7 +18,7 @@ const ContactHome = () => {
         <Contact />
       </main>
       <Footer />
-    </body>
+    </div>
   );
 };
 

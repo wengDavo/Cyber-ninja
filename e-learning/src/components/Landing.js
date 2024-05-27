@@ -3,7 +3,7 @@
 
 const Landing = ({ children }) => {
   return (
-    <div id="body" >
+    <div >
       {children}
     </div>
   );
