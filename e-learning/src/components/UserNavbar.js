@@ -13,10 +13,8 @@ import {
 } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import logout from "../components/assets/icons/logout.svg";
-import search from "../components/assets/icons/search-normal.svg";
 
 function UserNavbar() {
-  let [isSearching, setIsSearching] = useState(false);
   const api = useAxios();
   const navigate = useNavigate();
 
@@ -41,36 +39,16 @@ function UserNavbar() {
   const handleButtonClick = user?.paid ? cancelSubscription : redirectSubscribe;
   return (
     <>
-      <form action="" className="grow">
-        <div className="flex">
-          <img
-            src={search}
-            alt="search"
-            onClick={() => setIsSearching(!isSearching)}
-          />
-          {isSearching && (
-            <input
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search..."
-              className="grow outline-none border border-white-90 rounded-regular mx-2 px-2"
-            />
-          )}
-        </div>
-      </form>
-      {isSearching || (
-        <div className="flex gap-4">
-          <section className="grid">
-            <p className="font-medium text-grey-40 text-lg">
-              Welcome, {user.first_name} {user.last_name}
-            </p>
-            <p className="text-sm text-grey-60 hidden md:block">
-              Have a good day
-            </p>
-          </section>
-        </div>
-      )}
+      <div className="flex gap-4">
+        <section className="grid">
+          <p className="font-medium text-grey-40 text-lg">
+            Welcome, {user.first_name} {user.last_name}
+          </p>
+          <p className="text-sm text-grey-60 hidden md:block">
+            Have a good day
+          </p>
+        </section>
+      </div>
       {/* <figure>
         <img src={logout} alt="logout" />
       </figure> */}
