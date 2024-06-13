@@ -317,7 +317,7 @@ const Info = () => {
             <p className="text-sm font-medium">By Sarah Thompson</p>
             <p className="font-semiBold text-xl">Cyber Security Tools</p>
             <p className="courseebg-abs-white text-sm text-grey-30">
-              This unit covers the various cyber security tools available, these tools include Firewalls, Antivirus software, PKI Services
+              This unit covers the various  cyber security tools available, these tools include Firewalls, Antivirus software, PKI Services, Managed Detection and Response Service, Penetration Tssting, and more this unit will familiarize you with much of the vocabulary you hear with regards to securty tools and also how to use them in details
             </p>
           </div>
           <button className="px-6 py-3 font-medium bg-white-97 w-full">
