@@ -14,16 +14,41 @@ const Info = () => {
         <h3 className="font-semiBold h-10 flex items-center text-3xl md:text-4xl">
           Benefits
         </h3>
-        <div className="">
-          <p className="leading-6 text-grey-35 md:w-[60%]">
-            Our platform boasts a set of features that facilitate collaboration
-            among learners, such as comprehensive learning resources,
-            interactive and engaging content, expert led intstructions. These
-            tools enable students to interact, share ideas, and learn from each
-            other, fostering a sense of community and enhancing the learning
-            experience. Collaboration also helps develop critical thinking and
-            communication skills, which are essential in both academic and
-            professional settings.
+        <div className="leading-6 text-grey-35 px-2 grid gap-4">
+          <ul className="list-disc px-2">
+            <li>
+              According to the Bureau of Labor Statistics, there is a high
+              demand for ethical hackers in the job market, with an unexpected
+              growth rate of 32% from 2020 to 2030
+            </li>
+            <li>
+              Ethical hacking is a diverse filed with opportunities in various
+              industries such as finance, healthcare, goverenment and technology
+            </li>
+            <li>
+              As per PayScale the average scalary for an ethical hacker in
+              tUnited State is $99,000 per year
+            </li>
+            <li>
+              The ethical hacking filed is constantly evolving, with new
+              technologies and tecgniques emerging, providing ongoing learning
+              opportunities for professionals
+            </li>
+            <li>
+              A report by Burning Glass Technologies found that cybersecurity
+              skills can boost a worker's salary by up to 16%
+            </li>
+            <li>
+              Learning ethical hacking can help individual protect themselves
+              from cyber attacks. According to Statista, there were 1.2 billion
+              data breaches in the first half of 2024 alone, which makes it
+              crucial for everyone to understand how to protect their personal
+              information online
+            </li>
+          </ul>
+          <p>
+            Below are some benefits of learning ethical hacking on Our platform
+            as we boast a set of features that facilitate maximum productivity.
           </p>
         </div>
       </article>

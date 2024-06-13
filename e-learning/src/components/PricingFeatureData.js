@@ -57,3 +57,33 @@ export const yearly = [
   { feature: "CompTIA Security +", status: correct },
   { feature: "Exam Retakes", status: correct },
 ];
+// tools
+export const starter = [
+  { feature: "Core Impact", status: correct },
+  { feature: "Invicti", status: correct },
+  { feature: "Fortify", status: correct },
+  { feature: "Cain & Abel", status: correct },
+  { feature: "Network Mapper", status: correct },
+];
+export const standard = [
+  { feature: "Cobalt Strike", status: correct },
+  { feature: "Immunity CANVAS", status: correct },
+  { feature: "Wireshark", status: correct },
+  { feature: "Aircrack", status: correct },
+  { feature: "Hydra", status: correct },
+  { feature: "Sqlmap", status: correct },
+  { feature: "Maltego", status: correct },
+  { feature: "Nessus", status: correct },
+];
+export const pro = [
+  { feature: "Rapid InsightVm", status: correct },
+  { feature: "OWASP ZAP", status: correct },
+  { feature: "GFI LanGuard", status: correct },
+  { feature: "Netcat", status: correct },
+  { feature: "WebInspect", status: correct },
+  {feature: "Ettercap",status: correct,},
+  { feature: "Recon", status: correct },
+  { feature: "Browser Exploitation Framework (BeEF)", status: correct },
+  { feature: "W3af", status: correct },
+  {feature: "Burp Suite Professional",status: correct,},
+];

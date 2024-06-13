@@ -25,7 +25,7 @@ function getDurationInMonths(duration) {
   return 0; // Default to 0 if no match
 }
 
-function PricingCard({ planType, amount, duration, features }) {
+function PricingCard({ planType, amount, duration, features, title }) {
   const navigate = useNavigate();
   const api = useAxios();
   const user = useAuthStore((state) => state.user());
@@ -133,10 +133,10 @@ function PricingCard({ planType, amount, duration, features }) {
       </p>
       <div className="text-center ">
         <span className="text-5xl font-semiBold">${amount}</span>
-        <span className=" text-grey-30">/{duration}</span>
+        <span className=" text-grey-30"> / {duration}</span>
       </div>
       <div className=" grid gap-y-5 text-center border-[1px] border-solid border-white-90 rounded-regular p-3">
-        <p className="pt-4 text-lg font-semiBold">Available Features</p>
+        <p className="pt-4 text-lg font-semiBold">{title}</p>
         {features.map((feature, idx) => {
           return <PricingFeature key={idx} {...feature} />;
         })}

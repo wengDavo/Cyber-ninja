@@ -4,14 +4,14 @@ import { useAuthStore } from "../store/auth";
 import "react-toastify/dist/ReactToastify.css";
 import useProfileUpdater from "../utils/profile";
 import HeroBar from "./HeroBar";
-import { free, yearly, months4, months8 } from "./PricingFeatureData";
+import { free, yearly, months4, months8, starter, standard, pro } from "./PricingFeatureData";
 import PricingCard from "./PricingCard";
 
 const Pricing = () => {
   const [duration, setDuration] = useState(1);
   const user = useAuthStore((state) => state.user());
   const { fetchAndSetProfile } = useProfileUpdater();
-  const [pricing, setPricing] = useState({ duration: "Month" });
+  const [pricing, setPricing] = useState({ type: "Courses" });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,11 +40,11 @@ const Pricing = () => {
               duration === 1 ? "bg-orange-50 text-abs-white" : "bg-white-97"
             } rounded-regular`}
             onClick={() => {
-              setPricing({ duration: "Month" });
+              setPricing({ type: "Courses" });
               setDuration(1);
             }}
           >
-            Monthly
+            Courses
           </button>
           <button
             className={`w-20 h-10 ${
@@ -52,17 +52,17 @@ const Pricing = () => {
             } rounded-regular`}
             onClick={() => {
               setDuration(12);
-              setPricing({ duration: "Year" });
+              setPricing({ type: "Tools" });
             }}
           >
-            Yearly
+            Tools
           </button>
         </div>
       </article>
       <div className="grid gap-8 bg-abs-white md:grid-cols-2">
         {(function () {
-          switch (pricing.duration) {
-            case "Month":
+          switch (pricing.type) {
+            case "Courses":
               return (
                 <>
                   <PricingCard
@@ -70,29 +70,56 @@ const Pricing = () => {
                     amount={"0"}
                     duration={"month"}
                     features={free}
+                    title={"Available Features"}
                   />
                   <PricingCard
                     planType={"Paid"}
                     amount={"300"}
                     duration={"4 months"}
                     features={months4}
+                    title={"Available Features"}
                   />
                   <PricingCard
                     planType={"Paid"}
                     amount={"611"}
                     duration={"8 months"}
                     features={months8}
+                    title={"Available Features"}
+                  />
+                  <PricingCard
+                    planType={"Paid"}
+                    amount={"950"}
+                    duration={"year"}
+                    features={yearly}
+                    title={"Available Features"}
                   />
                 </>
               );
-            case "Year":
+            case "Tools":
               return (
-                <PricingCard
-                  planType={"Paid"}
-                  amount={"950"}
-                  duration={"year"}
-                  features={yearly}
-                />
+                <>
+                  <PricingCard
+                    planType={"Starter"}
+                    amount={"100"}
+                    duration={"lifetime access"}
+                    features={starter}
+                    title={"Available Tools"}
+                  />
+                  <PricingCard
+                    planType={"Standard"}
+                    amount={"450"}
+                    duration={"lifetime access"}
+                    features={standard}
+                    title={"Available Tools"}
+                  />
+                  <PricingCard
+                    planType={"Professional"}
+                    amount={"700"}
+                    duration={"lifetime access"}
+                    features={pro}
+                    title={"Available Tools"}
+                  />
+                </>
               );
             default:
               return <></>;
