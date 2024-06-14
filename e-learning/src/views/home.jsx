@@ -39,7 +39,7 @@ const Home = () => {
       try {
         const NowPaymentsApi = window.NOWPaymentsApiJS;
         if (NowPaymentsApi) {
-          const NPApi2 = new NowPaymentsApi({ apiKey: '3DEDSV5-GGKMN2G-HNFQN0Q-BDYJJZW' });
+          const NPApi2 = new NowPaymentsApi({ apiKey: process.env.REACT_APP_NOWPAY_API_KEY });
           const response = await NPApi2.status();
           setStatus(response.message);
           console.log(response.message);  

@@ -23,8 +23,6 @@ import {
 } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -50,12 +48,12 @@ const Courses = () => {
             autoClose: 3000,
           });
         } else if (error.request) {
-          // Request made but no response is received from the server.         
+          // Request made but no response is received from the server.
           toast.error(error.request, {
             autoClose: 3000,
           });
         } else {
-          // Error occured while setting up the request      
+          // Error occured while setting up the request
           toast.error(error.message, {
             autoClose: 3000,
           });
@@ -156,7 +154,7 @@ const Courses = () => {
                 4 weeks
               </span>
               <span className="font-regular inline-block h-8 border-[1px] border-solid  border-white-95 py-2 px-3 text-grey-30 rounded-regular my-3 text-sm max-w-[150px] overflow-hidden truncate text-nowrap">
-                Begineer
+                Beginner
               </span>
             </div>
             <p className="text-sm font-medium">By John Smith</p>
@@ -165,14 +163,17 @@ const Courses = () => {
             </p>
             <p className="bg-abs-white text-sm text-grey-30">
               A comprehensive course, which covers the Cyber Security Principles
-              in a self paced begineer friendly manner, showing the steps to
-              cybersecurity for people, organisations and bussinesses that are
-              looking to protect themselves from attakcs in cyberspace, the
+              in a self paced beginner friendly manner, showing the steps to
+              cybersecurity for people, organizations and businesses that are
+              looking to protect themselves from attacks in cyberspace, the
               steps discussed in this course follows the guidance originally
               produced by the National Cyber Security Centre (NCSC).
             </p>
           </div>
-          <Link to="/course">
+          <Link
+            to={`/course/${1}`}
+            onClick={() => handleCourseClick(1)}
+          >
             <button className="px-6 py-3 font-medium bg-white-97 w-full">
               Get it Now
             </button>
@@ -298,7 +299,6 @@ const Courses = () => {
               <img src={Image5} alt="" className="w-full" />
             </figure>
             <div className="inline-block space-x-2">
-            
               <span className="font-regular inline-block h-8 border-[1px] border-solid border-white-95 py-2 px-3 text-grey-30 rounded-regular my-3 text-sm  max-w-[150px] overflow-hidden truncate text-nowrap">
                 14 weeks
               </span>

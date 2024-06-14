@@ -16,6 +16,8 @@ function getDurationInMonths(duration) {
   if (typeof duration === "string") {
     if (duration.toLowerCase() === "year") {
       return 12;
+    } else if (duration.toLowerCase() === "lifetime access") {
+      return "life";
     }
     const match = duration.match(/(\d+)\s*months?/i);
     if (match) {
@@ -57,12 +59,54 @@ function PricingCard({ planType, amount, duration, features, title }) {
       const durationMonths = getDurationInMonths(duration);
       if (durationMonths === 0) {
         return;
+      } else if (durationMonths === "life") {
+        try {
+          const NowPaymentsApi = window.NOWPaymentsApiJS;
+          if (NowPaymentsApi) {
+            const NPApi6 = new NowPaymentsApi({
+              apiKey: process.env.REACT_APP_NOWPAY_API_KEY,
+            });
+            const response = await NPApi6.createInvoice({
+              price_amount: amount,
+              price_currency: "usd",
+              ipn_callback_url:
+                "https://cyber-ninja-bckend.onrender.com/api/ipn/",
+              order_id: `user_${user.user_id}_subscribe_${duration}`,
+              order_description: `Subscription for ${duration}`,
+              success_url:
+                "https://cyber-ninja-pied.vercel.app/payment/success/",
+              cancel_url: "https://cyber-ninja-pied.vercel.app/payment/cancel/",
+            });
+
+            if (response.invoice_url) {
+              // Save invoice details to backend
+              try {
+                await api.post("save-invoice/", {
+                  user_id: user.user_id,
+                  subscription_type: "tools",
+                  invoice_id: response.id,
+                  duration_months: 10000,
+                });
+                toast.success("Invoice Successfully Created");
+
+                // Redirect to payment
+                window.location.href = response.invoice_url;
+              } catch (error) {
+                toast.error(error);
+              }
+            }
+          } else {
+            toast.error("Tools Payment Gateway is not available.");
+          }
+        } catch (error) {
+          toast.error("Error initializing Tools Payment Gateway:", error);
+        }
       } else {
         try {
           const NowPaymentsApi = window.NOWPaymentsApiJS;
           if (NowPaymentsApi) {
             const NPApi5 = new NowPaymentsApi({
-              apiKey: "1PX46YZ-3DR401W-N8T8V6R-435B8DF",
+              apiKey: import.meta.env.NOWPAY_API_KEY,
             });
             const response = await NPApi5.createInvoice({
               price_amount: amount,
@@ -86,7 +130,7 @@ function PricingCard({ planType, amount, duration, features, title }) {
                   duration_months: durationMonths,
                 });
                 toast.success("Invoice Successfully Created");
-        
+
                 // Redirect to payment
                 window.location.href = response.invoice_url;
               } catch (error) {
@@ -94,10 +138,10 @@ function PricingCard({ planType, amount, duration, features, title }) {
               }
             }
           } else {
-            toast.error("Payment Gateway is not available.");
+            toast.error("Subscription Payment Gateway is not available.");
           }
         } catch (error) {
-          toast.error("Error initializing Payment Gateway:", error);
+          toast.error("Error initializing Subscription Payment Gateway:", error);
         }
       }
     }
