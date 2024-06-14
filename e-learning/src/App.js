@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom/dist";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import {
   ToastContainer,
   toast,
@@ -24,6 +24,7 @@ import CancelPage from "./views/cancelPayment";
 import SuccessPage from "./views/successPayment";
 import { CourseProvider } from "./layouts/CourseContext";
 import Dashboard from "./views/dashboard";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -83,9 +84,9 @@ function App() {
             <Route
               path="/dashboard"
               element={
-                // <PrivateRoute>
+                <PrivateRoute>
                   <Dashboard />
-                // </PrivateRoute>
+                </PrivateRoute>
               }
             />
             <Route path="/payment/success" element={<SuccessPage/>} />
@@ -95,6 +96,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="*" element={<NotFound />} /> {/* Catch-all route */}
           </Routes>
         </MainWrapper>
       </CourseProvider>
