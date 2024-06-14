@@ -1,2 +1,4 @@
 /core
 .vscode/settings.json
+e-learning/.env
+e-learning/src/.env
