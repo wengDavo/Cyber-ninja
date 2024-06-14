@@ -54,7 +54,7 @@ const Courses = () => {
     };
 
     fetchCourses();
-  }, []);
+  }, [api]);
 
   return (
     <section className="grid gap-y-4 border border-white-99 p-3 md:p-10">
