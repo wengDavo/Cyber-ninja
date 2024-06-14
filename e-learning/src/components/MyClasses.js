@@ -36,7 +36,7 @@ function MyClasses() {
               className="h-32 md:h-80 relative rounded-regular min-w-full"
             >
               <img
-                src={imageUrl}
+                src={course.image1}
                 alt={course.title}
                 className="w-full h-full object-cover rounded-regular"
               />
