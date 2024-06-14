@@ -167,6 +167,7 @@ const Course = () => {
               </>
             )}
             {/* Pass selectedLessonId as prop */}
+            {/* <Lessons course={course} onSelectLesson={handleLessonSelect} />{" "} */}
             <Lessons course={course} onSelectLesson={handleLessonSelect} />{" "}
             {/* Pass setSelectedLessonId as prop */}
           </>

@@ -9,7 +9,7 @@ const Video = ({ selectedLessonId, lesson }) => {
           {" "}
           {lesson.title}
         </h2>
-        <div className="overflow-y-scroll max-h-[500px] mx-auto group topicc border border-white-95 rounded-regular flex flex-col gap-y-8 p-5 md:flex-row md:justify-between md:items-center border-orange-80 shadow-md">
+        <div className="overflow-y-scroll max-h-[500px] mx-auto group topicc border  rounded-regular flex flex-col gap-y-8 p-5 md:flex-row md:justify-between md:items-center border-orange-80 shadow-md">
           <p className=" m-auto leading-6 font-light overflow-y-auto scrollbar-hidden">
             {lesson.content}
           </p>

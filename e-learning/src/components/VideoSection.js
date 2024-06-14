@@ -4,7 +4,8 @@ const CompanyLogos = () => {
     <section className="">
       <video
         src={cyberVideo}
-        autoPlay="true"
+        // autoPlay="true"
+        autoPlay
         controls
         className="md:w-[80%] md:mx-auto"
         controlsList="nodownload"

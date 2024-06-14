@@ -87,13 +87,13 @@ export const LoggedInView = () => {
       <Link to="/pricing">
         <button
           onClick={handleButtonClick}
-          className="px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2 h-8"
+          className="px-1 border text-grey-15 rounded-regular bg-abs-white border-white-90 md:p-2 h-8 flex items-center"
         >
           {user?.paid ? " Cancel Plan" : "Subscribe Now"}
         </button>
       </Link>
       <Link to="/dashboard">
-        <button className="h-8 px-1 bg-orange-50 rounded-regular md:p-2">
+        <button className="h-8 px-1 bg-orange-50 rounded-regular md:p-2 flex items-center">
           Dashboard
         </button>
       </Link>
