@@ -106,7 +106,7 @@ function PricingCard({ planType, amount, duration, features, title }) {
           const NowPaymentsApi = window.NOWPaymentsApiJS;
           if (NowPaymentsApi) {
             const NPApi5 = new NowPaymentsApi({
-              apiKey: import.meta.env.NOWPAY_API_KEY,
+              apiKey: process.env.REACT_APP_NOWPAY_API_KEY,
             });
             const response = await NPApi5.createInvoice({
               price_amount: amount,
